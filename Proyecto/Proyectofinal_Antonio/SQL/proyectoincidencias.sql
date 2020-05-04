@@ -10,14 +10,14 @@ USE `proyectoincidencias`;
 DROP TABLE IF EXISTS `Usuario`;
 CREATE TABLE `Usuario` (
   `id_usuario` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `correo` varchar(80) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `correo` varchar(80) COLLATE utf8mb4_spanish_ci DEFAULT NULL unique,
   `password` varchar(255) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   `tipo` enum('a','u') COLLATE utf8mb4_spanish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 
 
-INSERT INTO `Usuario` (`id_usuario`, `correo`, `contraseña`, `tipo`) VALUES
+INSERT INTO `Usuario` (`id_usuario`, `correo`, `password`, `tipo`) VALUES
 (1, 'correo1@gmail.com', '123', 'u'),
 (2, 'correo1@gmail.com', '123', 'u'),
 (3, 'correo2@gmail.com', '1234', 'u');

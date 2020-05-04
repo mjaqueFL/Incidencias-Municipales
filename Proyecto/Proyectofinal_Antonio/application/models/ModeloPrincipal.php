@@ -19,10 +19,10 @@ class ModeloPrincipal extends CI_Model
 
 	public function autenticar($usuario,$password)
 	{
-		$this->bd->select('codigousuario,correo,contraseña');
-		$this->bd->from('usuarios');
+		$this->bd->select('id_usuario,correo,password');
+		$this->bd->from('Usuario');
 		$this->bd->where("correo",$usuario);
-		$this->bd->where("contraseña",$password);
+		$this->bd->where("password",$password);
 
 		$resultado=$this->bd->get();
 
