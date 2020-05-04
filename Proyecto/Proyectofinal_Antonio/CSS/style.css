@@ -1,0 +1,107 @@
+ /* Nombre de autor:Antonio Barril Hernandez  */
+ /* Curso:2 DAW  */
+ /* Escuela: Escuela Virgen de guadalupe  */
+ /* Proyecto fin de ciclo: Proyecto de Web de Gestión de Incidencias Municipales  */
+ /* Año:2020  */
+/*Importando las fuentes necesarias*/
+/*<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200&family=Manuale&family=Podkova&display=swap" rel="stylesheet">*/
+/*Colores*/
+/*Color azul muy oscuro: #222831*/
+/*Color azul marino:#30475e*/
+/*dorado:#f2a365*/
+/*Gris: #ececec*/
+
+
+
+html {
+	 /*width: 1300px;*/
+	margin: 0 auto;
+}
+img
+{
+	width: 100%;
+	height: auto;
+}
+a
+{
+	text-decoration: none;
+}
+
+body {
+	width: 100%;
+	background-color: #dac682;
+}
+#header {
+	width: 100%;
+	padding: 0;
+	margin: 0 auto;
+}
+#header img {
+	width: 700px;
+	display:block;
+	margin:auto;
+	/*margin-left: 500px;*/
+}
+#menu {
+	display: flex;
+	padding: 0;
+}
+#menu a:hover
+{
+	color:#ececec;
+	text-decoration: none;
+}
+.nav {
+	flex-grow: 1;
+	background: #222831;
+	color: #f2a365;
+	text-decoration: none;
+	text-align: center;
+	font-size: 20px;
+	padding: 15px;
+	border: 2px solid #ececec;
+}
+footer {
+	text-align: left;
+
+	font-size: 13px;
+}
+#footer {
+
+	background-color: #30475e;
+	text-align: center;
+
+	padding-top: 10px;
+}
+#footer li {
+	display: inline-block;
+	text-align: center;
+}
+#footer a
+{
+	color:#f2a365 ;
+}
+#footer a:hover
+{
+	color:#ececec;
+	text-decoration: none;
+}
+
+#contenedor {
+	background-color: #f1eade;
+	height: 690px;
+	padding: 10px 10px 0;
+	font-size: 15px;
+}
+/*Login estilo*/
+#formulario
+{
+	width: 100px;
+	text-align: center;
+	margin:  auto;
+}
+@media (max-width: 40em) {
+	#menu {
+		flex-direction: column;
+	}
+}

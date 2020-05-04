@@ -1,0 +1,16 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+
+class TestController extends CI_Controller {
+//	public function index()
+//	{
+//		$this->load->view('hola_mundo');
+//	}
+//	public function prueba()
+//	{
+//		echo "hola";
+////$this->load->view('hola_mundo');
+//
+//	}
+
+}
