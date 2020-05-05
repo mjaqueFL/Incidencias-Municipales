@@ -15,12 +15,19 @@ CREATE TABLE `Usuario` (
   `tipo` enum('a','u') COLLATE utf8mb4_spanish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
+DROP TABLE IF EXISTS `Incidencia`;
+CREATE TABLE `Incidencia`(
+  `id_incidencia` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `titulo` varchar(30) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `descripcion` varchar(120) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `fecha` datetime COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `ubicacion` varchar(120) default null
+);
 
-
-INSERT INTO `Usuario` (`id_usuario`, `correo`, `password`, `tipo`) VALUES
-(1, 'correo1@gmail.com', '123', 'u'),
-(2, 'correo1@gmail.com', '123', 'u'),
-(3, 'correo2@gmail.com', '1234', 'u');
+INSERT INTO `Usuario` (`correo`, `password`, `tipo`) VALUES
+('correo1@gmail.com', '123', 'u'),
+('correo2@gmail.com', '123', 'u'),
+('correo3@gmail.com', '1234', 'u');
 
 
 

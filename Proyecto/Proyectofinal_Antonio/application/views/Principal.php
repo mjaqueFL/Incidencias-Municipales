@@ -23,15 +23,10 @@ echo '
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-12" id="menu">
-						<a class="nav" href="' .base_url(). 'home">Inicio</a>						
-						<a class="nav" href="Estadisticas.html">Estadisticas</a>
-						<a class="nav" href="Incidencias.html">Incidencias</a>
-						<a class="nav" href="Historiadelapagina.html">Historia de la pagina</a>
-						<a class="nav" href="haztemiembro.html">Hazte miembro</a>
-						<a class="nav" href="' .base_url(). 'logearse">Login</a>
-						<a class="nav" href="' .base_url(). 'cerrarsesion">Cerrar sesion</a>
-					</div>
+					';
+				include('Barrademenu.php');
+
+echo'
 				</div>
 				<div class="row" id="contenedor">
 				<h3>Hola estas en la principal</h3>
@@ -42,18 +37,8 @@ echo '
 			
 			';
 
+		include ('barrafooter.php');
 echo '
-				<div class="row" id="footer">
-					<div class=" col-lg-4 col-sm-12">
-						   <li><a href="PoliticaPrivacidad.html">POLITICA DE PRIVACIDAD</a> </li>
-					</div>
-					 <div class="col-lg-4 col-sm-12">
-					 <li><a href="Cookies.html">POLITICA DE COOKIES</a> </li>
-					 </div>
-					 <div class="col-lg-4 col-sm-12">
-					   <li><a href="avisolegal.html"> AVISO LEGAL</a></li>
-					 </div>
-				</div>
 			</div>
 			<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 			<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
