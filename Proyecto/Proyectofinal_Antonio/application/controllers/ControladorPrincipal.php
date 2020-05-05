@@ -61,6 +61,31 @@ class ControladorPrincipal extends CI_Controller
 			$this->load->view('Principal');
 		}
 	}
+
+	//Con esta clase accederemos al menu de las incidenciuas
+
+	public function menuincidencias()
+	{
+		$this->load->helper('url');
+		$this->load->view('Incidencias');
+	}
+
+	//Con esta funcion crearemos una incidencia
+	public function altaincidencia()
+	{
+
+	}
+
+	//Modificaremos una incidencia que ya existe
+	public function modificarincidencia(){
+
+	}
+
+	//Borraremos incidencias
+	public function borrarincidencia(){
+
+	}
+
 //con esta clase realizaremos el cerrar sesion
 	public function cerrarsesion()
 	{

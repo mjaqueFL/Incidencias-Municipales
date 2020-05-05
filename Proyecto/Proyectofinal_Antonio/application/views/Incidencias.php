@@ -13,7 +13,7 @@ echo '
 			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 			<link href="' . base_url() . 'CSS/style.css" rel="stylesheet" type="text/css">
 			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-			<title>Inicio</title>
+			<title>Incidencias</title>
 		  </head>
 		  <body>
 			<div class="container-fluid" >
@@ -28,24 +28,22 @@ include('Barrademenu.php');
 echo '
 				</div>
 				<div class="row" id="contenedor">
-					<div id="formulario">
-						<div class="row">
-							
-								<form class="col-12" action="' . base_url() . 'autenticacion" method="post">
-									<div class=" col-sm-12 col-md-6 col-lg-6 form-group">
-										<label for="Correo">Correo: </label>
-										<input type="text" name="correo" required placeholder="Correo electronico">
-									</div>
-									<div class=" col-sm-12 col-md-6 col-lg-6 form-group">
-										<label for="contrasenia">Contraseña: </label>
-										<input type="password" name="contrasenia" required placeholder="Contraseña">
-									</div>
-									<div class=" col-sm-12 col-md-6 col-lg-6 form-group">
-										<input type="submit" value="logearse"> 
-									</div>
-								</form>
-						</div>   
-					</div>
+					<div class="col-12" id="titulodelasincidencias">
+						<h4>Bienvenido al menu de incidencias</h4>
+            		</div>
+            		
+					<div class="col-12 col-md-6" id="misincidencias">
+               			<p>Mis incidencias:</p>
+           			</div>
+           			
+           			 <div class="col-12 col-md-6">
+                		<div id="menuincidencias">
+							<button>Crear incidencia</button><br>
+							<button>Modificar incidencia</button><br>
+							<button>Borrar incidencia</button><br>
+						</div>
+           			 </div>
+					
 				</div>
 			';
 
