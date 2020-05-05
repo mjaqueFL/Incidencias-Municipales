@@ -47,8 +47,13 @@ body {
 
 #menu {
 	display: flex;
+	flex-direction:row;
+	justify-content: center;
+	flex-wrap: wrap;
+	align-items: flex-start;
 	padding: 0;
-	text-align: center !important;
+	overflow: hidden;
+
 
 }
 
@@ -61,10 +66,10 @@ body {
 	flex-grow: 1;
 	background: #222831;
 	color: #f2a365;
+	justify-content: center;
 	text-decoration: none;
-	text-align: center;
 	font-size: 20px;
-	padding: 15px !important;
+	padding:10px 20px;
 	border: 2px solid #ececec;
 }
 
