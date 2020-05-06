@@ -4,6 +4,7 @@
 // Escuela: Escuela Virgen de guadalupe
 // Proyecto fin de ciclo: Proyecto de Web de Gestión de Incidencias Municipales
 // Año:2020
+$i=0;
 
 echo '
 		<!doctype html>
@@ -34,11 +35,26 @@ echo '
             		
 					<div class="col-12 col-md-6" id="misincidencias">
                			<p>Mis incidencias:</p>
+               			';
+
+if($this->misincidencias==NULL)
+{
+	echo "<p>No hay incidencias</p>";
+}
+else
+{
+	foreach ($this->misincidencias as $indice=>$valor)
+	{
+		echo "<button>$valor</button>";
+	}
+}
+
+echo '
            			</div>
            			
            			 <div class="col-12 col-md-6">
                 		<div id="menuincidencias">
-							<button>Crear incidencia</button><br>
+							<a href="'.base_url().'paginaandir"><button>Crear incidencia</button></a> <br>
 							<button>Modificar incidencia</button><br>
 							<button>Borrar incidencia</button><br>
 						</div>

@@ -15,6 +15,7 @@ class ControladorPrincipal extends CI_Controller
 		parent::__construct();
 		$this->load->helper('url');
 		$this->load->library('session');
+		$this->load->library('form_validation');
 		$this->load->model('ModeloPrincipal');
 	}
 
@@ -26,7 +27,7 @@ class ControladorPrincipal extends CI_Controller
 		$this->load->view('Principal');
 	}
 
-//Con esta clase redigira a la pestaña de login si no hay sesion y si la hay a la principal
+	//Con esta clase redigira a la pestaña de login si no hay sesion y si la hay a la principal
 	public function login()
 	{
 		$this->load->helper('url');
@@ -50,7 +51,7 @@ class ControladorPrincipal extends CI_Controller
 		if (!$res) {
 			$this->load->view('errror');
 		} else {
-//			//Con esto creamos la variable de sesion
+			//Con esto creamos la variable de sesion
 			$sesion = array(
 				'codigousuario' => $res->id_usuario,
 				'logeado' => TRUE
@@ -67,14 +68,56 @@ class ControladorPrincipal extends CI_Controller
 	public function menuincidencias()
 	{
 		$this->load->helper('url');
+		$this->load->helper('form');
+		$incidencias=$this->ModeloPrincipal->verincidencias();
+		$this->misincidencias=array();
+		foreach ($incidencias as $inc)
+			$this->misincidencias[$inc['id_incidencia']]=$inc["titulo"];
 		$this->load->view('Incidencias');
 	}
+
+
+	//Para acceder al formulario de añadir incidencias
+
+	public function formularioanadir()
+	{
+		$this->load->helper('url');
+		$this->load->helper('form');
+		if($this->form_validation->run()== FALSE) {
+
+			/*Aqui cogemos los tipos de incidencias*/
+
+			$tipos=$this->ModeloPrincipal->cogertipos();
+			$this->mistipos = array();
+			foreach ($tipos as $tipo)
+				$this->mistipos[$tipo['id_tipo']] = $tipo['nombre_tipo'];
+
+			$this->load->view('Anadirincidencia');
+		}
+	}
+
+
 
 	//Con esta funcion crearemos una incidencia
 	public function altaincidencia()
 	{
+		$this->load->helper('url');
+		$this->load->helper('form');
 
+		if($this->form_validation->run()== FALSE)
+		{
+			$datos =array();
+			$datos["titulo"]=$_POST["tituloincidencia"];
+			$datos["descripcion"]=$_POST["descripcionincidencia"];
+			$datos["fecha"]= date("Y-m-d h:i:sa");
+			$datos["ubicacion"]=$_POST["ubicacionincidencia"];
+			$datos["tipo_incidencia"]=$_POST["tipo"];
+
+			$this->ModeloPrincipal->altaincidencia($datos);
+			header("Location:".base_url()."incidencias");
+		}
 	}
+
 
 	//Modificaremos una incidencia que ya existe
 	public function modificarincidencia(){
@@ -89,12 +132,8 @@ class ControladorPrincipal extends CI_Controller
 //con esta clase realizaremos el cerrar sesion
 	public function cerrarsesion()
 	{
-
-
 		$this->session->sess_destroy();
 		$this->load->view('Principal');
-
-
 	}
 }
 

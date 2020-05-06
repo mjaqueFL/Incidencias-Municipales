@@ -17,6 +17,7 @@ class ModeloPrincipal extends CI_Model
 		$this->bd=$this->load->database('default',true);
 	}
 
+	//Con esta funcion comprobaremos que existe el usuario o no
 	public function autenticar($usuario,$password)
 	{
 		$this->bd->select('id_usuario,correo,password');
@@ -37,6 +38,50 @@ class ModeloPrincipal extends CI_Model
 
 	}
 
+	//Cogeremos los tipos gracias a esto
+	public function cogertipos()
+	{
+		$this->bd->select('id_tipo,nombre_tipo');
+		$this->bd->from('tipo_incidencia');
+		$query = $this->bd->get();
+		$rows = $query->result_array();
+		$query->free_result();
+		return $rows;
+	}
+
+
+	 //con esta funcion veremos nuestras incidencias
+	public function verincidencias()
+	{
+		$this->bd->select('*');
+		$this->bd->from('incidencia');
+//		$this->bd->join('tipo_incidencia', 'tipo_incidencia = id_tipo');
+		$query = $this->bd->get();
+		$rows = $query->result_array();
+		$query->free_result();
+		return $rows;
+	}
+	//Con esta funcion crearemos una incidencia
+
+	public function altaincidencia($datos)
+	{
+		 $this->bd->insert('incidencia',$datos);
+
+	}
+
+
+	//Con esta funcion modificaremos una incidencia
+	public function modificacionincidencia()
+	{
+
+	}
+
+
+	//Con esta funcion borraremos una incidencia
+	public function borrado()
+	{
+
+	}
 
 }
 
