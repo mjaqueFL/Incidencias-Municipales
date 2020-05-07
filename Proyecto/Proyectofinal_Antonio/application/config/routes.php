@@ -70,4 +70,7 @@ $route['paginaandir']='ControladorPrincipal/formularioanadir';
 $route['paginamodifi']='ControladorPrincipal/formulariomodificar';
 $route['paginaborrado']='ControladorPrincipal/formularioborrar';
 $route['alta']='ControladorPrincipal/altaincidencia';
+$route['modificar/(:num)']='ControladorPrincipal/modificarincidencia/$1';
+
 $route['incidencias']='ControladorPrincipal/menuincidencias';
+$route['Modificarincidencia/(:num)']='ControladorPrincipal/formulariomodificar/$1';

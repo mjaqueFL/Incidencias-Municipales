@@ -45,17 +45,15 @@ else
 {
 	foreach ($this->misincidencias as $indice=>$valor)
 	{
-		echo "<button>$valor</button>";
+		echo "<button>$valor</button><a href=".base_url()."Modificarincidencia/".$i++."><button>Modificar incidencia</button><br></a>";
 	}
 }
 
 echo '
            			</div>
-           			
-           			 <div class="col-12 col-md-6">
+	           			 <div class="col-12 col-md-6">
                 		<div id="menuincidencias">
 							<a href="'.base_url().'paginaandir"><button>Crear incidencia</button></a> <br>
-							<button>Modificar incidencia</button><br>
 							<button>Borrar incidencia</button><br>
 						</div>
            			 </div>

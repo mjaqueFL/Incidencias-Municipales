@@ -133,9 +133,19 @@ footer {
 	font-size: 18px;
 
 }
+#misincidencias button
+{
+	width: 20%;
+}
 /*Login estilo*/
 #formulario {
 	width: 100px;
+	text-align: center;
+	margin: auto;
+}
+#formulariomodifi
+{
+
 	text-align: center;
 	margin: auto;
 }

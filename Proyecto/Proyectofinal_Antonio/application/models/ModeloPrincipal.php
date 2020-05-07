@@ -62,7 +62,6 @@ class ModeloPrincipal extends CI_Model
 		return $rows;
 	}
 	//Con esta funcion crearemos una incidencia
-
 	public function altaincidencia($datos)
 	{
 		 $this->bd->insert('incidencia',$datos);
@@ -71,8 +70,9 @@ class ModeloPrincipal extends CI_Model
 
 
 	//Con esta funcion modificaremos una incidencia
-	public function modificacionincidencia()
+	public function modificacionincidencia($datos)
 	{
+		$this->bd->replace('incidencia',$datos);
 
 	}
 
@@ -83,6 +83,19 @@ class ModeloPrincipal extends CI_Model
 
 	}
 
+	public function cogerdescripcion()
+	{
+
+	}
+	public function cogerdatosincidencia($idincidencia)
+	{
+		$this->bd->select('id_incidencia,titulo,descripcion,fecha,ubicacion,tipo_incidencia');
+		$query = $this->bd->get('incidencia');
+		$this->bd->where('id_incidencia',$idincidencia);
+		$rows = $query->result_array();
+		$query->free_result();
+		return $rows;
+	}
 }
 
 ?>

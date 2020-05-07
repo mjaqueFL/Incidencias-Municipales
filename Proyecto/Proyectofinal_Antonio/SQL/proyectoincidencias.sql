@@ -7,7 +7,7 @@ CREATE TABLE `incidencia` (
   `id_incidencia` smallint(5) UNSIGNED NOT NULL,
   `titulo` varchar(30) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   `descripcion` varchar(120) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
-  `fecha` datetime DEFAULT NULL,
+  `fecha` DATE DEFAULT NULL,
   `ubicacion` varchar(120) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   `tipo_incidencia` tinyint(3) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;

@@ -118,9 +118,51 @@ class ControladorPrincipal extends CI_Controller
 		}
 	}
 
+	//Para acceder al formulario que nos permitira añadir una incidencia
+
+	public function formulariomodificar($idincidencia)
+	{
+		$this->load->helper('url');
+		$this->load->helper('form');
+		$this->load->library('form_validation');
+		if($this->form_validation->run()== FALSE)
+		{
+
+
+			$tipos=$this->ModeloPrincipal->cogertipos();
+			$this->mistipos = array();
+			foreach ($tipos as $tipo)
+				$this->mistipos[$tipo['id_tipo']] = $tipo['nombre_tipo'];
+
+			/*Aqui cogemos los datos de la clase*/
+			$claseaux=$this->ModeloPrincipal->cogerdatosincidencia($idincidencia);
+			$this->clase=$claseaux[$idincidencia];
+
+
+
+			$this->load->view('Modificarincidencia');
+		}
+	}
 
 	//Modificaremos una incidencia que ya existe
+
 	public function modificarincidencia(){
+
+		$this->load->helper('url');
+		$this->load->helper('form');
+
+		$datos =array();
+		$datos["id_incidencia"]=$_POST["idincidencia"];
+		$datos["titulo"]=$_POST["tituloincidencia"];
+		$datos["descripcion"]=$_POST["descripcioninciencia"];
+		$datos["fecha"]=$_POST["fechaincidencia"];
+		$datos["ubicacion"]=$_POST["ubicacionincidencia"];
+		$datos["tipo_incidencia"]=$_POST["tipoincidencia"];
+		$this->ModeloPrincipal->modificacionincidencia($datos);
+		$this->load->view('Principal');
+
+
+
 
 	}
 
@@ -135,6 +177,7 @@ class ControladorPrincipal extends CI_Controller
 		$this->session->sess_destroy();
 		$this->load->view('Principal');
 	}
-}
 
-?>
+
+
+}
