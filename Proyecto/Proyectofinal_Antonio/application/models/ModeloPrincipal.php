@@ -78,15 +78,13 @@ class ModeloPrincipal extends CI_Model
 
 
 	//Con esta funcion borraremos una incidencia
-	public function borrado()
+	public function borrado($idincidencia)
 	{
-
+		$this->bd->where('id_incidencia',$idincidencia);
+		$this->bd->delete('incidencia');
 	}
 
-	public function cogerdescripcion()
-	{
 
-	}
 	public function cogerdatosincidencia($idincidencia)
 	{
 		$this->bd->select('id_incidencia,titulo,descripcion,fecha,ubicacion,tipo_incidencia');
@@ -95,6 +93,11 @@ class ModeloPrincipal extends CI_Model
 		$rows = $query->result_array();
 		$query->free_result();
 		return $rows;
+	}
+
+	public function cogertodo()
+	{
+		return $this->bd->get('incidencia')->result();
 	}
 }
 

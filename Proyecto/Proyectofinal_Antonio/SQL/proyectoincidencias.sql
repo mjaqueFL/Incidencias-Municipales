@@ -1,5 +1,4 @@
 
-DROP DATABASE `proyectoincidencias`;
 CREATE DATABASE IF NOT EXISTS `proyectoincidencias` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci;
 
 CREATE USER 'antonio'@'localhost' IDENTIFIED BY 'antonio';

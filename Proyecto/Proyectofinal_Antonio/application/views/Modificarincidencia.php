@@ -14,6 +14,7 @@ $inp_idclase=array(
 	'name'=>'idincidencia',
 	'id'=>'ins_idclase',
 	'value'=>$this->clase['id_incidencia'],
+	'type'=>'hidden',
 );
 $inp_descripcion=array(
 	'name'=>'descripcioninciencia',
@@ -61,7 +62,7 @@ $attributes =array('class'=> 'ControladorPrincipal','id'=>'myform');
 				</div>
 				<div class="row">
 					<div class="col-12" id="menu">
-						<a class="nav" href="' .base_url(). 'home">Inicio</a>						
+						<a class="nav" href="' .base_url(). 'home">Inicio</a>
 						<a class="nav" href="Estadisticas.html">Estadisticas</a>
 						<a class="nav" href="Incidencias.html">Incidencias</a>
 						<a class="nav" href="Historiadelapagina.html">Historia de la pagina</a>
@@ -72,7 +73,7 @@ $attributes =array('class'=> 'ControladorPrincipal','id'=>'myform');
 				</div>
 				<div class="row" id="contenedor">
 				<div class="col-12">
-				<div class="col-12" id="formulariomodifi"';
+				<div class="col-12" id="formulariomodifi">';
 				echo validation_errors();
 				echo form_open(base_url().'ControladorPrincipal/modificarincidencia',$attributes);
 				echo form_label('titulo incidencia: ');
@@ -82,8 +83,6 @@ $attributes =array('class'=> 'ControladorPrincipal','id'=>'myform');
 				echo form_label('descripcion incidencia: ');
 				echo '<br>';
 				echo form_input($inp_descripcion);
-				echo '<br>';
-				echo form_label('id incidencia: ');
 				echo '<br>';
 				echo form_input($inp_idclase);
 				echo '<br>';

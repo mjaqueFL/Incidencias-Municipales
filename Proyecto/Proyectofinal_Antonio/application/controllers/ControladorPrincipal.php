@@ -5,7 +5,7 @@
 //Proyecto fin de ciclo: Proyecto de Web de Gestión de Incidencias Municipales
 //Año:2020
 
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') OR exit('No tienes permiso para acceder a este contenido');
 
 class ControladorPrincipal extends CI_Controller
 {
@@ -38,6 +38,7 @@ class ControladorPrincipal extends CI_Controller
 		}
 	}
 	//Con esta clase realizara la autenticacion de usuarios
+
 	public function logearse()
 	{
 		//con esto cogemos el correo y la contraseña
@@ -63,7 +64,7 @@ class ControladorPrincipal extends CI_Controller
 		}
 	}
 
-	//Con esta clase accederemos al menu de las incidenciuas
+	//Con esta clase accederemos al menu de las incidenciu	as
 
 	public function menuincidencias()
 	{
@@ -107,11 +108,11 @@ class ControladorPrincipal extends CI_Controller
 		if($this->form_validation->run()== FALSE)
 		{
 			$datos =array();
-			$datos["titulo"]=$_POST["tituloincidencia"];
-			$datos["descripcion"]=$_POST["descripcionincidencia"];
+			$datos["titulo"]=$this->input->post("tituloincidencia");
+			$datos["descripcion"]=$this->input->post("descripcionincidencia");
 			$datos["fecha"]= date("Y-m-d h:i:sa");
-			$datos["ubicacion"]=$_POST["ubicacionincidencia"];
-			$datos["tipo_incidencia"]=$_POST["tipo"];
+			$datos["ubicacion"]=$this->input->post("ubicacionincidencia");
+			$datos["tipo_incidencia"]=$this->input->post("tipo");
 
 			$this->ModeloPrincipal->altaincidencia($datos);
 			header("Location:".base_url()."incidencias");
@@ -152,12 +153,12 @@ class ControladorPrincipal extends CI_Controller
 		$this->load->helper('form');
 
 		$datos =array();
-		$datos["id_incidencia"]=$_POST["idincidencia"];
-		$datos["titulo"]=$_POST["tituloincidencia"];
-		$datos["descripcion"]=$_POST["descripcioninciencia"];
-		$datos["fecha"]=$_POST["fechaincidencia"];
-		$datos["ubicacion"]=$_POST["ubicacionincidencia"];
-		$datos["tipo_incidencia"]=$_POST["tipoincidencia"];
+		$datos["id_incidencia"]=$this->input->post("idincidencia");
+		$datos["titulo"]=$this->input->post("tituloincidencia");
+		$datos["descripcion"]=$this->input->post("descripcioninciencia");
+		$datos["fecha"]=$this->input->post("fechaincidencia");
+		$datos["ubicacion"]=$this->input->post("ubicacionincidencia");
+		$datos["tipo_incidencia"]=$this->input->post("tipoincidencia");
 		$this->ModeloPrincipal->modificacionincidencia($datos);
 		$this->load->view('Principal');
 
@@ -166,9 +167,30 @@ class ControladorPrincipal extends CI_Controller
 
 	}
 
+	//para ir al formulario de borrarincidencias
+
+	public function formularioborrar()
+	{
+		$this->load->helper('url');
+		$this->load->helper('form');
+		$data['listaincidencias']=$this->ModeloPrincipal->cogertodo();
+//			$incidencias=$this->ModeloPrincipal->verincidencias();
+//		$this->misincidencias=array();
+//		foreach ($incidencias as $inc)
+//			$this->misincidencias[$inc['id_incidencia']]=$inc["titulo"];
+		$this->load->view('BorrarIncidencias',$data);
+
+	}
+
 	//Borraremos incidencias
 	public function borrarincidencia(){
-
+		$this->load->helper('url');
+		$this->load->helper('form');
+		foreach ($this->input->post('id_incidencia') as $id)
+		{
+			$this->ModeloPrincipal->borrado($id);
+		}
+		$this->load->view('Principal');
 	}
 
 //con esta clase realizaremos el cerrar sesion

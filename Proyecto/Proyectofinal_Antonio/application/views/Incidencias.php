@@ -54,7 +54,7 @@ echo '
 	           			 <div class="col-12 col-md-6">
                 		<div id="menuincidencias">
 							<a href="'.base_url().'paginaandir"><button>Crear incidencia</button></a> <br>
-							<button>Borrar incidencia</button><br>
+							<a href="'.base_url().'paginaborrado"><button>Borrar incidencia</button></a><br>
 						</div>
            			 </div>
 					
