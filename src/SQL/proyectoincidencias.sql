@@ -1,5 +1,10 @@
+DROP DATABASE IF EXISTS `proyectoincidencias`;
+CREATE DATABASE  `proyectoincidencias` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci;
 
-CREATE DATABASE IF NOT EXISTS `proyectoincidencias` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci;
+DROP USER IF EXISTS 'antonio'@'localhost';
+CREATE USER 'antonio'@'localhost' IDENTIFIED BY 'antonio';
+GRANT ALL ON proyectoincidencias.* TO 'antonio'@'localhost' ;
+
 USE `proyectoincidencias`;
 
 
@@ -9,7 +14,8 @@ CREATE TABLE `incidencia` (
   `descripcion` varchar(120) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   `fecha` DATE DEFAULT NULL,
   `ubicacion` varchar(120) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
-  `tipo_incidencia` tinyint(3) UNSIGNED NOT NULL
+  `tipo_incidencia` tinyint(3) UNSIGNED NOT NULL,
+  `id_usuario`smallint(5) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 
@@ -26,16 +32,6 @@ CREATE TABLE `usuario` (
   `tipo` enum('a','u') COLLATE utf8mb4_spanish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
-
-INSERT INTO `usuario` (`id_usuario`, `correo`, `password`, `tipo`) VALUES
-(1, 'correo1@gmail.com', '123', 'u'),
-(2, 'correo2@gmail.com', '123', 'u'),
-(3, 'correo3@gmail.com', '1234', 'u');
-
-INSERT INTO `tipo_incidencia` (`nombre_tipo`) VALUES
-('vial'),
-('ciudadana'),
-('transito');
 
 
 ALTER TABLE `incidencia`
@@ -63,5 +59,15 @@ ALTER TABLE `usuario`
 
 ALTER TABLE `incidencia`
   ADD CONSTRAINT `fk_IncidenciaTipo` FOREIGN KEY (`tipo_incidencia`) REFERENCES `tipo_incidencia` (`id_tipo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-COMMIT;
+  
+  INSERT INTO `usuario` (`id_usuario`, `correo`, `password`, `tipo`) VALUES
+(1, 'correo1@gmail.com', '123', 'u'),
+(2, 'correo2@gmail.com', '123', 'u'),
+(3, 'correo3@gmail.com', '1234', 'u');
 
+INSERT INTO `tipo_incidencia` (`nombre_tipo`) VALUES
+('vial'),
+('ciudadana'),
+('transito');
+  
+COMMIT;

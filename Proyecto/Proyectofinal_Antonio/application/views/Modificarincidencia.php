@@ -61,15 +61,9 @@ $attributes =array('class'=> 'ControladorPrincipal','id'=>'myform');
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-12" id="menu">
-						<a class="nav" href="' .base_url(). 'home">Inicio</a>
-						<a class="nav" href="Estadisticas.html">Estadisticas</a>
-						<a class="nav" href="Incidencias.html">Incidencias</a>
-						<a class="nav" href="Historiadelapagina.html">Historia de la pagina</a>
-						<a class="nav" href="haztemiembro.html">Hazte miembro</a>
-						<a class="nav" href="' .base_url(). 'logearse">Login</a>
-						<a class="nav" href="' .base_url(). 'cerrarsesion">Cerrar sesion</a>
-					</div>
+					';
+include('Barrademenu.php');
+ echo'
 				</div>
 				<div class="row" id="contenedor">
 				<div class="col-12">

@@ -4,7 +4,6 @@
 // Escuela: Escuela Virgen de guadalupe
 // Proyecto fin de ciclo: Proyecto de Web de Gestión de Incidencias Municipales
 // Año:2020
-
 $tituloincidencia=array(
 	'name'=>'tituloincidencia',
 	'id'=>'tituloincidencia',

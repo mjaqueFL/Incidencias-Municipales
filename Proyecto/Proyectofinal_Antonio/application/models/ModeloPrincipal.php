@@ -55,12 +55,14 @@ class ModeloPrincipal extends CI_Model
 	{
 		$this->bd->select('*');
 		$this->bd->from('incidencia');
-//		$this->bd->join('tipo_incidencia', 'tipo_incidencia = id_tipo');
+		$this->bd->where('id_usuario',$this->session->userdata('codigousuario'));
 		$query = $this->bd->get();
 		$rows = $query->result_array();
 		$query->free_result();
 		return $rows;
 	}
+
+
 	//Con esta funcion crearemos una incidencia
 	public function altaincidencia($datos)
 	{

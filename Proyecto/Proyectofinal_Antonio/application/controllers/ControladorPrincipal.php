@@ -93,7 +93,7 @@ class ControladorPrincipal extends CI_Controller
 			foreach ($tipos as $tipo)
 				$this->mistipos[$tipo['id_tipo']] = $tipo['nombre_tipo'];
 
-			$this->load->view('Anadirincidencia');
+			$this->load->view('Anadirincidencia',$this->session->userdata('codigousuario'));
 		}
 	}
 
@@ -113,7 +113,7 @@ class ControladorPrincipal extends CI_Controller
 			$datos["fecha"]= date("Y-m-d h:i:sa");
 			$datos["ubicacion"]=$this->input->post("ubicacionincidencia");
 			$datos["tipo_incidencia"]=$this->input->post("tipo");
-
+			$datos["id_usuario"]=$this->session->userdata('codigousuario');
 			$this->ModeloPrincipal->altaincidencia($datos);
 			header("Location:".base_url()."incidencias");
 		}
@@ -159,6 +159,7 @@ class ControladorPrincipal extends CI_Controller
 		$datos["fecha"]=$this->input->post("fechaincidencia");
 		$datos["ubicacion"]=$this->input->post("ubicacionincidencia");
 		$datos["tipo_incidencia"]=$this->input->post("tipoincidencia");
+		$datos["id_usuario"]=$this->session->userdata('codigousuario');
 		$this->ModeloPrincipal->modificacionincidencia($datos);
 		$this->load->view('Principal');
 

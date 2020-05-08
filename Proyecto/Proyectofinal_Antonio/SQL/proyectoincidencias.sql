@@ -1,6 +1,7 @@
+DROP DATABASE IF EXISTS `proyectoincidencias`;
+CREATE DATABASE  `proyectoincidencias` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci;
 
-CREATE DATABASE IF NOT EXISTS `proyectoincidencias` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci;
-
+DROP USER IF EXISTS 'antonio'@'localhost';
 CREATE USER 'antonio'@'localhost' IDENTIFIED BY 'antonio';
 GRANT ALL ON proyectoincidencias.* TO 'antonio'@'localhost' ;
 
@@ -13,7 +14,8 @@ CREATE TABLE `incidencia` (
   `descripcion` varchar(120) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   `fecha` DATE DEFAULT NULL,
   `ubicacion` varchar(120) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
-  `tipo_incidencia` tinyint(3) UNSIGNED NOT NULL
+  `tipo_incidencia` tinyint(3) UNSIGNED NOT NULL,
+  `id_usuario`smallint(5) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 
