@@ -175,10 +175,6 @@ class ControladorPrincipal extends CI_Controller
 		$this->load->helper('url');
 		$this->load->helper('form');
 		$data['listaincidencias']=$this->ModeloPrincipal->cogertodo();
-//			$incidencias=$this->ModeloPrincipal->verincidencias();
-//		$this->misincidencias=array();
-//		foreach ($incidencias as $inc)
-//			$this->misincidencias[$inc['id_incidencia']]=$inc["titulo"];
 		$this->load->view('BorrarIncidencias',$data);
 
 	}
