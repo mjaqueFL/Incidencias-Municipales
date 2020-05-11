@@ -303,251 +303,118 @@
       "value": ""
     }]
   }, {
-    "id": "258ad169-bd5f-49aa-9a90-6f6f2e128e73",
-    "name": "2.-Gestion de Incidencias",
+    "id": "4e1bcb6d-2251-48df-befa-d2b4cf32204e",
+    "name": "2.-Gestion de incidencias",
     "commands": [{
-      "id": "1567ba2d-067c-4f2e-baed-01f4f29af227",
+      "id": "7ee2a3b8-896f-42d8-85b2-849a3b3e0390",
       "comment": "",
       "command": "open",
-      "target": "/Proyectofinal_Antonio/incidencias",
+      "target": "/Proyectofinal_Antonio/",
       "targets": [],
       "value": ""
     }, {
-      "id": "2041517a-dc29-4532-a1e9-89da204c9f8d",
+      "id": "8fa28ac8-e012-42d2-94ab-9db0d59b817d",
       "comment": "",
       "command": "setWindowSize",
-      "target": "1936x1056",
+      "target": "958x1039",
       "targets": [],
       "value": ""
     }, {
-      "id": "7027895b-b274-4eaa-80ac-4cd4ff064d45",
+      "id": "ad6dc3ab-4b06-4ce5-842d-739dab9b87df",
       "comment": "",
       "command": "click",
-      "target": "css=a:nth-child(1) > button",
+      "target": "linkText=Cerrar sesion",
       "targets": [
-        ["css=a:nth-child(1) > button", "css:finder"],
-        ["xpath=//div[@id='menuincidencias']/a/button", "xpath:idRelative"],
-        ["xpath=//div[3]/div[3]/div/a/button", "xpath:position"],
-        ["xpath=//button[contains(.,'Crear incidencia')]", "xpath:innerText"]
+        ["linkText=Cerrar sesion", "linkText"],
+        ["css=.nav:nth-child(7)", "css:finder"],
+        ["xpath=//a[contains(text(),'Cerrar sesion')]", "xpath:link"],
+        ["xpath=//div[@id='menu']/a[7]", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost/Proyectofinal_Antonio/cerrarsesion']", "xpath:href"],
+        ["xpath=//a[7]", "xpath:position"],
+        ["xpath=//a[contains(.,'Cerrar sesion')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "c8850b87-3c3b-40e0-97b0-1eb6dd69d02b",
+      "id": "dd245ae9-625e-4334-b9d1-caad6adfbdb4",
       "comment": "",
       "command": "click",
-      "target": "id=tituloincidencia",
+      "target": "linkText=Login",
       "targets": [
-        ["id=tituloincidencia", "id"],
-        ["name=tituloincidencia", "name"],
-        ["css=#tituloincidencia", "css:finder"],
-        ["xpath=//input[@id='tituloincidencia']", "xpath:attributes"],
-        ["xpath=//form[@id='myform']/input", "xpath:idRelative"],
+        ["linkText=Login", "linkText"],
+        ["css=.nav:nth-child(6)", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//div[@id='menu']/a[6]", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost/Proyectofinal_Antonio/logearse']", "xpath:href"],
+        ["xpath=//a[6]", "xpath:position"],
+        ["xpath=//a[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c381caac-5ff4-4ef3-af63-07f8925b170d",
+      "comment": "",
+      "command": "click",
+      "target": "name=correo",
+      "targets": [
+        ["name=correo", "name"],
+        ["css=.col-sm-12:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='correo']", "xpath:attributes"],
+        ["xpath=//div[@id='formulario']/div/form/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "d4ae67da-1b96-4dc5-b2e5-e530cd731694",
+      "id": "b68e027a-6127-4d55-81e7-1e620d02ff8b",
       "comment": "",
       "command": "type",
-      "target": "id=tituloincidencia",
+      "target": "name=correo",
       "targets": [
-        ["id=tituloincidencia", "id"],
-        ["name=tituloincidencia", "name"],
-        ["css=#tituloincidencia", "css:finder"],
-        ["xpath=//input[@id='tituloincidencia']", "xpath:attributes"],
-        ["xpath=//form[@id='myform']/input", "xpath:idRelative"],
+        ["name=correo", "name"],
+        ["css=.col-sm-12:nth-child(1) > input", "css:finder"],
+        ["xpath=//input[@name='correo']", "xpath:attributes"],
+        ["xpath=//div[@id='formulario']/div/form/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
-      "value": "a"
+      "value": "correo1@gmail.com"
     }, {
-      "id": "ca28e6a8-58dc-42be-95e5-809e29f7fc50",
+      "id": "45ca8ab1-386c-4055-a6cf-415e56796c3f",
+      "comment": "",
+      "command": "click",
+      "target": "name=contrasenia",
+      "targets": [
+        ["name=contrasenia", "name"],
+        ["css=.col-sm-12:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='contrasenia']", "xpath:attributes"],
+        ["xpath=//div[@id='formulario']/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b94800f6-41a0-4911-835b-412741d2af7f",
       "comment": "",
       "command": "type",
-      "target": "id=descripcionincidencia",
+      "target": "name=contrasenia",
       "targets": [
-        ["id=descripcionincidencia", "id"],
-        ["name=descripcionincidencia", "name"],
-        ["css=#descripcionincidencia", "css:finder"],
-        ["xpath=//input[@id='descripcionincidencia']", "xpath:attributes"],
-        ["xpath=//form[@id='myform']/input[2]", "xpath:idRelative"],
-        ["xpath=//input[2]", "xpath:position"]
+        ["name=contrasenia", "name"],
+        ["css=.col-sm-12:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='contrasenia']", "xpath:attributes"],
+        ["xpath=//div[@id='formulario']/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
       ],
-      "value": "a"
+      "value": "123"
     }, {
-      "id": "10add281-2910-4d36-8448-288aa9fcef34",
-      "comment": "",
-      "command": "type",
-      "target": "id=ubicacionincidencia",
-      "targets": [
-        ["id=ubicacionincidencia", "id"],
-        ["name=ubicacionincidencia", "name"],
-        ["css=#ubicacionincidencia", "css:finder"],
-        ["xpath=//input[@id='ubicacionincidencia']", "xpath:attributes"],
-        ["xpath=//form[@id='myform']/input[3]", "xpath:idRelative"],
-        ["xpath=//input[3]", "xpath:position"]
-      ],
-      "value": "a"
-    }, {
-      "id": "1225fcb8-e9f2-4dbd-9b35-c46008ab7fab",
+      "id": "c17c7be3-3923-4a8d-b0db-6f60c1c2a318",
       "comment": "",
       "command": "click",
-      "target": "name=tipo",
+      "target": "css=input:nth-child(1)",
       "targets": [
-        ["name=tipo", "name"],
-        ["css=select", "css:finder"],
-        ["xpath=//select[@name='tipo']", "xpath:attributes"],
-        ["xpath=//form[@id='myform']/select", "xpath:idRelative"],
-        ["xpath=//select", "xpath:position"],
-        ["xpath=//select[contains(.,'vial\nciudadana\ntransito')]", "xpath:innerText"]
+        ["css=input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@value='logearse']", "xpath:attributes"],
+        ["xpath=//div[@id='formulario']/div/form/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "1d659348-140c-4480-85e3-63ac6471732f",
-      "comment": "",
-      "command": "select",
-      "target": "name=tipo",
-      "targets": [],
-      "value": "label=ciudadana"
-    }, {
-      "id": "8dc06cd5-8bf7-4987-aaa4-b93f60426f80",
-      "comment": "",
-      "command": "click",
-      "target": "name=tipo",
-      "targets": [
-        ["name=tipo", "name"],
-        ["css=select", "css:finder"],
-        ["xpath=//select[@name='tipo']", "xpath:attributes"],
-        ["xpath=//form[@id='myform']/select", "xpath:idRelative"],
-        ["xpath=//select", "xpath:position"],
-        ["xpath=//select[contains(.,'vial\nciudadana\ntransito')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "334e27c7-abff-4e96-9482-e96e0d465772",
-      "comment": "",
-      "command": "click",
-      "target": "name=btn_enviar",
-      "targets": [
-        ["name=btn_enviar", "name"],
-        ["css=input:nth-child(21)", "css:finder"],
-        ["xpath=//input[@name='btn_enviar']", "xpath:attributes"],
-        ["xpath=//form[@id='myform']/input[4]", "xpath:idRelative"],
-        ["xpath=//input[4]", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "5968d81f-9466-464d-825e-d03286d6ca8c",
-      "comment": "",
-      "command": "click",
-      "target": "css=a:nth-child(5) > button",
-      "targets": [
-        ["css=a:nth-child(5) > button", "css:finder"],
-        ["xpath=//div[@id='misincidencias']/a[2]/button", "xpath:idRelative"],
-        ["xpath=//a[2]/button", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "8dd7b0b4-8e20-4d0c-aa65-137914ff7c2d",
-      "comment": "",
-      "command": "click",
-      "target": "id=myform",
-      "targets": [
-        ["id=myform", "id"],
-        ["css=#myform", "css:finder"],
-        ["xpath=//form[@id='myform']", "xpath:attributes"],
-        ["xpath=//div[@id='formulariomodifi']/form", "xpath:idRelative"],
-        ["xpath=//form", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "51eed122-f5d2-4dca-978d-4eab7dea5043",
-      "comment": "",
-      "command": "type",
-      "target": "id=nombreclase",
-      "targets": [
-        ["id=nombreclase", "id"],
-        ["name=tituloincidencia", "name"],
-        ["css=#nombreclase", "css:finder"],
-        ["xpath=//input[@id='nombreclase']", "xpath:attributes"],
-        ["xpath=//form[@id='myform']/input", "xpath:idRelative"],
-        ["xpath=//input", "xpath:position"]
-      ],
-      "value": "8"
-    }, {
-      "id": "042bf8f9-8225-48d9-9d1f-5f72706dc25d",
-      "comment": "",
-      "command": "type",
-      "target": "id=ins_idclase",
-      "targets": [
-        ["id=ins_idclase", "id"],
-        ["name=descripcioninciencia", "name"],
-        ["xpath=//input[@id='ins_idclase']", "xpath:attributes"],
-        ["xpath=//form[@id='myform']/input[2]", "xpath:idRelative"],
-        ["xpath=//input[2]", "xpath:position"]
-      ],
-      "value": "8"
-    }, {
-      "id": "f045ea5b-af37-43d3-8948-1265d5822798",
-      "comment": "",
-      "command": "type",
-      "target": "name=fechaincidencia",
-      "targets": [
-        ["name=fechaincidencia", "name"],
-        ["xpath=(//input[@id='ins_idclase'])[3]", "xpath:attributes"],
-        ["xpath=//form[@id='myform']/input[4]", "xpath:idRelative"],
-        ["xpath=//input[4]", "xpath:position"]
-      ],
-      "value": "2020-05-11"
-    }, {
-      "id": "a5ee41fe-e963-4d2d-837d-3e446150522c",
-      "comment": "",
-      "command": "click",
-      "target": "name=tipoincidencia",
-      "targets": [
-        ["name=tipoincidencia", "name"],
-        ["css=select", "css:finder"],
-        ["xpath=//select[@name='tipoincidencia']", "xpath:attributes"],
-        ["xpath=//form[@id='myform']/select", "xpath:idRelative"],
-        ["xpath=//select", "xpath:position"],
-        ["xpath=//select[contains(.,'vial\nciudadana\ntransito')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "85c3854d-8857-49de-be2a-25fd59d5e8bf",
-      "comment": "",
-      "command": "select",
-      "target": "name=tipoincidencia",
-      "targets": [],
-      "value": "label=ciudadana"
-    }, {
-      "id": "91306af4-453a-47cf-8786-6455fdc06549",
-      "comment": "",
-      "command": "click",
-      "target": "name=tipoincidencia",
-      "targets": [
-        ["name=tipoincidencia", "name"],
-        ["css=select", "css:finder"],
-        ["xpath=//select[@name='tipoincidencia']", "xpath:attributes"],
-        ["xpath=//form[@id='myform']/select", "xpath:idRelative"],
-        ["xpath=//select", "xpath:position"],
-        ["xpath=//select[contains(.,'vial\nciudadana\ntransito')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "98e4c2a3-715a-49d0-80ae-1cefd93b2772",
-      "comment": "",
-      "command": "click",
-      "target": "name=btn_modificar",
-      "targets": [
-        ["name=btn_modificar", "name"],
-        ["css=input:nth-child(24)", "css:finder"],
-        ["xpath=//input[@name='btn_modificar']", "xpath:attributes"],
-        ["xpath=//form[@id='myform']/input[6]", "xpath:idRelative"],
-        ["xpath=//input[6]", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "b907254d-a9da-4416-a36b-e1ba24c52d2f",
+      "id": "5282f857-0459-49b2-b582-cef545c70b43",
       "comment": "",
       "command": "click",
       "target": "linkText=Incidencias",
@@ -562,7 +429,7 @@
       ],
       "value": ""
     }, {
-      "id": "fbca4920-b9a1-4e45-95bd-aa72f23d6d8b",
+      "id": "3fcdf6f9-fb90-4fce-a33c-29850235c09e",
       "comment": "",
       "command": "click",
       "target": "css=#menuincidencias > a:nth-child(3) > button",
@@ -574,67 +441,291 @@
       ],
       "value": ""
     }, {
-      "id": "c908ffeb-85ff-4e09-85ad-06ca2b14b56e",
+      "id": "60dcb5f2-c545-489c-bc0f-b85fc7b0080b",
       "comment": "",
       "command": "click",
-      "target": "name=id_incidencia[]",
+      "target": "id=myform",
       "targets": [
-        ["name=id_incidencia[]", "name"],
-        ["css=tr:nth-child(2) input", "css:finder"],
-        ["xpath=//input[@name='id_incidencia[]']", "xpath:attributes"],
-        ["xpath=//form[@id='myform']/table/tbody/tr[2]/td/input", "xpath:idRelative"],
-        ["xpath=//td/input", "xpath:position"]
+        ["id=myform", "id"],
+        ["css=#myform", "css:finder"],
+        ["xpath=//form[@id='myform']", "xpath:attributes"],
+        ["xpath=//div[@id='formulariomodifi']/form", "xpath:idRelative"],
+        ["xpath=//form", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "153608ee-1b9b-41f7-a7ea-dcf391fd16cd",
+      "id": "5f801ed7-7aaf-428d-b728-9ae5081fd97d",
       "comment": "",
       "command": "click",
-      "target": "css=tr:nth-child(3) input",
+      "target": "linkText=Incidencias",
       "targets": [
-        ["css=tr:nth-child(3) input", "css:finder"],
-        ["xpath=(//input[@name='id_incidencia[]'])[2]", "xpath:attributes"],
-        ["xpath=//form[@id='myform']/table/tbody/tr[3]/td/input", "xpath:idRelative"],
-        ["xpath=//tr[3]/td/input", "xpath:position"]
+        ["linkText=Incidencias", "linkText"],
+        ["css=.nav:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Incidencias')]", "xpath:link"],
+        ["xpath=//div[@id='menu']/a[3]", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost/Proyectofinal_Antonio/incidencias']", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Incidencias')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "557c0c1f-a610-4888-b0be-66da543d9bfb",
+      "id": "2c581153-679c-40e5-9ce7-897e2fad9a06",
       "comment": "",
       "command": "click",
-      "target": "css=tr:nth-child(4) > td:nth-child(1)",
+      "target": "css=a:nth-child(1) > button",
       "targets": [
-        ["css=tr:nth-child(4) > td:nth-child(1)", "css:finder"],
-        ["xpath=//form[@id='myform']/table/tbody/tr[4]/td", "xpath:idRelative"],
-        ["xpath=//tr[4]/td", "xpath:position"]
+        ["css=a:nth-child(1) > button", "css:finder"],
+        ["xpath=//div[@id='menuincidencias']/a/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div[3]/div/a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Crear incidencia')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
-      "id": "31399862-9769-4efb-964a-4cbac06c003f",
+      "id": "37792fb4-af04-421d-a948-6338d5036d0a",
       "comment": "",
       "command": "click",
-      "target": "css=tr:nth-child(4) input",
+      "target": "id=tituloincidencia",
       "targets": [
-        ["css=tr:nth-child(4) input", "css:finder"],
-        ["xpath=(//input[@name='id_incidencia[]'])[3]", "xpath:attributes"],
-        ["xpath=//form[@id='myform']/table/tbody/tr[4]/td/input", "xpath:idRelative"],
-        ["xpath=//tr[4]/td/input", "xpath:position"]
-      ],
-      "value": ""
-    }, {
-      "id": "f9281dec-4df0-4f85-9fe0-b2a2bb3ead67",
-      "comment": "",
-      "command": "click",
-      "target": "css=#myform > input",
-      "targets": [
-        ["css=#myform > input", "css:finder"],
-        ["xpath=//input[@value='borrar']", "xpath:attributes"],
+        ["id=tituloincidencia", "id"],
+        ["name=tituloincidencia", "name"],
+        ["css=#tituloincidencia", "css:finder"],
+        ["xpath=//input[@id='tituloincidencia']", "xpath:attributes"],
         ["xpath=//form[@id='myform']/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
       "value": ""
     }, {
-      "id": "ead8cf96-d902-4877-8f3e-bc34cf23699e",
+      "id": "8ba57228-9965-4dd7-803a-c390ba739863",
+      "comment": "",
+      "command": "type",
+      "target": "id=tituloincidencia",
+      "targets": [
+        ["id=tituloincidencia", "id"],
+        ["name=tituloincidencia", "name"],
+        ["css=#tituloincidencia", "css:finder"],
+        ["xpath=//input[@id='tituloincidencia']", "xpath:attributes"],
+        ["xpath=//form[@id='myform']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "antonio"
+    }, {
+      "id": "18b1c8a1-1511-45b0-933d-11cb197d72e0",
+      "comment": "",
+      "command": "type",
+      "target": "id=descripcionincidencia",
+      "targets": [
+        ["id=descripcionincidencia", "id"],
+        ["name=descripcionincidencia", "name"],
+        ["css=#descripcionincidencia", "css:finder"],
+        ["xpath=//input[@id='descripcionincidencia']", "xpath:attributes"],
+        ["xpath=//form[@id='myform']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": "barril"
+    }, {
+      "id": "ff6915ac-3d14-4592-8fbf-dac3f6108765",
+      "comment": "",
+      "command": "type",
+      "target": "id=ubicacionincidencia",
+      "targets": [
+        ["id=ubicacionincidencia", "id"],
+        ["name=ubicacionincidencia", "name"],
+        ["css=#ubicacionincidencia", "css:finder"],
+        ["xpath=//input[@id='ubicacionincidencia']", "xpath:attributes"],
+        ["xpath=//form[@id='myform']/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": "montijo"
+    }, {
+      "id": "dffbbcde-86a6-4bbf-a407-2b1080ece375",
+      "comment": "",
+      "command": "click",
+      "target": "name=tipo",
+      "targets": [
+        ["name=tipo", "name"],
+        ["css=select", "css:finder"],
+        ["xpath=//select[@name='tipo']", "xpath:attributes"],
+        ["xpath=//form[@id='myform']/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'vial\nciudadana\ntransito')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "21c960fd-ef3f-4815-a134-3ca814fbd68f",
+      "comment": "",
+      "command": "select",
+      "target": "name=tipo",
+      "targets": [],
+      "value": "label=ciudadana"
+    }, {
+      "id": "cc22c94b-20bd-4594-bcc3-6789e42fa48c",
+      "comment": "",
+      "command": "click",
+      "target": "name=tipo",
+      "targets": [
+        ["name=tipo", "name"],
+        ["css=select", "css:finder"],
+        ["xpath=//select[@name='tipo']", "xpath:attributes"],
+        ["xpath=//form[@id='myform']/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"],
+        ["xpath=//select[contains(.,'vial\nciudadana\ntransito')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1fc39c2d-f184-4efd-bb38-b019435e0054",
+      "comment": "",
+      "command": "click",
+      "target": "name=btn_enviar",
+      "targets": [
+        ["name=btn_enviar", "name"],
+        ["css=input:nth-child(18)", "css:finder"],
+        ["xpath=//input[@name='btn_enviar']", "xpath:attributes"],
+        ["xpath=//form[@id='myform']/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b56aac5d-21b0-4c4f-851b-f517b046ecf9",
+      "comment": "",
+      "command": "click",
+      "target": "css=a:nth-child(7) > button",
+      "targets": [
+        ["css=a:nth-child(7) > button", "css:finder"],
+        ["xpath=//div[@id='misincidencias']/a[3]/button", "xpath:idRelative"],
+        ["xpath=//a[3]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d0357ffe-1e1b-4b8b-b00e-8151478b786d",
+      "comment": "",
+      "command": "click",
+      "target": "id=myform",
+      "targets": [
+        ["id=myform", "id"],
+        ["css=#myform", "css:finder"],
+        ["xpath=//form[@id='myform']", "xpath:attributes"],
+        ["xpath=//div[@id='formulariomodifi']/form", "xpath:idRelative"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "48a78dfd-af45-448e-b748-666baa0b73c7",
+      "comment": "",
+      "command": "type",
+      "target": "id=nombreclase",
+      "targets": [
+        ["id=nombreclase", "id"],
+        ["name=tituloincidencia", "name"],
+        ["css=#nombreclase", "css:finder"],
+        ["xpath=//input[@id='nombreclase']", "xpath:attributes"],
+        ["xpath=//form[@id='myform']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "paco"
+    }, {
+      "id": "05b1a922-374d-4572-8d6b-2049ecbd5437",
+      "comment": "",
+      "command": "click",
+      "target": "name=btn_modificar",
+      "targets": [
+        ["name=btn_modificar", "name"],
+        ["css=input:nth-child(24)", "css:finder"],
+        ["xpath=//input[@name='btn_modificar']", "xpath:attributes"],
+        ["xpath=//form[@id='myform']/input[6]", "xpath:idRelative"],
+        ["xpath=//input[6]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "38a0ac07-570d-4d46-8851-8efa88065823",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Incidencias",
+      "targets": [
+        ["linkText=Incidencias", "linkText"],
+        ["css=.nav:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Incidencias')]", "xpath:link"],
+        ["xpath=//div[@id='menu']/a[3]", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost/Proyectofinal_Antonio/incidencias']", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Incidencias')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ac58d5db-5584-43f1-ab12-314f2c0d9d0a",
+      "comment": "",
+      "command": "click",
+      "target": "css=#menuincidencias > a:nth-child(3) > button",
+      "targets": [
+        ["css=#menuincidencias > a:nth-child(3) > button", "css:finder"],
+        ["xpath=//div[@id='menuincidencias']/a[2]/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div[3]/div/a[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Borrar incidencia')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6a5bb2e7-b109-4b79-9e6d-04b3655166dd",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(3)",
+      "targets": [
+        ["css=input:nth-child(3)", "css:finder"],
+        ["xpath=(//input[@name='id_incidencia[]'])[3]", "xpath:attributes"],
+        ["xpath=//form[@id='myform']/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "738ef3a3-571c-4f8c-afe6-228eec9c31c8",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(2)",
+      "targets": [
+        ["css=input:nth-child(2)", "css:finder"],
+        ["xpath=(//input[@name='id_incidencia[]'])[2]", "xpath:attributes"],
+        ["xpath=//form[@id='myform']/input[2]", "xpath:idRelative"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2d2c3fbb-3df0-4938-a6c0-633a363bac88",
+      "comment": "",
+      "command": "click",
+      "target": "id=myform",
+      "targets": [
+        ["id=myform", "id"],
+        ["css=#myform", "css:finder"],
+        ["xpath=//form[@id='myform']", "xpath:attributes"],
+        ["xpath=//div[@id='formulariomodifi']/form", "xpath:idRelative"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "32eba04c-1e57-47eb-8c75-5c5bdca8cd84",
+      "comment": "",
+      "command": "click",
+      "target": "name=id_incidencia[]",
+      "targets": [
+        ["name=id_incidencia[]", "name"],
+        ["css=input:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='id_incidencia[]']", "xpath:attributes"],
+        ["xpath=//form[@id='myform']/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2bf7b2c7-706c-443a-b3ce-62166b550014",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(6)",
+      "targets": [
+        ["css=input:nth-child(6)", "css:finder"],
+        ["xpath=//input[@value='borrar']", "xpath:attributes"],
+        ["xpath=//form[@id='myform']/input[4]", "xpath:idRelative"],
+        ["xpath=//input[4]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6c998e80-5658-4349-be2e-c81c4938c5ee",
       "comment": "",
       "command": "click",
       "target": "linkText=Incidencias",
