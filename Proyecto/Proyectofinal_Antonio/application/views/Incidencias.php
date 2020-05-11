@@ -4,7 +4,7 @@
 // Escuela: Escuela Virgen de guadalupe
 // Proyecto fin de ciclo: Proyecto de Web de Gestión de Incidencias Municipales
 // Año:2020
-$i=0;
+$i = 0;
 
 echo '
 		<!doctype html>
@@ -37,15 +37,11 @@ echo '
                			<p>Mis incidencias:</p>
                			';
 
-if($this->misincidencias==NULL)
-{
+if ($this->misincidencias == NULL) {
 	echo "<p>No hay incidencias</p>";
-}
-else
-{
-	foreach ($this->misincidencias as $indice=>$valor)
-	{
-		echo "<button>$valor</button><a href=".base_url()."Modificarincidencia/".$i++."><button>Modificar incidencia</button><br></a>";
+} else {
+	foreach ($this->misincidencias as $indice => $valor) {
+		echo "<button>$valor</button><a href=" . base_url() . "Modificarincidencia/" . $i++ . "><button>Modificar incidencia</button><br></a>";
 	}
 }
 
@@ -53,15 +49,15 @@ echo '
            			</div>
 	           			 <div class="col-12 col-md-6">
                 		<div id="menuincidencias">
-							<a href="'.base_url().'paginaandir"><button>Crear incidencia</button></a> <br>
-							<a href="'.base_url().'paginaborrado"><button>Borrar incidencia</button></a><br>
+							<a href="' . base_url() . 'paginaandir"><button>Crear incidencia</button></a> <br>
+							<a href="' . base_url() . 'paginaborrado"><button>Borrar incidencia</button></a><br>
 						</div>
            			 </div>
 					
 				</div>
 			';
 
-include('barrafooter.php');
+include('Barrafooter.php');
 echo '
 			</div>
 			<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

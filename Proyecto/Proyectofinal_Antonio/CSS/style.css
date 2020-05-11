@@ -149,6 +149,14 @@ footer {
 	text-align: center;
 	margin: auto;
 }
+#errorlogin
+{
+
+}
+#contenedor  button
+{
+	width: 40% !important;
+}
 
 @media (max-width: 40em) {
 	#menu {

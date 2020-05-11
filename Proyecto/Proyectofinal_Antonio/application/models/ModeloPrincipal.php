@@ -14,25 +14,22 @@ class ModeloPrincipal extends CI_Model
 
 		parent::__construct();
 
-		$this->bd=$this->load->database('default',true);
+		$this->bd = $this->load->database('default', true);
 	}
 
 	//Con esta funcion comprobaremos que existe el usuario o no
-	public function autenticar($usuario,$password)
+	public function autenticar($usuario, $password)
 	{
 		$this->bd->select('id_usuario,correo,password');
 		$this->bd->from('Usuario');
-		$this->bd->where("correo",$usuario);
-		$this->bd->where("password",$password);
+		$this->bd->where("correo", $usuario);
+		$this->bd->where("password", $password);
 
-		$resultado=$this->bd->get();
+		$resultado = $this->bd->get();
 
-		if($resultado->num_rows()>0)
-		{
+		if ($resultado->num_rows() > 0) {
 			return $resultado->row();
-		}
-		else
-		{
+		} else {
 			return false;
 		}
 
@@ -50,12 +47,12 @@ class ModeloPrincipal extends CI_Model
 	}
 
 
-	 //con esta funcion veremos nuestras incidencias
+	//con esta funcion veremos nuestras incidencias
 	public function verincidencias()
 	{
 		$this->bd->select('*');
 		$this->bd->from('incidencia');
-		$this->bd->where('id_usuario',$this->session->userdata('codigousuario'));
+		$this->bd->where('id_usuario', $this->session->userdata('codigousuario'));
 		$query = $this->bd->get();
 		$rows = $query->result_array();
 		$query->free_result();
@@ -66,7 +63,7 @@ class ModeloPrincipal extends CI_Model
 	//Con esta funcion crearemos una incidencia
 	public function altaincidencia($datos)
 	{
-		 $this->bd->insert('incidencia',$datos);
+		$this->bd->insert('incidencia', $datos);
 
 	}
 
@@ -74,7 +71,7 @@ class ModeloPrincipal extends CI_Model
 	//Con esta funcion modificaremos una incidencia
 	public function modificacionincidencia($datos)
 	{
-		$this->bd->replace('incidencia',$datos);
+		$this->bd->replace('incidencia', $datos);
 
 	}
 
@@ -82,16 +79,16 @@ class ModeloPrincipal extends CI_Model
 	//Con esta funcion borraremos una incidencia
 	public function borrado($idincidencia)
 	{
-		$this->bd->where('id_incidencia',$idincidencia);
+		$this->bd->where('id_incidencia', $idincidencia);
 		$this->bd->delete('incidencia');
 	}
 
-
+	//para coger los datos
 	public function cogerdatosincidencia($idincidencia)
 	{
 		$this->bd->select('id_incidencia,titulo,descripcion,fecha,ubicacion,tipo_incidencia');
 		$query = $this->bd->get('incidencia');
-		$this->bd->where('id_incidencia',$idincidencia);
+		$this->bd->where('id_incidencia', $idincidencia);
 		$rows = $query->result_array();
 		$query->free_result();
 		return $rows;
@@ -100,6 +97,15 @@ class ModeloPrincipal extends CI_Model
 	public function cogertodo()
 	{
 		return $this->bd->get('incidencia')->result();
+	}
+
+	public function vertodaslasincidencias()
+	{
+		$this->bd->select('*');
+		$query = $this->bd->get('incidencia');
+		$rows = $query->result_array();
+		$query->free_result();
+		return $rows;
 	}
 }
 

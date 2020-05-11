@@ -11,7 +11,7 @@ echo '
 		  <head>
 			<meta charset="utf-8">
 			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-			<link href="'.base_url().'CSS/style.css" rel="stylesheet" type="text/css">
+			<link href="' . base_url() . 'CSS/style.css" rel="stylesheet" type="text/css">
 			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 			<title>Inicio</title>
 		  </head>
@@ -19,17 +19,28 @@ echo '
 			<div class="container-fluid" >
 				<div class="row">
 					<div class="col-12" id="header">
-						<img src="'.base_url().'Imagenes/prueba1.jpg" alt="Es una imagen del inicio" longdesc="Se trata de una imagen ">
+						<img src="' . base_url() . 'Imagenes/prueba1.jpg" alt="Es una imagen del inicio" longdesc="Se trata de una imagen ">
 					</div>
 				</div>
 				<div class="row">
 					';
-				include('Barrademenu.php');
+include('Barrademenu.php');
 
-echo'
+echo '
 				</div>
 				<div class="row" id="contenedor">
-				<h3>Hola estas en la principal</h3>
+				';
+
+if ($this->todasinci == NULL) {
+	echo "<p>No hay incidencias disponibles para mostrar porfavor vuelva mas tarde</p>";
+} else {
+	foreach ($this->todasinci as $indice => $valor) {
+		echo "<button>$valor</button>";
+	}
+}
+
+
+echo '
 				</div>
 			
 			
@@ -37,7 +48,7 @@ echo'
 			
 			';
 
-		include ('barrafooter.php');
+include('Barrafooter.php');
 echo '
 			</div>
 			<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

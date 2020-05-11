@@ -19,26 +19,33 @@ class ControladorPrincipal extends CI_Controller
 		$this->load->model('ModeloPrincipal');
 	}
 
-	//Con esta clase hce que se rediriga a home por defecto
 
+	//Con esta clase hce que se rediriga a home por defecto
 	public function index()
 	{
 		$this->load->helper('url');
+		$this->load->helper('form');
+		$todasincidencias = $this->ModeloPrincipal->vertodaslasincidencias();
+		$this->todasinci = array();
+		foreach ($todasincidencias as $todes)
+			$this->todasinci[$todes['id_incidencia']] = $todes["titulo"];
 		$this->load->view('Principal');
 	}
+
 
 	//Con esta clase redigira a la pestaña de login si no hay sesion y si la hay a la principal
 	public function login()
 	{
 		$this->load->helper('url');
 		if ($this->session->userdata('logeado')) {
-			$this->load->view('Principal');
+			return $this->index();
 		} else {
 			$this->load->view('Login');
 		}
 	}
-	//Con esta clase realizara la autenticacion de usuarios
 
+
+	//Con esta clase realizara la autenticacion de usuarios
 	public function logearse()
 	{
 		//con esto cogemos el correo y la contraseña
@@ -60,20 +67,20 @@ class ControladorPrincipal extends CI_Controller
 //			//Aqui le decimos que asi se llamara
 //
 			$this->session->set_userdata($sesion);
-			$this->load->view('Principal');
+			return $this->index();
 		}
 	}
 
-	//Con esta clase accederemos al menu de las incidenciu	as
 
+	//Con esta clase accederemos al menu de las incidencias
 	public function menuincidencias()
 	{
 		$this->load->helper('url');
 		$this->load->helper('form');
-		$incidencias=$this->ModeloPrincipal->verincidencias();
-		$this->misincidencias=array();
+		$incidencias = $this->ModeloPrincipal->verincidencias();
+		$this->misincidencias = array();
 		foreach ($incidencias as $inc)
-			$this->misincidencias[$inc['id_incidencia']]=$inc["titulo"];
+			$this->misincidencias[$inc['id_incidencia']] = $inc["titulo"];
 		$this->load->view('Incidencias');
 	}
 
@@ -84,19 +91,18 @@ class ControladorPrincipal extends CI_Controller
 	{
 		$this->load->helper('url');
 		$this->load->helper('form');
-		if($this->form_validation->run()== FALSE) {
+		if ($this->form_validation->run() == FALSE) {
 
 			/*Aqui cogemos los tipos de incidencias*/
 
-			$tipos=$this->ModeloPrincipal->cogertipos();
+			$tipos = $this->ModeloPrincipal->cogertipos();
 			$this->mistipos = array();
 			foreach ($tipos as $tipo)
 				$this->mistipos[$tipo['id_tipo']] = $tipo['nombre_tipo'];
 
-			$this->load->view('Anadirincidencia',$this->session->userdata('codigousuario'));
+			$this->load->view('Anadirincidencia', $this->session->userdata('codigousuario'));
 		}
 	}
-
 
 
 	//Con esta funcion crearemos una incidencia
@@ -105,17 +111,16 @@ class ControladorPrincipal extends CI_Controller
 		$this->load->helper('url');
 		$this->load->helper('form');
 
-		if($this->form_validation->run()== FALSE)
-		{
-			$datos =array();
-			$datos["titulo"]=$this->input->post("tituloincidencia");
-			$datos["descripcion"]=$this->input->post("descripcionincidencia");
-			$datos["fecha"]= date("Y-m-d h:i:sa");
-			$datos["ubicacion"]=$this->input->post("ubicacionincidencia");
-			$datos["tipo_incidencia"]=$this->input->post("tipo");
-			$datos["id_usuario"]=$this->session->userdata('codigousuario');
+		if ($this->form_validation->run() == FALSE) {
+			$datos = array();
+			$datos["titulo"] = $this->input->post("tituloincidencia");
+			$datos["descripcion"] = $this->input->post("descripcionincidencia");
+			$datos["fecha"] = date("Y-m-d h:i:sa");
+			$datos["ubicacion"] = $this->input->post("ubicacionincidencia");
+			$datos["tipo_incidencia"] = $this->input->post("tipo");
+			$datos["id_usuario"] = $this->session->userdata('codigousuario');
 			$this->ModeloPrincipal->altaincidencia($datos);
-			header("Location:".base_url()."incidencias");
+			header("Location:" . base_url() . "incidencias");
 		}
 	}
 
@@ -126,19 +131,17 @@ class ControladorPrincipal extends CI_Controller
 		$this->load->helper('url');
 		$this->load->helper('form');
 		$this->load->library('form_validation');
-		if($this->form_validation->run()== FALSE)
-		{
+		if ($this->form_validation->run() == FALSE) {
 
 
-			$tipos=$this->ModeloPrincipal->cogertipos();
+			$tipos = $this->ModeloPrincipal->cogertipos();
 			$this->mistipos = array();
 			foreach ($tipos as $tipo)
 				$this->mistipos[$tipo['id_tipo']] = $tipo['nombre_tipo'];
 
 			/*Aqui cogemos los datos de la clase*/
-			$claseaux=$this->ModeloPrincipal->cogerdatosincidencia($idincidencia);
-			$this->clase=$claseaux[$idincidencia];
-
+			$claseaux = $this->ModeloPrincipal->cogerdatosincidencia($idincidencia);
+			$this->clase = $claseaux[$idincidencia];
 
 
 			$this->load->view('Modificarincidencia');
@@ -147,25 +150,22 @@ class ControladorPrincipal extends CI_Controller
 
 	//Modificaremos una incidencia que ya existe
 
-	public function modificarincidencia(){
+	public function modificarincidencia()
+	{
 
 		$this->load->helper('url');
 		$this->load->helper('form');
 
-		$datos =array();
-		$datos["id_incidencia"]=$this->input->post("idincidencia");
-		$datos["titulo"]=$this->input->post("tituloincidencia");
-		$datos["descripcion"]=$this->input->post("descripcioninciencia");
-		$datos["fecha"]=$this->input->post("fechaincidencia");
-		$datos["ubicacion"]=$this->input->post("ubicacionincidencia");
-		$datos["tipo_incidencia"]=$this->input->post("tipoincidencia");
-		$datos["id_usuario"]=$this->session->userdata('codigousuario');
+		$datos = array();
+		$datos["id_incidencia"] = $this->input->post("idincidencia");
+		$datos["titulo"] = $this->input->post("tituloincidencia");
+		$datos["descripcion"] = $this->input->post("descripcioninciencia");
+		$datos["fecha"] = $this->input->post("fechaincidencia");
+		$datos["ubicacion"] = $this->input->post("ubicacionincidencia");
+		$datos["tipo_incidencia"] = $this->input->post("tipoincidencia");
+		$datos["id_usuario"] = $this->session->userdata('codigousuario');
 		$this->ModeloPrincipal->modificacionincidencia($datos);
-		$this->load->view('Principal');
-
-
-
-
+		return $this->index();
 	}
 
 	//para ir al formulario de borrarincidencias
@@ -174,29 +174,28 @@ class ControladorPrincipal extends CI_Controller
 	{
 		$this->load->helper('url');
 		$this->load->helper('form');
-		$data['listaincidencias']=$this->ModeloPrincipal->cogertodo();
-		$this->load->view('BorrarIncidencias',$data);
+		$data['listaincidencias'] = $this->ModeloPrincipal->cogertodo();
+		$this->load->view('BorrarIncidencias', $data);
 
 	}
 
 	//Borraremos incidencias
-	public function borrarincidencia(){
+	public function borrarincidencia()
+	{
 		$this->load->helper('url');
 		$this->load->helper('form');
-		foreach ($this->input->post('id_incidencia') as $id)
-		{
+		foreach ($this->input->post('id_incidencia') as $id) {
 			$this->ModeloPrincipal->borrado($id);
 		}
-		$this->load->view('Principal');
+		return $this->index();
 	}
 
 //con esta clase realizaremos el cerrar sesion
 	public function cerrarsesion()
 	{
 		$this->session->sess_destroy();
-		$this->load->view('Principal');
+		return $this->index();
 	}
-
 
 
 }

@@ -5,7 +5,7 @@
 // Proyecto fin de ciclo: Proyecto de Web de Gestión de Incidencias Municipales
 // Año:2020
 
-$attributes =array('class'=> 'ControladorPrincipal','id'=>'myform');
+$attributes = array('class' => 'ControladorPrincipal', 'id' => 'myform');
 ?>
 <?php
 echo '
@@ -33,24 +33,23 @@ echo '
 				<div class="row" id="contenedor">
 				<div class="col-12">
 				<div class="col-12" id="formulariomodifi">';
-				echo validation_errors();
-				echo form_open(base_url().'borrado',$attributes);
-				foreach ($listaincidencias as $lista)
-				{
-					echo '
-				<input type="checkbox" value="'.$lista->id_incidencia.'" name="id_incidencia[]"/>'. $lista->titulo;
-				}
+echo validation_errors();
+echo form_open(base_url() . 'borrado', $attributes);
+foreach ($listaincidencias as $lista) {
+	echo '
+				<input type="checkbox" value="' . $lista->id_incidencia . '" name="id_incidencia[]"/>' . $lista->titulo;
+}
 echo '<br>';
 echo '<br>';
-				echo '<input type="submit" value="borrar" />';
-				echo form_close();
-echo'
+echo '<input type="submit" value="borrar" />';
+echo form_close();
+echo '
 </div>
 </div>
 				</div>
 				';
-include ('barrafooter.php');
-echo'
+include('Barrafooter.php');
+echo '
 			</div>
 			<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 			<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
@@ -58,9 +57,6 @@ echo'
 		  </body>
 		</html>
  ';
-
-
-
 
 
 ?>
