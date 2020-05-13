@@ -72,6 +72,6 @@ $route['paginaborrado']='ControladorPrincipal/formularioborrar';
 $route['alta']='ControladorPrincipal/altaincidencia';
 $route['modificar/(:num)']='ControladorPrincipal/modificarincidencia/$1';
 $route['borrado']='ControladorPrincipal/borrarincidencia';
-
+$route['filtro/(:num)']='ControladorPrincipal/filtro/$1';
 $route['incidencias']='ControladorPrincipal/menuincidencias';
 $route['Modificarincidencia/(:num)']='ControladorPrincipal/formulariomodificar/$1';

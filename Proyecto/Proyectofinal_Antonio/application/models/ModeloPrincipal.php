@@ -107,6 +107,17 @@ class ModeloPrincipal extends CI_Model
 		$query->free_result();
 		return $rows;
 	}
+	public function filtrado($tipo)
+	{
+//		echo $tipo;
+		$this->bd->select('*');
+		$this->bd->from('incidencia');
+		$this->bd->where('tipo_incidencia', $tipo);
+		$query = $this->bd->get();
+		$rows = $query->result_array();
+		$query->free_result();
+		return $rows;
+	}
 }
 
 ?>

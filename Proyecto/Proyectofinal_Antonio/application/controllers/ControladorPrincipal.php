@@ -25,10 +25,19 @@ class ControladorPrincipal extends CI_Controller
 	{
 		$this->load->helper('url');
 		$this->load->helper('form');
+
+		//Para coger los tipos de las incidencias
+		$tipos = $this->ModeloPrincipal->cogertipos();
+		$this->mistipos = array();
+		foreach ($tipos as $tipo)
+			$this->mistipos[$tipo['id_tipo']] = $tipo['nombre_tipo'];
+
+		//Para coger todas las incidencias
 		$todasincidencias = $this->ModeloPrincipal->vertodaslasincidencias();
 		$this->todasinci = array();
 		foreach ($todasincidencias as $todes)
 			$this->todasinci[$todes['id_incidencia']] = $todes["titulo"];
+
 		$this->load->view('Principal');
 	}
 
@@ -188,6 +197,25 @@ class ControladorPrincipal extends CI_Controller
 			$this->ModeloPrincipal->borrado($id);
 		}
 		return $this->index();
+	}
+
+	public function filtro()
+	{
+		$this->load->helper('url');
+		$this->load->helper('form');
+		$idincidencia=$this->input->post("tipo");
+
+		//con esto podremos filtrar por tipo de incidencia y nos saldran solo las incicendias de esa categoria
+
+		$todasincidencias = $this->ModeloPrincipal->filtrado($idincidencia);
+		$this->filtradas = array();
+		foreach ($todasincidencias as $todes)
+			$this->filtradas[$todes['id_incidencia']] = $todes["titulo"];
+
+	
+
+
+		$this->load->view('Filtrados');
 	}
 
 //con esta clase realizaremos el cerrar sesion

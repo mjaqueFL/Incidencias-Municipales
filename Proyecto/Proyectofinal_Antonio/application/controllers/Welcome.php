@@ -18,10 +18,33 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
+	public function __construct()
+	{
+		parent::__construct();
+		$this->load->helper('url');
+		$this->load->library('session');
+		$this->load->library('form_validation');
+		$this->load->model('ModeloPrincipal');
+	}
+
 	public function index()
 	{
 		$this->load->helper('url');
 		$data['css']= $this->config->item('css');
+		$this->load->helper('form');
+
+		//Para coger los tipos de las incidencias
+		$tipos = $this->ModeloPrincipal->cogertipos();
+		$this->mistipos = array();
+		foreach ($tipos as $tipo)
+			$this->mistipos[$tipo['id_tipo']] = $tipo['nombre_tipo'];
+
+
+
+		$todasincidencias = $this->ModeloPrincipal->vertodaslasincidencias();
+		$this->todasinci = array();
+		foreach ($todasincidencias as $todes)
+			$this->todasinci[$todes['id_incidencia']] = $todes["titulo"];
 		$this->load->view('Principal');
 	}
 }

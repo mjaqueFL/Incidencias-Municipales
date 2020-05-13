@@ -4,6 +4,12 @@
 // Escuela: Escuela Virgen de guadalupe
 // Proyecto fin de ciclo: Proyecto de Web de Gestión de Incidencias Municipales
 // Año:2020
+$tipos=array(
+	'name'=>'tipo',
+	'options'=> $this->mistipos,
+	'type' => 'select'
+
+);
 
 echo '
 		<!doctype html>
@@ -28,8 +34,21 @@ include('Barrademenu.php');
 
 echo '
 				</div>
-				<div class="row" id="contenedor">
+				<div class="row " id="contenedor">
 				';
+echo '<div class="col-lg-3 col-md-5 col-xs-12 p-3">
+            <h5>Filtrar por tipo de incidencia:</h5>   ';
+$attributes =array('class'=> 'ControladorPrincipal','id'=>'myform');
+echo form_open(base_url().'ControladorPrincipal/filtro',$attributes);
+echo form_dropdown($tipos);
+echo '<br>';echo '<br>';
+echo form_submit('btn_enviar','Filtrar');
+echo form_close();
+echo '
+            </div>';
+
+echo '<div class=" col-lg-9 col-md-5 col-xs-12 p-3">
+            ';
 
 if ($this->todasinci == NULL) {
 	echo "<p>No hay incidencias disponibles para mostrar porfavor vuelva mas tarde</p>";
@@ -38,6 +57,10 @@ if ($this->todasinci == NULL) {
 		echo "<button>$valor</button>";
 	}
 }
+
+echo'
+        </div>';
+
 
 
 echo '
