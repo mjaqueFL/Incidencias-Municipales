@@ -1,7 +1,7 @@
 <?php
 //Nombre de autor:Antonio Barril Hernandez
 //Curso:2 DAW
-//Escuela: Escuela Virgen de guadalupe
+//Escuela: Escuela Virgen de Guadalupe
 //Proyecto fin de ciclo: Proyecto de Web de Gestión de Incidencias Municipales
 //Año:2020
 echo '
@@ -23,7 +23,7 @@ echo '
 				</div>
 				<div class="row">
 					';
-include('Barrademenu.php');
+include('barrademenu.php');
 echo '
 				</div>
 				<div class="row " id="contenedor">
@@ -50,7 +50,7 @@ echo '
 			
 			';
 
-include('Barrafooter.php');
+include('barrafooter.php');
 echo '
 			</div>
 			<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

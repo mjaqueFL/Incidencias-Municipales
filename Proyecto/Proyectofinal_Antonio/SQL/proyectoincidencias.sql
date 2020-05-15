@@ -2,7 +2,7 @@ DROP DATABASE IF EXISTS `proyectoincidencias`;
 CREATE DATABASE  `proyectoincidencias` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_spanish_ci;
 
 DROP USER IF EXISTS 'antonio'@'localhost';
-CREATE USER 'antonio'@'localhost' IDENTIFIED BY 'antonio';
+CREATE USER 'antonio'@'localhost' IDENTIFIED BY '	';
 GRANT ALL ON proyectoincidencias.* TO 'antonio'@'localhost' ;
 
 USE `proyectoincidencias`;
@@ -11,7 +11,7 @@ USE `proyectoincidencias`;
 CREATE TABLE `incidencia` (
   `id_incidencia` smallint(5) UNSIGNED NOT NULL,
   `titulo` varchar(30) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
-  `descripcion` varchar(120) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `descripcion` text COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   `fecha` DATE DEFAULT NULL,
   `ubicacion` varchar(120) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   `tipo_incidencia` tinyint(3) UNSIGNED NOT NULL,
@@ -70,4 +70,8 @@ INSERT INTO `tipo_incidencia` (`nombre_tipo`) VALUES
 ('ciudadana'),
 ('transito');
   
+    INSERT INTO `incidencia` (`id_incidencia`, `titulo`, `descripcion`, `fecha`,`ubicacion`,`tipo_incidencia`,`id_usuario`) VALUES
+(1, 'habia', 'una vez', '2020-05-15','montijo','2','1'),
+(2, 'habia', 'una ', '2020-05-17','montijo','3','2'),
+(3, 'habiados', ' vez', '2020-05-18','montijo','1','1');
 COMMIT;

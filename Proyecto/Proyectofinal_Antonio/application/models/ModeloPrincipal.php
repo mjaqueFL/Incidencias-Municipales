@@ -1,7 +1,7 @@
 <?php
 //Nombre de autor:Antonio Barril Hernandez
 //Curso:2 DAW
-//Escuela: Escuela Virgen de guadalupe
+//Escuela: Escuela Virgen de Guadalupe
 //Proyecto fin de ciclo: Proyecto de Web de Gestión de Incidencias Municipales
 //Año:2020
 
@@ -16,12 +16,18 @@ class ModeloPrincipal extends CI_Model
 
 		$this->bd = $this->load->database('default', true);
 	}
-
+	/**
+	 * Este metodo nos iniciara la sesion .
+	 *
+	 * Este metodo sera el encargado de que existe el usuario y la comprobacion de usuario y contraseña	.
+	 *
+	 */
 	//Con esta funcion comprobaremos que existe el usuario o no
 	public function autenticar($usuario, $password)
 	{
+
 		$this->bd->select('id_usuario,correo,password');
-		$this->bd->from('Usuario');
+		$this->bd->from('usuario');
 		$this->bd->where("correo", $usuario);
 		$this->bd->where("password", $password);
 
@@ -35,6 +41,12 @@ class ModeloPrincipal extends CI_Model
 
 	}
 
+	/**
+	 * Este metodo nos cogera los tipos de incidencias que existen .
+	 *
+	 * Este metodo sera el encargado de coger los tipos de incidencias que existen	.
+	 *
+	 */
 	//Cogeremos los tipos gracias a esto
 	public function cogertipos()
 	{
@@ -46,7 +58,12 @@ class ModeloPrincipal extends CI_Model
 		return $rows;
 	}
 
-
+	/**
+	 * Este metodo nos cogera las incidencias que tienen los usuarios .
+	 *
+	 * Este metodo sera el encargado de coger  las incidencias que tienen los usuarios	.
+	 *
+	 */
 	//con esta funcion veremos nuestras incidencias
 	public function verincidencias()
 	{
@@ -59,7 +76,13 @@ class ModeloPrincipal extends CI_Model
 		return $rows;
 	}
 
-
+	/**
+	 * Este metodo nos realizara el insert into de incidencia .
+	 *
+	 * Este metodo sera el encargado de añadir datos al abase de datos	.
+	 *
+	 *  string $datos esto cogera los datos que vienen del formulario
+	 */
 	//Con esta funcion crearemos una incidencia
 	public function altaincidencia($datos)
 	{
@@ -67,6 +90,13 @@ class ModeloPrincipal extends CI_Model
 
 	}
 
+	/**
+	 * Este metodo nos realizara el update de incidencia .
+	 *
+	 * Este metodo sera el encargado de actualizar datos a la base de datos	.
+	 *
+	 *  string $datos esto cogera los datos que vienen del formulario
+	 */
 
 	//Con esta funcion modificaremos una incidencia
 	public function modificacionincidencia($datos)
@@ -76,13 +106,28 @@ class ModeloPrincipal extends CI_Model
 	}
 
 
+	/**
+	 * Este metodo nos realizara el delete from de incidencia .
+	 *
+	 * Este metodo sera el encargado de borrar datos a la base de datos	.
+	 *
+	 *  string $idincidencia esto cogera los datos que vienen del formulario
+	 */
 	//Con esta funcion borraremos una incidencia
 	public function borrado($idincidencia)
 	{
-		$this->bd->where('id_incidencia', $idincidencia);
+		$this->bd->where('titulo', $idincidencia);
 		$this->bd->delete('incidencia');
 	}
 
+
+	/**
+	 * Este metodo se usa para ver todas las incidencias .
+	 *
+	 *Este metodo se usa para ver todas las incidencias	.
+	 * 	 string $idincidencia esto cogera los datos que vienen del formulario
+	 *
+	 */
 	//para coger los datos
 	public function cogerdatosincidencia($idincidencia)
 	{
@@ -94,11 +139,27 @@ class ModeloPrincipal extends CI_Model
 		return $rows;
 	}
 
+
+	/**
+	 * Este metodo se usa para ver todas las incidencias .
+	 *
+	 *Este metodo se usa para ver todas las incidencias	.
+	 *
+	 */
 	public function cogertodo()
 	{
+
 		return $this->bd->get('incidencia')->result();
+
 	}
 
+
+	/**
+	 * Este metodo se usa para ver todas las incidencias .
+	 *
+	 *Este metodo se usa para ver todas las incidencias	.
+	 *
+	 */
 	public function vertodaslasincidencias()
 	{
 		$this->bd->select('*');
@@ -107,6 +168,14 @@ class ModeloPrincipal extends CI_Model
 		$query->free_result();
 		return $rows;
 	}
+	/**
+	 * Este metodo sera el encargado de filtrar las incidencias .
+	 *
+	 * Este metodo sera el encargado de filtrar las incidencias	.
+	 *
+	 *  string $tipo esto cogera el tipo que tiene que buscar
+	 */
+	//Con e
 	public function filtrado($tipo)
 	{
 //		echo $tipo;

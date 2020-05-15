@@ -1,35 +1,18 @@
 <?php
 //Nombre de autor:Antonio Barril Hernandez
 // Curso:2 DAW
-// Escuela: Escuela Virgen de guadalupe
+// Escuela: Escuela Virgen de Guadalupe
 // Proyecto fin de ciclo: Proyecto de Web de Gestión de Incidencias Municipales
 // Año:2020
-$tituloincidencia=array(
-	'name'=>'tituloincidencia',
-	'id'=>'tituloincidencia',
-	'maxlength'=>'30',
-	'size'=>'30'
-);
-$descripcionincidencia=array(
-	'name'=>'descripcionincidencia',
-	'id'=>'descripcionincidencia',
-	'maxlength'=>'30',
-	'size'=>'30'
-);
-$ubicacionincidencia=array(
-	'name'=>'ubicacionincidencia',
-	'id'=>'ubicacionincidencia',
-	'maxlength'=>'30',
-	'size'=>'30'
-);
-$tipos=array(
-	'name'=>'tipo',
-	'options'=> $this->mistipos,
+
+$tipos = array(
+	'name' => 'tipo',
+	'options' => $this->mistipos,
 	'type' => 'select'
 
 );
 
-$attributes =array('class'=> 'ControladorPrincipal','id'=>'myform');
+$attributes = array('class' => 'ControladorPrincipal', 'id' => 'myform');
 
 ?>
 <?php
@@ -39,7 +22,7 @@ echo '
 		  <head>
 			<meta charset="utf-8">
 			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-			<link href="'.base_url().'CSS/style.css" rel="stylesheet" type="text/css">
+			<link href="' . base_url() . 'CSS/style.css" rel="stylesheet" type="text/css">
 			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 			<title>Inicio</title>
 		  </head>
@@ -47,45 +30,46 @@ echo '
 			<div class="container-fluid" >
 				<div class="row">
 					<div class="col-12" id="header">
-						<img src="'.base_url().'Imagenes/prueba1.jpg" alt="Es una imagen del inicio" longdesc="Se trata de una imagen ">
+						<img src="' . base_url() . 'Imagenes/prueba1.jpg" alt="Es una imagen del inicio" longdesc="Se trata de una imagen ">
 					</div>
 				</div>
 				<div class="row">
 					';
-include('Barrademenu.php');
-echo'
+include('barrademenu.php');
+echo '
 				</div>
 				<div class="row" id="contenedor">
 				<div class="col-12">
-				<div class="col-12" id="formulariomodifi">';
-				echo validation_errors();
-				echo form_open(base_url().'alta',$attributes);
-				echo form_label('Titulo incidencia');
-				echo '<br>';
-				echo form_input($tituloincidencia);
-				echo '<br>';
-				echo form_label('Descripcion incidencia');
-				echo '<br>';
-				echo form_input($descripcionincidencia);
-				echo '<br>';
-				echo form_label('Escriba la ubicacion');
-				echo '<br>';
-				echo form_input($ubicacionincidencia);
-				echo '<br>';
-				echo form_label('Selecciona el tipo de incidencia');
-				echo '<br>';
-				echo form_dropdown($tipos);
-				echo '<br>';echo '<br>';
-				echo form_submit('btn_enviar','Añadir');
-				echo form_close();
-				echo '<br>';
-echo'
+				<div class="col-12" id="formulariomodifi">
+				
+				<form action="' . base_url() . 'alta" method="post">
+				<label>Titulo</label><br/>
+				<input type="text" placeholder="Titulo incidencia" name="tituloincidencia" required><br/> 
+				<label>Descripcion</label><br/>
+				<input type="text" placeholder="Descripcion incidencia" name="descripcionincidencia" required><br/>
+				<label>Ubicacion</label><br/>
+				<input type="text" placeholder="Ubicacion incidencia" name="ubicacionincidencia" required ><br/>
+				
+';
+echo '<br>';
+echo form_label('Selecciona el tipo de incidencia');
+echo '<br>';
+echo form_dropdown($tipos);
+echo '<br>';
+echo '<br>';
+echo form_submit('btn_enviar', 'Añadir');
+echo form_close();
+echo '
+</form>
+';
+echo '<br>';
+echo '
 </div>
 </div>
 				</div>
 				';
-include('Barrafooter.php');
-echo'
+include('barrafooter.php');
+echo '
 			</div>
 			<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 			<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

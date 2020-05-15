@@ -1,7 +1,7 @@
 <?php
 //Nombre de autor:Antonio Barril Hernandez
 //Curso:2 DAW
-//Escuela: Escuela Virgen de guadalupe
+//Escuela: Escuela Virgen de Guadalupe
 //Proyecto fin de ciclo: Proyecto de Web de Gestión de Incidencias Municipales
 //Año:2020
 
@@ -9,6 +9,12 @@ defined('BASEPATH') OR exit('No tienes permiso para acceder a este contenido');
 
 class ControladorPrincipal extends CI_Controller
 {
+	/**
+	 * Este es un resumen corto de la clase.
+	 *
+	 * Esta sera la clase que hara todas las operaciones.
+	 *
+	 */
 
 	public function __construct()
 	{
@@ -21,6 +27,13 @@ class ControladorPrincipal extends CI_Controller
 
 
 	//Con esta clase hce que se rediriga a home por defecto
+
+	/**
+	 * Este metodo redirige a home.
+	 *
+	 * Esta sera la clase que nos mandara al inicio de la aplicacion.
+	 *
+	 */
 	public function index()
 	{
 		$this->load->helper('url');
@@ -41,7 +54,12 @@ class ControladorPrincipal extends CI_Controller
 		$this->load->view('Principal');
 	}
 
-
+	/**
+	 * Este metodo nos lleva a al login.
+	 *
+	 * Este metodo sera el encargado de llevarnos a la pagina de login y de comprobar que estamos logeados.
+	 *
+	 */
 	//Con esta clase redigira a la pestaña de login si no hay sesion y si la hay a la principal
 	public function login()
 	{
@@ -53,7 +71,12 @@ class ControladorPrincipal extends CI_Controller
 		}
 	}
 
-
+	/**
+	 * Este metodo nos hace la funcion de login.
+	 *
+	 * Este metodo sera el encargado de logearnos y comprobar que no fallamos a al hora de autenticarnos.
+	 *
+	 */
 	//Con esta clase realizara la autenticacion de usuarios
 	public function logearse()
 	{
@@ -81,6 +104,12 @@ class ControladorPrincipal extends CI_Controller
 	}
 
 
+	/**
+	 * Este metodo nos redirige ala pagina donde estan las incidencias.
+	 *
+	 * Este metodo sera el encargado de mostrarnos las incidencias de ese usuario.
+	 *
+	 */
 	//Con esta clase accederemos al menu de las incidencias
 	public function menuincidencias()
 	{
@@ -96,42 +125,90 @@ class ControladorPrincipal extends CI_Controller
 
 	//Para acceder al formulario de añadir incidencias
 
+	/**
+	 * Este metodo nos redirige ala pagina donde podremos dar de alta una incidencia.
+	 *
+	 * Este metodo sera el encargado de mostrarnos la pagina donde podremos dar de alta una incidencia.
+	 *
+	 */
 	public function formularioanadir()
 	{
 		$this->load->helper('url');
 		$this->load->helper('form');
-		if ($this->form_validation->run() == FALSE) {
 
-			/*Aqui cogemos los tipos de incidencias*/
 
-			$tipos = $this->ModeloPrincipal->cogertipos();
-			$this->mistipos = array();
-			foreach ($tipos as $tipo)
-				$this->mistipos[$tipo['id_tipo']] = $tipo['nombre_tipo'];
+		if (!isset($this->session)) {
+			return $this->index();
+		} else {
+			if (isset($_SESSION['logeado'])) {
+				if ($_SESSION['logeado'] == 1) {
+					if ($this->form_validation->run() == FALSE) {
 
-			$this->load->view('Anadirincidencia', $this->session->userdata('codigousuario'));
+						/*Aqui cogemos los tipos de incidencias*/
+
+						$tipos = $this->ModeloPrincipal->cogertipos();
+						$this->mistipos = array();
+						foreach ($tipos as $tipo)
+							$this->mistipos[$tipo['id_tipo']] = $tipo['nombre_tipo'];
+
+						$this->load->view('Anadirincidencia', $this->session->userdata('codigousuario'));
+					}
+
+				} else {
+					return $this->index();
+				}
+			} else {
+				return $this->index();
+			}
+
 		}
 	}
 
-
+	/**
+	 * Este metodo nos realiza el alta en la base de datos.
+	 *
+	 * Este metodo sera el encargado de mostrarnos la pagina donde podremos dar de alta una incidencia.
+	 *
+	 */
 	//Con esta funcion crearemos una incidencia
 	public function altaincidencia()
 	{
 		$this->load->helper('url');
 		$this->load->helper('form');
 
+
+			$titulo=$this->input->post("tituloincidencia");
+			$descripcion= $this->input->post("descripcionincidencia");;
+			$fecha=date("Y-m-d h:i:sa");;
+			$ubicacion=$this->input->post("ubicacionincidencia");;
+			$tipoinci=$this->input->post("tipo");
+			$idusu= $this->session->userdata('codigousuario');
+
+
 		if ($this->form_validation->run() == FALSE) {
 			$datos = array();
-			$datos["titulo"] = $this->input->post("tituloincidencia");
-			$datos["descripcion"] = $this->input->post("descripcionincidencia");
-			$datos["fecha"] = date("Y-m-d h:i:sa");
-			$datos["ubicacion"] = $this->input->post("ubicacionincidencia");
-			$datos["tipo_incidencia"] = $this->input->post("tipo");
-			$datos["id_usuario"] = $this->session->userdata('codigousuario');
+			$datos["titulo"] = $titulo;
+			$datos["descripcion"] = $descripcion;
+			$datos["fecha"] =$fecha;
+			$datos["ubicacion"] =$ubicacion;
+			$datos["tipo_incidencia"] = $tipoinci;
+			$datos["id_usuario"] =$idusu;
+//			print_r($datos);
 			$this->ModeloPrincipal->altaincidencia($datos);
 			header("Location:" . base_url() . "incidencias");
 		}
+		else
+		{
+			echo 'Debe rellenar todos los datos';
+		}
 	}
+
+	/**
+	 * Este metodo nos lleva a la pagina de modificacion de incidencias.
+	 *
+	 * Este metodo sera el encargado de mostrarnos la pagina donde podremos modificar una incidencia.
+	 *
+	 */
 
 	//Para acceder al formulario que nos permitira añadir una incidencia
 
@@ -140,25 +217,45 @@ class ControladorPrincipal extends CI_Controller
 		$this->load->helper('url');
 		$this->load->helper('form');
 		$this->load->library('form_validation');
-		if ($this->form_validation->run() == FALSE) {
 
 
-			$tipos = $this->ModeloPrincipal->cogertipos();
-			$this->mistipos = array();
-			foreach ($tipos as $tipo)
-				$this->mistipos[$tipo['id_tipo']] = $tipo['nombre_tipo'];
+		if (!isset($this->session)) {
+			return $this->index();
+		} else {
+			if (isset($_SESSION['logeado'])) {
+				if ($_SESSION['logeado'] == 1) {
 
-			/*Aqui cogemos los datos de la clase*/
-			$claseaux = $this->ModeloPrincipal->cogerdatosincidencia($idincidencia);
-			$this->clase = $claseaux[$idincidencia];
+					if ($this->form_validation->run() == FALSE) {
+						$tipos = $this->ModeloPrincipal->cogertipos();
+						$this->mistipos = array();
+						foreach ($tipos as $tipo)
+							$this->mistipos[$tipo['id_tipo']] = $tipo['nombre_tipo'];
+
+						/*Aqui cogemos los datos de la clase*/
+						$claseaux = $this->ModeloPrincipal->cogerdatosincidencia($idincidencia);
+						$this->clase = $claseaux[$idincidencia];
 
 
-			$this->load->view('Modificarincidencia');
+						$this->load->view('Modificarincidencia');
+					}
+				} else {
+					return $this->index();
+				}
+			} else {
+				return $this->index();
+			}
 		}
+
 	}
 
 	//Modificaremos una incidencia que ya existe
 
+	/**
+	 * Este metodo nos realizara la modificacion de incidencias.
+	 *
+	 * Este metodo sera el encargado de realizar la  modificacion de una incidencia.
+	 *
+	 */
 	public function modificarincidencia()
 	{
 
@@ -177,17 +274,50 @@ class ControladorPrincipal extends CI_Controller
 		return $this->index();
 	}
 
+	/**
+	 * Este metodo nos lleva a la pagina de borrado de incidencias.
+	 *
+	 * Este metodo sera el encargado de mostrarnos la pagina donde podremos borrar una o muchas incidencia.
+	 *
+	 */
 	//para ir al formulario de borrarincidencias
 
 	public function formularioborrar()
 	{
 		$this->load->helper('url');
 		$this->load->helper('form');
-		$data['listaincidencias'] = $this->ModeloPrincipal->cogertodo();
-		$this->load->view('BorrarIncidencias', $data);
+		if(!isset($this->session))
+		{
+			return $this->index();
+		}
+		else
+		{
+			if(isset($_SESSION['logeado']))
+			{
+				if($_SESSION['logeado']==1)
+				{
+					$incidencias = $this->ModeloPrincipal->verincidencias();
+
+					$this->misincidencias = array();
+					foreach ($incidencias as $inc)
+						$this->misincidencias[$inc['id_incidencia']] = $inc["titulo"];
+					$this->load->view('borrarincidencias');
+				}
+			}
+			else
+			{
+				return $this->index();
+			}
+		}
+
 
 	}
-
+	/**
+	 * Este metodo nos realizara el borrado de incidencias.
+	 *
+	 * Este metodo sera el encargado de realizar la  borrado de una o muchas incidencia.
+	 *
+	 */
 	//Borraremos incidencias
 	public function borrarincidencia()
 	{
@@ -199,11 +329,17 @@ class ControladorPrincipal extends CI_Controller
 		return $this->index();
 	}
 
+	/**
+	 * Este metodo nos realizara el filtro de incidencias.
+	 *
+	 * Este metodo sera el encargado de realizar la filtracion por tipo de  incidencia.
+	 *
+	 */
 	public function filtro()
 	{
 		$this->load->helper('url');
 		$this->load->helper('form');
-		$idincidencia=$this->input->post("tipo");
+		$idincidencia = $this->input->post("tipo");
 
 		//con esto podremos filtrar por tipo de incidencia y nos saldran solo las incicendias de esa categoria
 
@@ -212,12 +348,16 @@ class ControladorPrincipal extends CI_Controller
 		foreach ($todasincidencias as $todes)
 			$this->filtradas[$todes['id_incidencia']] = $todes["titulo"];
 
-	
-
 
 		$this->load->view('Filtrados');
 	}
 
+	/**
+	 * Este metodo nos cerrara la sesion .
+	 *
+	 * Este metodo sera el encargado de cerrar sesion que tenemos abierta.
+	 *
+	 */
 //con esta clase realizaremos el cerrar sesion
 	public function cerrarsesion()
 	{
