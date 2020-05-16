@@ -4,6 +4,10 @@
 // Escuela: Escuela Virgen de Guadalupe
 // Proyecto fin de ciclo: Proyecto de Web de Gestión de Incidencias Municipales
 // Año:2020
+$inp_descripcion=array(
+	'name'=>'descripcioninciencia',
+	'id'=>'ins_idclase',
+);
 
 $tipos = array(
 	'name' => 'tipo',
@@ -45,8 +49,10 @@ echo '
 				<form action="' . base_url() . 'alta" method="post">
 				<label>Titulo</label><br/>
 				<input type="text" placeholder="Titulo incidencia" name="tituloincidencia" required><br/> 
-				<label>Descripcion</label><br/>
-				<input type="text" placeholder="Descripcion incidencia" name="descripcionincidencia" required><br/>
+				<label>Descripcion</label><br/>';
+				echo form_textarea($inp_descripcion);
+				echo '<br>';
+				echo '
 				<label>Ubicacion</label><br/>
 				<input type="text" placeholder="Ubicacion incidencia" name="ubicacionincidencia" required ><br/>
 				

@@ -178,7 +178,7 @@ class ControladorPrincipal extends CI_Controller
 
 
 			$titulo=$this->input->post("tituloincidencia");
-			$descripcion= $this->input->post("descripcionincidencia");;
+			$descripcion= $this->input->post("descripcioninciencia");;
 			$fecha=date("Y-m-d h:i:sa");;
 			$ubicacion=$this->input->post("ubicacionincidencia");;
 			$tipoinci=$this->input->post("tipo");
