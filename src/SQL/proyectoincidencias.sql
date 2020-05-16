@@ -10,7 +10,7 @@ USE `proyectoincidencias`;
 
 CREATE TABLE `incidencia` (
   `id_incidencia` smallint(5) UNSIGNED NOT NULL,
-  `titulo` varchar(30) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `	titulo` varchar(30) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   `descripcion` text COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   `fecha` DATE DEFAULT NULL,
   `ubicacion` varchar(120) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
@@ -73,5 +73,8 @@ INSERT INTO `tipo_incidencia` (`nombre_tipo`) VALUES
     INSERT INTO `incidencia` (`id_incidencia`, `titulo`, `descripcion`, `fecha`,`ubicacion`,`tipo_incidencia`,`id_usuario`) VALUES
 (1, 'habia', 'una vez', '2020-05-15','montijo','2','1'),
 (2, 'habia', 'una ', '2020-05-17','montijo','3','2'),
-(3, 'habiados', ' vez', '2020-05-18','montijo','1','1');
+(2, 'habia', 'una ', '2020-05-17','montijo','2','3'),
+(2, 'elefante', 'tela ', '2020-12-17','caceres','3','2'),
+(2, 'araña', 'romper ', '2020-07-17','badajoz','2','3'),
+(3, 'habiados', ' vez', '2020-05-18','badajoz','1','1');
 COMMIT;
