@@ -13,10 +13,10 @@
 /*Gris: #ececec*/
 
 
-html {
-	/*width: 1300px;*/
-	margin: 0 auto;
-}
+/*html {*/
+/*	!*width: 1300px;*!*/
+/*	margin: 0 auto;*/
+/*}*/
 
 img {
 	width: 100%;
@@ -27,10 +27,7 @@ a {
 	text-decoration: none;
 }
 
-body {
-	width: 100%;
-	background-color: #dac682;
-}
+
 
 #header {
 	width: 100%;
@@ -103,8 +100,9 @@ footer {
 
 #contenedor {
 	background-color: #f1eade;
-	padding: 10px;
+	/*padding: 10px;*/
 	font-size: 15px;
+	min-height: 650px;
 }
 
 #contenedor h4 {
@@ -118,10 +116,7 @@ footer {
 	background-color: #30475e;
 	color:#f2a365;
 }
-#menuincidencias {
-	float: right;
 
-}
 #titulodelasincidencias
 {
 	height: 50px;
@@ -131,17 +126,50 @@ footer {
 	font-weight: bold;
 	text-decoration: underline;
 	font-size: 18px;
+	text-align: center;
 
 }
-#misincidencias button
+#misincidencias div
 {
-	width: 20%;
+	height: 40px;
+	text-align: center;
+	background-color: #30475e;
+	color:#f2a365 ;
+	border:1px solid #ececec;
+	line-height: 35px;
+}
+#misincidencias a:hover {
+	color: #ececec !important;
+	text-decoration: none;
+}
+#menuincidencias div
+{
+	height: 40px;
+	text-align: center;
+	background-color: #f2a365;
+	color:#30475e ;
+	border:1px solid #ececec;
+	line-height: 35px;
+}
+#menuincidencias a:hover {
+	color: #30475e;
+	text-decoration: none;
 }
 /*Login estilo*/
 #formulario {
-	width: 100px;
 	text-align: center;
+	width: 100%;
 	margin: auto;
+}
+#estilodellogin
+{
+	width:61.53%;/*Pasamos de 800px entre 1300*/
+	/*width: 800px;*/
+	color:#30475e;
+	background-color: #ececec;
+	padding: 10px;
+	margin: auto;
+
 }
 #formulariomodifi
 {
@@ -149,17 +177,101 @@ footer {
 	text-align: center;
 	margin: auto;
 }
-#errorlogin
+#botondellogin
 {
-
+	text-align: center;
 }
 #contenedor  button
 {
 	width: 40% !important;
 }
+#incidenciaslista div
+{
+
+	height: 40px;
+	text-align: center;
+	background-color: #30475e;
+	color:#f2a365 ;
+	border:1px solid #ececec;
+	line-height: 35px;
+
+}
+#filtros
+{
+
+	text-align: center;
+}
+.rellenartitulo
+{
+	width: 303px;
+}
+#formularioborrar
+{
+	width: 100%;
+	text-align: center;
+
+
+}
+#imagensenales
+{
+	width: 40%;
+	margin: auto;
+}
+#filtrosss
+{
+	display: inline-block;
+}
+#contenedorborrar a
+{
+	padding:5px;
+	margin: 5px;
+	background-color: #30475e;
+	color:#f2a365 ;
+	border:1px solid #ececec;
+
+}
 
 @media (max-width: 40em) {
+	html
+	{
+		min-width: 474px;
+	}
 	#menu {
+		width: 100%;
 		flex-direction: column;
+		text-align: center;
+	}
+	.nav
+	{
+		width: 100%;
+		flex-direction: column;
+	}
+	#contenedor button
+	{
+
+		margin: auto;
+		flex-direction: column;
+	}
+	#contenedor
+	{
+		min-height:0px;
+	}
+	#misincidencias
+	{
+		display: inline-block;
+
+	}
+	#misincidencias button
+	{
+		width: 100%;
+	}
+	#estilodellogin
+	{
+		width: 100%;
+		color:#30475e;
+		background-color: #ececec;
+		padding: 10px;
+		margin: auto;
+
 	}
 }

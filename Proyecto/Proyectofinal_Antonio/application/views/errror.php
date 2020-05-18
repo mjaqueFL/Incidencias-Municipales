@@ -20,7 +20,7 @@ echo '
 			<div class="container-fluid" >
 				<div class="row">
 					<div class="col-12" id="header">
-						<img src="' . base_url() . 'Imagenes/prueba1.jpg" alt="Es una imagen del inicio" longdesc="Se trata de una imagen ">
+						<img src="' . base_url() . 'Imagenes/prueba1.jpg" class="img-fluid" alt="Es una imagen del inicio" longdesc="Se trata de una imagen ">
 					</div>
 				</div>
 				<div class="row">

@@ -4,9 +4,9 @@
 // Escuela: Escuela Virgen de Guadalupe
 // Proyecto fin de ciclo: Proyecto de Web de Gestión de Incidencias Municipales
 // Año:2020
-$tipos=array(
-	'name'=>'tipo',
-	'options'=> $this->mistipos,
+$tipos = array(
+	'name' => 'tipo',
+	'options' => $this->mistipos,
 	'type' => 'select'
 
 );
@@ -25,52 +25,41 @@ echo '
 			<div class="container-fluid" >
 				<div class="row">
 					<div class="col-12" id="header">
-						<img src="' . base_url() . 'Imagenes/prueba1.jpg" alt="Es una imagen del inicio" longdesc="Se trata de una imagen ">
+						<img src="' . base_url() . 'Imagenes/prueba1.jpg"  class="img-fluid" alt="Es una imagen del inicio" longdesc="Se trata de una imagen ">
 					</div>
 				</div>
 				<div class="row">
 					';
 include('barrademenu.php');
-
 echo '
 				</div>
 				<div class="row " id="contenedor">
 				';
-echo '<div class="col-lg-3 col-md-5 col-xs-12 p-3">
-            <h5>Filtrar por tipo de incidencia:</h5>   ';
-$attributes =array('class'=> 'ControladorPrincipal','id'=>'myform');
-echo form_open(base_url().'ControladorPrincipal/filtro',$attributes);
+echo '<div class="col-lg-3 col-md-6 col-xs-6 p-3" id="filtros">
+            <h5>Filtrar por tipo de incidencia:</h5><br/>   ';
+$attributes = array('class' => 'ControladorPrincipal', 'id' => 'myform');
+echo form_open(base_url() . 'ControladorPrincipal/filtro', $attributes);
 echo form_dropdown($tipos);
-echo '<br>';echo '<br>';
-echo form_submit('btn_enviar','Filtrar');
+echo '<br>';
+echo '<br>';
+echo form_submit('btn_enviar', 'Filtrar');
 echo form_close();
 echo '
             </div>';
-
-echo '<div class=" col-lg-9 col-md-5 col-xs-12 p-3">
+echo '<div class=" col-lg-9 col-md-6 col-xs-6 p-3" id="incidenciaslista">
             ';
-
 if ($this->todasinci == NULL) {
 	echo "<p>No hay incidencias disponibles para mostrar porfavor vuelva mas tarde</p>";
 } else {
 	foreach ($this->todasinci as $indice => $valor) {
-		echo "<button>$valor</button>";
+		echo "<div >$valor</div>";
 	}
 }
-
-echo'
-        </div>';
-
-
-
 echo '
-				</div>
-			
-			
-			
-			
+        </div>';
+echo '
+				</div>		
 			';
-
 include('barrafooter.php');
 echo '
 			</div>

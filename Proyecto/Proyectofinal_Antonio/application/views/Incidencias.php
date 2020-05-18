@@ -20,7 +20,7 @@ echo '
 			<div class="container-fluid" >
 				<div class="row">
 					<div class="col-12" id="header">
-						<img src="' . base_url() . 'Imagenes/prueba1.jpg" alt="Es una imagen del inicio" longdesc="Se trata de una imagen ">
+						<img src="' . base_url() . 'Imagenes/prueba1.jpg" class="img-fluid"  alt="Es una imagen del inicio" longdesc="Se trata de una imagen ">
 					</div>
 				</div>
 				<div class="row">
@@ -29,11 +29,7 @@ include('barrademenu.php');
 echo '
 				</div>
 				<div class="row" id="contenedor">
-					<div class="col-12" id="titulodelasincidencias">
-						<h4>Bienvenido al menu de incidencias</h4>
-            		</div>
-            		
-					<div class="col-12 col-md-6" id="misincidencias">
+					<div class="col-12 col-md-10  m-0 col-xs-6 " id="misincidencias">
                			<p>Mis incidencias:</p>
                			';
 
@@ -41,16 +37,17 @@ if ($this->misincidencias == NULL) {
 	echo "<p>No hay incidencias</p>";
 } else {
 	foreach ($this->misincidencias as $indice => $valor) {
-		echo "<button>$valor</button><a href=" . base_url() . "Modificarincidencia/" . $i++ . "><button>Modificar incidencia</button><br></a>";
+		echo "<a href=" . base_url() . "Modificarincidencia/" . $i++ . "><div class='mx-1 p-1'>$valor</div></a>";
 	}
 }
 
 echo '
            			</div>
-	           			 <div class="col-12 col-md-6">
+	           			 <div class="col-12 col-md-2 col-xs-6 py-1">
                 		<div id="menuincidencias">
-							<a href="' . base_url() . 'paginaandir"><button>Crear incidencia</button></a> <br>
-							<a href="' . base_url() . 'paginaborrado"><button>Borrar incidencia</button></a><br>
+                			<h4>Opciones:</h4><br>
+							<a href="' . base_url() . 'paginaandir"><div>Crear incidencia</div></a> <br>
+							<a href="' . base_url() . 'paginaborrado"><div>Borrar incidencia</div></a><br>
 						</div>
            			 </div>
 					

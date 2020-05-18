@@ -10,7 +10,7 @@ USE `proyectoincidencias`;
 
 CREATE TABLE `incidencia` (
   `id_incidencia` smallint(5) UNSIGNED NOT NULL,
-  `	titulo` varchar(30) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
+  `titulo` varchar(30) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   `descripcion` text COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   `fecha` DATE DEFAULT NULL,
   `ubicacion` varchar(120) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
@@ -60,6 +60,10 @@ ALTER TABLE `usuario`
 ALTER TABLE `incidencia`
   ADD CONSTRAINT `fk_IncidenciaTipo` FOREIGN KEY (`tipo_incidencia`) REFERENCES `tipo_incidencia` (`id_tipo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
   
+ALTER TABLE `incidencia`
+  ADD CONSTRAINT `fk_Incidenciausuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  
+
   INSERT INTO `usuario` (`id_usuario`, `correo`, `password`, `tipo`) VALUES
 (1, 'correo1@gmail.com', '123', 'u'),
 (2, 'correo2@gmail.com', '123', 'u'),
@@ -69,12 +73,15 @@ INSERT INTO `tipo_incidencia` (`nombre_tipo`) VALUES
 ('vial'),
 ('ciudadana'),
 ('transito');
+
+INSERT INTO `incidencia` (`id_incidencia`,`titulo`,`descripcion`,`fecha`,`ubicacion`,`tipo_incidencia`,`id_usuario`) VALUES
+(1,'habia','una vez','2020-12-03','montijo',1,1),
+(2,'erase','una vez','2020-11-03','montijo',2,2),
+(3,'pepe','un cafe','2020-08-03','montijo',3,3),
+(4,'matilda','se tiro','2020-04-13','montijo',1,2),
+(5,'habia','un perezoso llamado juanjo','2020-12-15','montijo',3,1),
+(6,'kervo','una vez se durmio','2020-12-30','montijo',1,1);
+
+
   
-    INSERT INTO `incidencia` (`id_incidencia`, `titulo`, `descripcion`, `fecha`,`ubicacion`,`tipo_incidencia`,`id_usuario`) VALUES
-(1, 'habia', 'una vez', '2020-05-15','montijo','2','1'),
-(2, 'habia', 'una ', '2020-05-17','montijo','3','2'),
-(2, 'habia', 'una ', '2020-05-17','montijo','2','3'),
-(2, 'elefante', 'tela ', '2020-12-17','caceres','3','2'),
-(2, 'araña', 'romper ', '2020-07-17','badajoz','2','3'),
-(3, 'habiados', ' vez', '2020-05-18','badajoz','1','1');
 COMMIT;

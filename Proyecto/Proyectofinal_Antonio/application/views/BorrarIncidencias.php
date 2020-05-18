@@ -22,7 +22,7 @@ echo '
 			<div class="container-fluid" >
 				<div class="row">
 					<div class="col-12" id="header">
-						<img src="' . base_url() . 'Imagenes/prueba1.jpg" alt="Es una imagen del inicio" longdesc="Se trata de una imagen ">
+						<img src="' . base_url() . 'Imagenes/prueba1.jpg" class="img-fluid" alt="Es una imagen del inicio" longdesc="Se trata de una imagen ">
 					</div>
 				</div>
 				<div class="row">
@@ -31,30 +31,31 @@ include('barrademenu.php');
 echo '
 				</div>
 				<div class="row" id="contenedor">
-				<div class="col-12">
-				<div class="col-12" id="formulariomodifi">';
-echo validation_errors();
-echo form_open(base_url() . 'borrado', $attributes);
+				
+					';
 
-if($this->misincidencias==NULL)
-{
-	echo "<p>No hay incidencias</p>";
-}
-else
-{
-	foreach ($this->misincidencias as $lista) {
-		echo '
-				<input type="checkbox" value="' . $lista . '" name="id_incidencia[]"/>' . $lista;
-	}
-}
+								echo '<form action="' . base_url() . 'borrado" method="post" class="m-2 p-2"	id="formularioborrar">
+				';
+								if ($this->misincidencias == NULL) {
+									echo "<p>No hay incidencias</p>";
+								} else {
+									echo'<div class="row"  id="contenedorborrar"> ';
+											foreach ($this->misincidencias as $lista) {
+												echo '
+													<div class="  col-lg-3 col-md-8 col-xs-12 p-3 m-3" >
+													
+													 	<input type="checkbox" value="' . $lista . '" name="id_incidencia[]"/> <a>'.$lista.
+													'</a></div>' ;
+											}
+									echo '</div>';
+								}
 
-echo '<br>';
-echo '<br>';
-echo '<input type="submit" value="borrar" />';
-echo form_close();
-echo '
-</div>
-</div>
+								echo '<br>';
+								echo '<br>';
+								echo '<input type="submit" value="borrar" />';
+								echo '
+							</form>
+							
 				</div>
 				';
 include('barrafooter.php');

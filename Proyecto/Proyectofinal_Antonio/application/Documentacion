@@ -1,0 +1,78 @@
+Collecting files .. OK
+Initializing parser .. OK
+Parsing files
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\config\autoload.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\config\config.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\config\constants.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\config\database.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\config\doctypes.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\config\foreign_chars.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\config\google_config.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\config\hooks.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\config\memcached.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\config\migration.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\config\mimes.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\config\profiler.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\config\routes.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\config\smileys.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\config\user_agents.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\controllers\ControladorPrincipal.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\controllers\TestController.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\controllers\Welcome.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\models\ModeloPrincipal.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\views\anadirincidencia.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\views\barrademenu.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\views\barrafooter.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\views\borrarincidencias.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\views\errors\cli\error_404.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\views\errors\cli\error_db.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\views\errors\cli\error_exception.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\views\errors\cli\error_general.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\views\errors\cli\error_php.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\views\errors\html\error_404.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\views\errors\html\error_db.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\views\errors\html\error_exception.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\views\errors\html\error_general.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\views\errors\html\error_php.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\views\errror.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\views\filtrados.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\views\incidencias.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\views\login.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\views\modificarincidencia.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\views\principal.php
+Parsing F:\xampp\htdocs\Proyectofinal_Antonio\application\views\welcome_message.php
+Storing cache in "F:\xampp\htdocs\Proyectofinal_Antonio\application\docs\api" .. OK
+Load cache                                                         ..    0.038s
+Preparing template "clean"                                         ..    0.005s
+Preparing 17 transformations                                       ..    0.000s
+Build "elements" index                                             ..    0.000s
+Replace textual FQCNs with object aliases                          ..    0.001s
+Resolve @link and @see tags in descriptions                        ..    0.000s
+Enriches inline example tags with their sources                    ..    0.000s
+Build "packages" index                                             ..    0.001s
+Build "namespaces" index and add namespaces to "elements"          ..    0.000s
+Collect all markers embedded in tags                               ..    0.000s
+Transform analyzed project into artifacts                          .. 
+Applying 17 transformations
+  Initialize writer "phpDocumentor\Plugin\Core\Transformer\Writer\FileIo"
+  Initialize writer "phpDocumentor\Plugin\Twig\Writer\Twig"
+  Initialize writer "phpDocumentor\Plugin\Graphs\Writer\Graph"
+  Execute transformation using writer "FileIo"
+  Execute transformation using writer "FileIo"
+  Execute transformation using writer "FileIo"
+  Execute transformation using writer "FileIo"
+  Execute transformation using writer "FileIo"
+  Execute transformation using writer "twig"
+  Execute transformation using writer "twig"
+  Execute transformation using writer "twig"
+  Execute transformation using writer "twig"
+  Execute transformation using writer "twig"
+  Execute transformation using writer "twig"
+  Execute transformation using writer "twig"
+  Execute transformation using writer "twig"
+  Execute transformation using writer "twig"
+  Execute transformation using writer "twig"
+  Execute transformation using writer "twig"
+  Execute transformation using writer "Graph"
+Unable to find the `dot` command of the GraphViz package. Is GraphViz correctly installed and present in your path?   0.700s
+Analyze results and write report to log                            ..    0.000s

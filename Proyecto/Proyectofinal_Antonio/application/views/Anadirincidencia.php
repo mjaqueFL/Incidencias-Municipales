@@ -34,7 +34,7 @@ echo '
 			<div class="container-fluid" >
 				<div class="row">
 					<div class="col-12" id="header">
-						<img src="' . base_url() . 'Imagenes/prueba1.jpg" alt="Es una imagen del inicio" longdesc="Se trata de una imagen ">
+						<img src="' . base_url() . 'Imagenes/prueba1.jpg" class="img-fluid" alt="Es una imagen del inicio" longdesc="Se trata de una imagen ">
 					</div>
 				</div>
 				<div class="row">
@@ -48,13 +48,13 @@ echo '
 				
 				<form action="' . base_url() . 'alta" method="post">
 				<label>Titulo</label><br/>
-				<input type="text" placeholder="Titulo incidencia" name="tituloincidencia" required><br/> 
+				<input type="text" placeholder="Titulo incidencia" name="tituloincidencia"  class="rellenartitulo" required><br/> 
 				<label>Descripcion</label><br/>';
 				echo form_textarea($inp_descripcion);
 				echo '<br>';
 				echo '
 				<label>Ubicacion</label><br/>
-				<input type="text" placeholder="Ubicacion incidencia" name="ubicacionincidencia" required ><br/>
+				<input type="text" placeholder="Ubicacion incidencia" name="ubicacionincidencia" class="rellenartitulo" required ><br/>
 				
 ';
 echo '<br>';

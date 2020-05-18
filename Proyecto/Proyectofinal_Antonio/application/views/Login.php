@@ -19,7 +19,7 @@ echo '
 			<div class="container-fluid" >
 				<div class="row">
 					<div class="col-12" id="header">
-						<img src="' . base_url() . 'Imagenes/prueba1.jpg" alt="Es una imagen del inicio" longdesc="Se trata de una imagen ">
+						<img src="' . base_url() . 'Imagenes/prueba1.jpg" class="img-fluid" alt="Es una imagen del inicio" longdesc="Se trata de una imagen ">
 					</div>
 				</div>
 				<div class="row">
@@ -29,22 +29,29 @@ echo '
 				</div>
 				<div class="row" id="contenedor">
 					<div id="formulario">
-						<div class="row">
-							
-								<form class="col-12" action="' . base_url() . 'autenticacion" method="post">
-									<div class=" col-sm-12 col-md-6 col-lg-6 form-group">
-										<label for="Correo">Correo: </label>
-										<input type="text" name="correo" required placeholder="Correo electronico">
-									</div>
-									<div class=" col-sm-12 col-md-6 col-lg-6 form-group">
-										<label for="contrasenia">Contraseña: </label>
-										<input type="password" name="contrasenia" required placeholder="Contraseña">
-									</div>
-									<div class=" col-sm-12 col-md-6 col-lg-6 form-group">
-										<input type="submit" value="logearse"> 
-									</div>
-								</form>
-						</div>   
+					
+						<form  action="' . base_url() . 'autenticacion" method="post" id="estilodellogin" class="p-4">
+						<div class="col-12 p-2" id="imagensenales">
+											<img src="' . base_url() . 'Imagenes/senales.png" class="img-fluid" alt="Es una imagen del inicio" longdesc="Se trata de una imagen " >
+					</div>
+						  <div class="form-group row" >
+							<label for="staticEmail" class="col-sm-2 col-form-label">Correo</label>
+							<div class="col-sm-10">
+							  <input type="text"  class="form-control"  id="staticEmail"  name="correo" placeholder="Correo electronico">
+							</div>
+						  </div>
+						  <div class="form-group row">
+							<label for="inputPassword" class="col-sm-2 col-form-label">Contraseña</label>
+							<div class="col-sm-10">
+							  <input type="password" class="form-control" name="contrasenia" placeholder="Contraseña" required >
+							</div>
+						  </div>
+						  <div class="form-group row">
+							 <div class="col-sm-12" id="botondellogin">
+								<input type="submit" value="iniciar sesión"> 
+							</div>
+						  </div>
+						</form>
 					</div>
 				</div>
 			';

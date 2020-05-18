@@ -18,7 +18,7 @@ echo '
 			<div class="container-fluid" >
 				<div class="row">
 					<div class="col-12" id="header">
-						<img src="' . base_url() . 'Imagenes/prueba1.jpg" alt="Es una imagen del inicio" longdesc="Se trata de una imagen ">
+						<img src="' . base_url() . 'Imagenes/prueba1.jpg"  class="img-fluid" alt="Es una imagen del inicio" longdesc="Se trata de una imagen ">
 					</div>
 				</div>
 				<div class="row">
@@ -28,13 +28,13 @@ echo '
 				</div>
 				<div class="row " id="contenedor">
 				';
-echo '<div class=" col-lg-9 col-md-5 col-xs-12 p-3">
+echo '<div class=" col-lg-12 col-md-6 col-xs-12 p-3" id="incidenciaslista">
             ';
 if ($this->filtradas == NULL) {
 	echo "<p>No hay incidencias disponibles con ese tipo para mostrar porfavor vuelva mas tarde</p>";
 } else {
 	foreach ($this->filtradas as $indice ) {
-		echo "<button>$indice</button>";
+		echo "<div>$indice</div>";
 	}
 }
 echo'

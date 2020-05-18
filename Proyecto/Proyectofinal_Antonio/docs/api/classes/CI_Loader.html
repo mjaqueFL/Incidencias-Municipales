@@ -1,0 +1,2085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>API Documentation</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+    <link href="../css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/prism.css" rel="stylesheet" media="all"/>
+    <link href="../css/template.css" rel="stylesheet" media="all"/>
+    
+    <!--[if lt IE 9]>
+    <script src="../js/html5.js"></script>
+    <![endif]-->
+    <script src="../js/jquery-1.11.0.min.js"></script>
+    <script src="../js/ui/1.10.4/jquery-ui.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.smooth-scroll.js"></script>
+    <script src="../js/prism.min.js"></script>
+    <!-- TODO: Add http://jscrollpane.kelvinluck.com/ to style the scrollbars for browsers not using webkit-->
+    <script type="text/javascript">
+    function loadExternalCodeSnippets() {
+        Array.prototype.slice.call(document.querySelectorAll('pre[data-src]')).forEach(function (pre) {
+            var src = pre.getAttribute('data-src');
+            var extension = (src.match(/\.(\w+)$/) || [, ''])[1];
+            var language = 'php';
+
+            var code = document.createElement('code');
+            code.className = 'language-' + language;
+
+            pre.textContent = '';
+
+            code.textContent = 'Loading…';
+
+            pre.appendChild(code);
+
+            var xhr = new XMLHttpRequest();
+
+            xhr.open('GET', src, true);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4) {
+
+                    if (xhr.status < 400 && xhr.responseText) {
+                        code.textContent = xhr.responseText;
+
+                        Prism.highlightElement(code);
+                    }
+                    else if (xhr.status >= 400) {
+                        code.textContent = '✖ Error ' + xhr.status + ' while fetching file: ' + xhr.statusText;
+                    }
+                    else {
+                        code.textContent = '✖ Error: File does not exist or is empty';
+                    }
+                }
+            };
+
+            xhr.send(null);
+        });
+    }
+
+    $(document).ready(function(){
+        loadExternalCodeSnippets();
+    });
+    $('#source-view').on('shown', function () {
+        loadExternalCodeSnippets();
+    })
+</script>
+
+    <link rel="shortcut icon" href="../images/favicon.ico"/>
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png"/>
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/apple-touch-icon-72x72.png"/>
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/apple-touch-icon-114x114.png"/>
+</head>
+<body>
+
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <i class="icon-ellipsis-vertical"></i>
+            </a>
+            <a class="brand" href="../index.html">API Documentation</a>
+
+            <div class="nav-collapse">
+                <ul class="nav pull-right">
+                                        <li class="dropdown" id="charts-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Charts <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../graphs/class.html">
+                                    <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" id="reports-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            Reports <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="../reports/errors.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Errors <span class="label label-info pull-right">106</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/markers.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <i class="icon-list-alt"></i>&#160;Markers <span class="label label-info pull-right">12</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="../reports/deprecated.html">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <i class="icon-list-alt"></i>&#160;Deprecated <span class="label label-info pull-right">19</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--<div class="go_to_top">-->
+    <!--<a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>-->
+    <!--</div>-->
+</div>
+
+<div id="___" class="container-fluid">
+        <section class="row-fluid">
+        <div class="span2 sidebar">
+                                <div class="accordion" style="margin-bottom: 0">
+        <div class="accordion-group">
+            <div class="accordion-heading">
+                                    <a class="accordion-toggle " data-toggle="collapse" data-target="#namespace-132342153"></a>
+                                <a href="../namespaces/default.html" style="margin-left: 30px; padding-left: 0">\</a>
+            </div>
+            <div id="namespace-132342153" class="accordion-body collapse in">
+                <div class="accordion-inner">
+
+                    
+                    <ul>
+                                                    <li class="interface"><a href="../classes/SessionHandlerInterface.html">SessionHandlerInterface</a></li>
+                                                                                                    <li class="class"><a href="../classes/CI_Benchmark.html">CI_Benchmark</a></li>
+                                                    <li class="class"><a href="../classes/CI_Cache.html">CI_Cache</a></li>
+                                                    <li class="class"><a href="../classes/CI_Cache_apc.html">CI_Cache_apc</a></li>
+                                                    <li class="class"><a href="../classes/CI_Cache_dummy.html">CI_Cache_dummy</a></li>
+                                                    <li class="class"><a href="../classes/CI_Cache_file.html">CI_Cache_file</a></li>
+                                                    <li class="class"><a href="../classes/CI_Cache_memcached.html">CI_Cache_memcached</a></li>
+                                                    <li class="class"><a href="../classes/CI_Cache_redis.html">CI_Cache_redis</a></li>
+                                                    <li class="class"><a href="../classes/CI_Cache_wincache.html">CI_Cache_wincache</a></li>
+                                                    <li class="class"><a href="../classes/CI_Calendar.html">CI_Calendar</a></li>
+                                                    <li class="class"><a href="../classes/CI_Cart.html">CI_Cart</a></li>
+                                                    <li class="class"><a href="../classes/CI_Config.html">CI_Config</a></li>
+                                                    <li class="class"><a href="../classes/CI_Controller.html">CI_Controller</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB.html">CI_DB</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_Cache.html">CI_DB_Cache</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_cubrid_driver.html">CI_DB_cubrid_driver</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_cubrid_forge.html">CI_DB_cubrid_forge</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_cubrid_result.html">CI_DB_cubrid_result</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_cubrid_utility.html">CI_DB_cubrid_utility</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_driver.html">CI_DB_driver</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_forge.html">CI_DB_forge</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_ibase_driver.html">CI_DB_ibase_driver</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_ibase_forge.html">CI_DB_ibase_forge</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_ibase_result.html">CI_DB_ibase_result</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_ibase_utility.html">CI_DB_ibase_utility</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_mssql_driver.html">CI_DB_mssql_driver</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_mssql_forge.html">CI_DB_mssql_forge</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_mssql_result.html">CI_DB_mssql_result</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_mssql_utility.html">CI_DB_mssql_utility</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_mysql_driver.html">CI_DB_mysql_driver</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_mysql_forge.html">CI_DB_mysql_forge</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_mysql_result.html">CI_DB_mysql_result</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_mysql_utility.html">CI_DB_mysql_utility</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_mysqli_driver.html">CI_DB_mysqli_driver</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_mysqli_forge.html">CI_DB_mysqli_forge</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_mysqli_result.html">CI_DB_mysqli_result</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_mysqli_utility.html">CI_DB_mysqli_utility</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_oci8_driver.html">CI_DB_oci8_driver</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_oci8_forge.html">CI_DB_oci8_forge</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_oci8_result.html">CI_DB_oci8_result</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_oci8_utility.html">CI_DB_oci8_utility</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_odbc_driver.html">CI_DB_odbc_driver</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_odbc_forge.html">CI_DB_odbc_forge</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_odbc_result.html">CI_DB_odbc_result</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_odbc_utility.html">CI_DB_odbc_utility</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_pdo_4d_driver.html">CI_DB_pdo_4d_driver</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_pdo_4d_forge.html">CI_DB_pdo_4d_forge</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_pdo_cubrid_driver.html">CI_DB_pdo_cubrid_driver</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_pdo_cubrid_forge.html">CI_DB_pdo_cubrid_forge</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_pdo_dblib_driver.html">CI_DB_pdo_dblib_driver</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_pdo_dblib_forge.html">CI_DB_pdo_dblib_forge</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_pdo_driver.html">CI_DB_pdo_driver</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_pdo_firebird_driver.html">CI_DB_pdo_firebird_driver</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_pdo_firebird_forge.html">CI_DB_pdo_firebird_forge</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_pdo_forge.html">CI_DB_pdo_forge</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_pdo_ibm_driver.html">CI_DB_pdo_ibm_driver</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_pdo_ibm_forge.html">CI_DB_pdo_ibm_forge</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_pdo_informix_driver.html">CI_DB_pdo_informix_driver</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_pdo_informix_forge.html">CI_DB_pdo_informix_forge</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_pdo_mysql_driver.html">CI_DB_pdo_mysql_driver</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_pdo_mysql_forge.html">CI_DB_pdo_mysql_forge</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_pdo_oci_driver.html">CI_DB_pdo_oci_driver</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_pdo_oci_forge.html">CI_DB_pdo_oci_forge</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_pdo_odbc_driver.html">CI_DB_pdo_odbc_driver</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_pdo_odbc_forge.html">CI_DB_pdo_odbc_forge</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_pdo_pgsql_driver.html">CI_DB_pdo_pgsql_driver</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_pdo_pgsql_forge.html">CI_DB_pdo_pgsql_forge</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_pdo_result.html">CI_DB_pdo_result</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_pdo_sqlite_driver.html">CI_DB_pdo_sqlite_driver</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_pdo_sqlite_forge.html">CI_DB_pdo_sqlite_forge</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_pdo_sqlsrv_driver.html">CI_DB_pdo_sqlsrv_driver</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_pdo_sqlsrv_forge.html">CI_DB_pdo_sqlsrv_forge</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_pdo_utility.html">CI_DB_pdo_utility</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_postgre_driver.html">CI_DB_postgre_driver</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_postgre_forge.html">CI_DB_postgre_forge</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_postgre_result.html">CI_DB_postgre_result</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_postgre_utility.html">CI_DB_postgre_utility</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_query_builder.html">CI_DB_query_builder</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_result.html">CI_DB_result</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_sqlite3_driver.html">CI_DB_sqlite3_driver</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_sqlite3_forge.html">CI_DB_sqlite3_forge</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_sqlite3_result.html">CI_DB_sqlite3_result</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_sqlite3_utility.html">CI_DB_sqlite3_utility</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_sqlite_driver.html">CI_DB_sqlite_driver</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_sqlite_forge.html">CI_DB_sqlite_forge</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_sqlite_result.html">CI_DB_sqlite_result</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_sqlite_utility.html">CI_DB_sqlite_utility</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_sqlsrv_driver.html">CI_DB_sqlsrv_driver</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_sqlsrv_forge.html">CI_DB_sqlsrv_forge</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_sqlsrv_result.html">CI_DB_sqlsrv_result</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_sqlsrv_utility.html">CI_DB_sqlsrv_utility</a></li>
+                                                    <li class="class"><a href="../classes/CI_DB_utility.html">CI_DB_utility</a></li>
+                                                    <li class="class"><a href="../classes/CI_Driver.html">CI_Driver</a></li>
+                                                    <li class="class"><a href="../classes/CI_Driver_Library.html">CI_Driver_Library</a></li>
+                                                    <li class="class"><a href="../classes/CI_Email.html">CI_Email</a></li>
+                                                    <li class="class"><a href="../classes/CI_Encrypt.html">CI_Encrypt</a></li>
+                                                    <li class="class"><a href="../classes/CI_Encryption.html">CI_Encryption</a></li>
+                                                    <li class="class"><a href="../classes/CI_Exceptions.html">CI_Exceptions</a></li>
+                                                    <li class="class"><a href="../classes/CI_Form_validation.html">CI_Form_validation</a></li>
+                                                    <li class="class"><a href="../classes/CI_FTP.html">CI_FTP</a></li>
+                                                    <li class="class"><a href="../classes/CI_Hooks.html">CI_Hooks</a></li>
+                                                    <li class="class"><a href="../classes/CI_Image_lib.html">CI_Image_lib</a></li>
+                                                    <li class="class"><a href="../classes/CI_Input.html">CI_Input</a></li>
+                                                    <li class="class"><a href="../classes/CI_Javascript.html">CI_Javascript</a></li>
+                                                    <li class="class"><a href="../classes/CI_Jquery.html">CI_Jquery</a></li>
+                                                    <li class="class"><a href="../classes/CI_Lang.html">CI_Lang</a></li>
+                                                    <li class="class"><a href="../classes/CI_Loader.html">CI_Loader</a></li>
+                                                    <li class="class"><a href="../classes/CI_Log.html">CI_Log</a></li>
+                                                    <li class="class"><a href="../classes/CI_Migration.html">CI_Migration</a></li>
+                                                    <li class="class"><a href="../classes/CI_Model.html">CI_Model</a></li>
+                                                    <li class="class"><a href="../classes/CI_Output.html">CI_Output</a></li>
+                                                    <li class="class"><a href="../classes/CI_Pagination.html">CI_Pagination</a></li>
+                                                    <li class="class"><a href="../classes/CI_Parser.html">CI_Parser</a></li>
+                                                    <li class="class"><a href="../classes/CI_Profiler.html">CI_Profiler</a></li>
+                                                    <li class="class"><a href="../classes/CI_Router.html">CI_Router</a></li>
+                                                    <li class="class"><a href="../classes/CI_Security.html">CI_Security</a></li>
+                                                    <li class="class"><a href="../classes/CI_Session.html">CI_Session</a></li>
+                                                    <li class="class"><a href="../classes/CI_Session_database_driver.html">CI_Session_database_driver</a></li>
+                                                    <li class="class"><a href="../classes/CI_Session_driver.html">CI_Session_driver</a></li>
+                                                    <li class="class"><a href="../classes/CI_Session_files_driver.html">CI_Session_files_driver</a></li>
+                                                    <li class="class"><a href="../classes/CI_Session_memcached_driver.html">CI_Session_memcached_driver</a></li>
+                                                    <li class="class"><a href="../classes/CI_Session_redis_driver.html">CI_Session_redis_driver</a></li>
+                                                    <li class="class"><a href="../classes/CI_Table.html">CI_Table</a></li>
+                                                    <li class="class"><a href="../classes/CI_Trackback.html">CI_Trackback</a></li>
+                                                    <li class="class"><a href="../classes/CI_Typography.html">CI_Typography</a></li>
+                                                    <li class="class"><a href="../classes/CI_Unit_test.html">CI_Unit_test</a></li>
+                                                    <li class="class"><a href="../classes/CI_Upload.html">CI_Upload</a></li>
+                                                    <li class="class"><a href="../classes/CI_URI.html">CI_URI</a></li>
+                                                    <li class="class"><a href="../classes/CI_User_agent.html">CI_User_agent</a></li>
+                                                    <li class="class"><a href="../classes/CI_Utf8.html">CI_Utf8</a></li>
+                                                    <li class="class"><a href="../classes/CI_Xmlrpc.html">CI_Xmlrpc</a></li>
+                                                    <li class="class"><a href="../classes/CI_Xmlrpcs.html">CI_Xmlrpcs</a></li>
+                                                    <li class="class"><a href="../classes/CI_Zip.html">CI_Zip</a></li>
+                                                    <li class="class"><a href="../classes/ControladorPrincipal.html">ControladorPrincipal</a></li>
+                                                    <li class="class"><a href="../classes/ModeloPrincipal.html">ModeloPrincipal</a></li>
+                                                    <li class="class"><a href="../classes/TestController.html">TestController</a></li>
+                                                    <li class="class"><a href="../classes/Welcome.html">Welcome</a></li>
+                                                    <li class="class"><a href="../classes/XML_RPC_Client.html">XML_RPC_Client</a></li>
+                                                    <li class="class"><a href="../classes/XML_RPC_Message.html">XML_RPC_Message</a></li>
+                                                    <li class="class"><a href="../classes/XML_RPC_Response.html">XML_RPC_Response</a></li>
+                                                    <li class="class"><a href="../classes/XML_RPC_Values.html">XML_RPC_Values</a></li>
+                                            </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </section>
+    <section class="row-fluid">
+        <div class="span10 offset2">
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <nav>
+                                                <a href="../namespaces/default.html">\</a> <i class="icon-level-up"></i>
+                                            </nav>
+                    <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal"><i class="icon-code"></i></a>
+
+                    <h1><small>\</small>CI_Loader</h1>
+                    <p><em>Loader Class</em></p>
+                    <p>Loads framework components.</p>
+                    
+                                        
+                    <section id="summary">
+                        <h2>Summary</h2>
+                        <section class="row-fluid heading">
+                            <section class="span4">
+                                <a href="#methods">Methods</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#properties">Properties</a>
+                            </section>
+                            <section class="span4">
+                                <a href="#constants">Constants</a>
+                            </section>
+                        </section>
+                        <section class="row-fluid public">
+                            <section class="span4">
+                                                                    <a href="../classes/CI_Loader.html#method___construct" class="">__construct()</a><br />
+                                                                    <a href="../classes/CI_Loader.html#method_initialize" class="">initialize()</a><br />
+                                                                    <a href="../classes/CI_Loader.html#method_is_loaded" class="">is_loaded()</a><br />
+                                                                    <a href="../classes/CI_Loader.html#method_library" class="">library()</a><br />
+                                                                    <a href="../classes/CI_Loader.html#method_model" class="">model()</a><br />
+                                                                    <a href="../classes/CI_Loader.html#method_database" class="">database()</a><br />
+                                                                    <a href="../classes/CI_Loader.html#method_dbutil" class="">dbutil()</a><br />
+                                                                    <a href="../classes/CI_Loader.html#method_dbforge" class="">dbforge()</a><br />
+                                                                    <a href="../classes/CI_Loader.html#method_view" class="">view()</a><br />
+                                                                    <a href="../classes/CI_Loader.html#method_file" class="">file()</a><br />
+                                                                    <a href="../classes/CI_Loader.html#method_vars" class="">vars()</a><br />
+                                                                    <a href="../classes/CI_Loader.html#method_clear_vars" class="">clear_vars()</a><br />
+                                                                    <a href="../classes/CI_Loader.html#method_get_var" class="">get_var()</a><br />
+                                                                    <a href="../classes/CI_Loader.html#method_get_vars" class="">get_vars()</a><br />
+                                                                    <a href="../classes/CI_Loader.html#method_helper" class="">helper()</a><br />
+                                                                    <a href="../classes/CI_Loader.html#method_helpers" class="">helpers()</a><br />
+                                                                    <a href="../classes/CI_Loader.html#method_language" class="">language()</a><br />
+                                                                    <a href="../classes/CI_Loader.html#method_config" class="">config()</a><br />
+                                                                    <a href="../classes/CI_Loader.html#method_driver" class="">driver()</a><br />
+                                                                    <a href="../classes/CI_Loader.html#method_add_package_path" class="">add_package_path()</a><br />
+                                                                    <a href="../classes/CI_Loader.html#method_get_package_paths" class="">get_package_paths()</a><br />
+                                                                    <a href="../classes/CI_Loader.html#method_remove_package_path" class="">remove_package_path()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No public properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No constants found</em>
+                                                            </section>
+                        </section>
+                        <section class="row-fluid protected">
+                            <section class="span4">
+                                                                    <a href="../classes/CI_Loader.html#method__ci_load" class="">_ci_load()</a><br />
+                                                                    <a href="../classes/CI_Loader.html#method__ci_load_library" class="">_ci_load_library()</a><br />
+                                                                    <a href="../classes/CI_Loader.html#method__ci_load_stock_library" class="">_ci_load_stock_library()</a><br />
+                                                                    <a href="../classes/CI_Loader.html#method__ci_init_library" class="">_ci_init_library()</a><br />
+                                                                    <a href="../classes/CI_Loader.html#method__ci_autoloader" class="">_ci_autoloader()</a><br />
+                                                                    <a href="../classes/CI_Loader.html#method__ci_prepare_view_vars" class="">_ci_prepare_view_vars()</a><br />
+                                                                    <a href="../classes/CI_Loader.html#method__ci_get_component" class="">_ci_get_component()</a><br />
+                                                            </section>
+                            <section class="span4">
+                                                                    <a href="../classes/CI_Loader.html#property__ci_ob_level" class="">$_ci_ob_level</a><br />
+                                                                    <a href="../classes/CI_Loader.html#property__ci_view_paths" class="">$_ci_view_paths</a><br />
+                                                                    <a href="../classes/CI_Loader.html#property__ci_library_paths" class="">$_ci_library_paths</a><br />
+                                                                    <a href="../classes/CI_Loader.html#property__ci_model_paths" class="">$_ci_model_paths</a><br />
+                                                                    <a href="../classes/CI_Loader.html#property__ci_helper_paths" class="">$_ci_helper_paths</a><br />
+                                                                    <a href="../classes/CI_Loader.html#property__ci_cached_vars" class="">$_ci_cached_vars</a><br />
+                                                                    <a href="../classes/CI_Loader.html#property__ci_classes" class="">$_ci_classes</a><br />
+                                                                    <a href="../classes/CI_Loader.html#property__ci_models" class="">$_ci_models</a><br />
+                                                                    <a href="../classes/CI_Loader.html#property__ci_helpers" class="">$_ci_helpers</a><br />
+                                                                    <a href="../classes/CI_Loader.html#property__ci_varmap" class="">$_ci_varmap</a><br />
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                        <section class="row-fluid private">
+                            <section class="span4">
+                                                                    <em>No private methods found</em>
+                                                            </section>
+                            <section class="span4">
+                                                                    <em>No private properties found</em>
+                                                            </section>
+                            <section class="span4">
+                                <em>N/A</em>
+                            </section>
+                        </section>
+                    </section>
+                </div>
+                <aside class="span4 detailsbar">
+                                        
+                    
+                    <dl>
+                        <dt>File</dt>
+                            <dd><a href="../files/system.core.Loader.html"><div class="path-wrapper">system\core\Loader.php</div></a></dd>
+                                                <dt>Package</dt>
+                            <dd><div class="namespace-wrapper">CodeIgniter\Libraries</div></dd>
+                                                <dt>Class hierarchy</dt>
+                            <dd class="hierarchy">
+                                                                                                                                                                    <div class="namespace-wrapper">\CI_Loader</div>
+                            </dd>
+
+                        
+                        
+                        
+                                                                            <dt>See also</dt>
+                                                                                        <dd><a href="https://codeigniter.com/user_guide/libraries/loader.html"><span class="namespace-wrapper">https://codeigniter.com/user_guide/libraries/loader.html</span></a></dd>
+                                                    
+                                                                        </dl>
+                    <h2>Tags</h2>
+                    <table class="table table-condensed">
+                                            <tr>
+                            <th>
+                                category
+                            </th>
+                            <td>
+                                                                    <p>Loader</p>
+                                                            </td>
+                        </tr>
+                                            <tr>
+                            <th>
+                                author
+                            </th>
+                            <td>
+                                                                    <p>EllisLab Dev Team</p>
+                                                            </td>
+                        </tr>
+                                        </table>
+                </aside>
+            </div>
+
+                        
+                                    <a id="properties" name="properties"></a>
+            <div class="row-fluid">
+                <div class="span8 content class">
+                    <h2>Properties</h2>
+                </div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__ci_ob_level" name="property__ci_ob_level" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$_ci_ob_level</h3>
+                <pre class="signature">$_ci_ob_level : integer</pre>
+                <p><em>Nesting level of the output buffering mechanism</em></p>
+                
+
+                                <h4>Type</h4>
+                integer
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__ci_view_paths" name="property__ci_view_paths" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$_ci_view_paths</h3>
+                <pre class="signature">$_ci_view_paths : array</pre>
+                <p><em>List of paths to load views from</em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__ci_library_paths" name="property__ci_library_paths" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$_ci_library_paths</h3>
+                <pre class="signature">$_ci_library_paths : array</pre>
+                <p><em>List of paths to load libraries from</em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__ci_model_paths" name="property__ci_model_paths" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$_ci_model_paths</h3>
+                <pre class="signature">$_ci_model_paths : array</pre>
+                <p><em>List of paths to load models from</em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__ci_helper_paths" name="property__ci_helper_paths" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$_ci_helper_paths</h3>
+                <pre class="signature">$_ci_helper_paths : array</pre>
+                <p><em>List of paths to load helpers from</em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__ci_cached_vars" name="property__ci_cached_vars" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$_ci_cached_vars</h3>
+                <pre class="signature">$_ci_cached_vars : array</pre>
+                <p><em>List of cached variables</em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__ci_classes" name="property__ci_classes" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$_ci_classes</h3>
+                <pre class="signature">$_ci_classes : array</pre>
+                <p><em>List of loaded classes</em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__ci_models" name="property__ci_models" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$_ci_models</h3>
+                <pre class="signature">$_ci_models : array</pre>
+                <p><em>List of loaded models</em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__ci_helpers" name="property__ci_helpers" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$_ci_helpers</h3>
+                <pre class="signature">$_ci_helpers : array</pre>
+                <p><em>List of loaded helpers</em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="property__ci_varmap" name="property__ci_varmap" class="anchor"></a>
+            <article class="property">
+                <h3 class="protected ">$_ci_varmap</h3>
+                <pre class="signature">$_ci_varmap : array</pre>
+                <p><em>List of class name mappings</em></p>
+                
+
+                                <h4>Type</h4>
+                array
+                                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                        <dl>
+                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                            
+                                    <a id="methods" name="methods"></a>
+            <div class="row-fluid">
+                <div class="span8 content class"><h2>Methods</h2></div>
+                <aside class="span4 detailsbar"></aside>
+            </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method___construct" name="method___construct" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">__construct()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">__construct() : void</pre>
+                <p><em>Class constructor</em></p>
+                <p>Sets component load paths, gets the initial output buffering level.</p>
+
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_initialize" name="method_initialize" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">initialize()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">initialize() : void</pre>
+                <p><em>Initializer</em></p>
+                
+
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                                            <dt>Uses</dt>
+                                                                <dd>CI_Loader::_ci_autoloader()</dd>
+                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            todo
+                        </th>
+                        <td>
+                                                                                            <p>Figure out a way to move this to the constructor
+without breaking <em>package_path</em>() methods.</p>
+                                                    </td>
+                    </tr>
+                                    <tr>
+                        <th>
+                            used-by
+                        </th>
+                        <td>
+                                                                                            <p>CI_Controller::__construct()</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_is_loaded" name="method_is_loaded" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">is_loaded()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">is_loaded(string  <span class="argument">$class</span>) : string|boolean</pre>
+                <p><em>Is Loaded</em></p>
+                <p>A utility method to test if a class is in the self::$_ci_classes array.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$class </td>
+                                <td><p>Class name to check for</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    string|boolean
+                                            &mdash; <p>Class object name if loaded or FALSE</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            used-by
+                        </th>
+                        <td>
+                                                                                            <p>Mainly used by Form Helper function _get_validation_object().</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_library" name="method_library" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">library()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">library(mixed  <span class="argument">$library</span>, array  <span class="argument">$params = NULL</span>, string  <span class="argument">$object_name = NULL</span>) : object</pre>
+                <p><em>Library Loader</em></p>
+                <p>Loads and instantiates libraries.
+Designed to be called from application controllers.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$library </td>
+                                <td><p>Library name</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$params </td>
+                                <td><p>Optional parameters to pass to the library class constructor</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$object_name </td>
+                                <td><p>An optional object name to assign to</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    object
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_model" name="method_model" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">model()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">model(mixed  <span class="argument">$model</span>, string  <span class="argument">$name = &#039;&#039;</span>, boolean  <span class="argument">$db_conn = FALSE</span>) : object</pre>
+                <p><em>Model Loader</em></p>
+                <p>Loads and instantiates models.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$model </td>
+                                <td><p>Model name</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$name </td>
+                                <td><p>An optional object name to assign to</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$db_conn </td>
+                                <td><p>An optional database connection configuration to initialize</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    object
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_database" name="method_database" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">database()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">database(mixed  <span class="argument">$params = &#039;&#039;</span>, boolean  <span class="argument">$return = FALSE</span>, boolean  <span class="argument">$query_builder = NULL</span>) : object|boolean</pre>
+                <p><em>Database Loader</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$params </td>
+                                <td><p>Database configuration options</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$return </td>
+                                <td><p>Whether to return the database object</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$query_builder </td>
+                                <td><p>Whether to enable Query Builder
+(overrides the configuration setting)</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    object|boolean
+                                            &mdash; <p>Database object if $return is set to TRUE,
+FALSE on failure, CI_Loader instance in any other case</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_dbutil" name="method_dbutil" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">dbutil()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">dbutil(object  <span class="argument">$db = NULL</span>, boolean  <span class="argument">$return = FALSE</span>) : object</pre>
+                <p><em>Load the Database Utilities Class</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>object</td>
+                                <td>$db </td>
+                                <td><p>Database object</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$return </td>
+                                <td><p>Whether to return the DB Utilities class object or not</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    object
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_dbforge" name="method_dbforge" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">dbforge()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">dbforge(object  <span class="argument">$db = NULL</span>, boolean  <span class="argument">$return = FALSE</span>) : object</pre>
+                <p><em>Load the Database Forge Class</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>object</td>
+                                <td>$db </td>
+                                <td><p>Database object</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$return </td>
+                                <td><p>Whether to return the DB Forge class object or not</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    object
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_view" name="method_view" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">view()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">view(string  <span class="argument">$view</span>, array  <span class="argument">$vars = array()</span>, boolean  <span class="argument">$return = FALSE</span>) : object|string</pre>
+                <p><em>View Loader</em></p>
+                <p>Loads &quot;view&quot; files.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$view </td>
+                                <td><p>View name</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$vars </td>
+                                <td><p>An associative array of data
+to be extracted for use in the view</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$return </td>
+                                <td><p>Whether to return the view output
+or leave it to the Output class</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    object|string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_file" name="method_file" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">file()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">file(string  <span class="argument">$path</span>, boolean  <span class="argument">$return = FALSE</span>) : object|string</pre>
+                <p><em>Generic File Loader</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$path </td>
+                                <td><p>File path</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$return </td>
+                                <td><p>Whether to return the file output</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    object|string
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_vars" name="method_vars" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">vars()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">vars(array|object|string  <span class="argument">$vars</span>, string  <span class="argument">$val = &#039;&#039;</span>) : object</pre>
+                <p><em>Set Variables</em></p>
+                <p>Once variables are set they become available within
+the controller class and its &quot;view&quot; files.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array|object|string</td>
+                                <td>$vars </td>
+                                <td><p>An associative array or object containing values
+to be set, or a value's name if string</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$val </td>
+                                <td><p>Value to set, only used if $vars is a string</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    object
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_clear_vars" name="method_clear_vars" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">clear_vars()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">clear_vars() : \CI_Loader</pre>
+                <p><em>Clear Cached Variables</em></p>
+                <p>Clears the cached variables.</p>
+
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    <a href="../classes/CI_Loader.html">\CI_Loader</a>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_get_var" name="method_get_var" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">get_var()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">get_var(string  <span class="argument">$key</span>) : mixed</pre>
+                <p><em>Get Variable</em></p>
+                <p>Check if a variable is set and retrieve it.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$key </td>
+                                <td><p>Variable name</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    mixed
+                                            &mdash; <p>The variable or NULL if not found</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_get_vars" name="method_get_vars" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">get_vars()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">get_vars() : array</pre>
+                <p><em>Get Variables</em></p>
+                <p>Retrieves all loaded variables.</p>
+
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_helper" name="method_helper" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">helper()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">helper(string|array&lt;mixed,string&gt;  <span class="argument">$helpers = array()</span>) : object</pre>
+                <p><em>Helper Loader</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string|array&lt;mixed,string&gt;</td>
+                                <td>$helpers </td>
+                                <td><p>Helper name(s)</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    object
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_helpers" name="method_helpers" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">helpers()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">helpers(string|array&lt;mixed,string&gt;  <span class="argument">$helpers = array()</span>) : object</pre>
+                <p><em>Load Helpers</em></p>
+                <p>An alias for the helper() method in case the developer has
+written the plural form of it.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string|array&lt;mixed,string&gt;</td>
+                                <td>$helpers </td>
+                                <td><p>Helper name(s)</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    object
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                                            <dt>Uses</dt>
+                                                                <dd>CI_Loader::helper()</dd>
+                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_language" name="method_language" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">language()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">language(string|array&lt;mixed,string&gt;  <span class="argument">$files</span>,   <span class="argument">$lang = &#039;&#039;</span>) : object</pre>
+                <p><em>Language Loader</em></p>
+                <p>Loads language files.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string|array&lt;mixed,string&gt;</td>
+                                <td>$files </td>
+                                <td><p>List of language file names to load</p></td>
+                            </tr>
+                                                    <tr>
+                                <td></td>
+                                <td>$lang </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    object
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_config" name="method_config" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">config()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">config(string  <span class="argument">$file</span>, boolean  <span class="argument">$use_sections = FALSE</span>, boolean  <span class="argument">$fail_gracefully = FALSE</span>) : boolean</pre>
+                <p><em>Config Loader</em></p>
+                <p>Loads a config file (an alias for CI_Config::load()).</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$file </td>
+                                <td><p>Configuration file name</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$use_sections </td>
+                                <td><p>Whether configuration values should be loaded into their own section</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$fail_gracefully </td>
+                                <td><p>Whether to just return FALSE or display an error message</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    boolean
+                                            &mdash; <p>TRUE if the file was loaded correctly or FALSE on failure</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                                            <dt>Uses</dt>
+                                                                <dd>CI_Config::load()</dd>
+                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_driver" name="method_driver" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">driver()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">driver(string|array&lt;mixed,string&gt;  <span class="argument">$library</span>, array  <span class="argument">$params = NULL</span>, string  <span class="argument">$object_name = NULL</span>) : object|boolean</pre>
+                <p><em>Driver Loader</em></p>
+                <p>Loads a driver library.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string|array&lt;mixed,string&gt;</td>
+                                <td>$library </td>
+                                <td><p>Driver name(s)</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array</td>
+                                <td>$params </td>
+                                <td><p>Optional parameters to pass to the driver</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$object_name </td>
+                                <td><p>An optional object name to assign to</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    object|boolean
+                                            &mdash; <p>Object or FALSE on failure if $library is a string
+and $object_name is set. CI_Loader instance otherwise.</p>
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_add_package_path" name="method_add_package_path" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">add_package_path()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">add_package_path(string  <span class="argument">$path</span>, boolean  <span class="argument">$view_cascade = TRUE</span>) : object</pre>
+                <p><em>Add Package Path</em></p>
+                <p>Prepends a parent path to the library, model, helper and config
+path arrays.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$path </td>
+                                <td><p>Path to add</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$view_cascade </td>
+                                <td><p>(default: TRUE)</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    object
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                            <dt>See also</dt>
+                                                                <dd><a href="../classes/CI_Loader.html#property__ci_library_paths"><span class="namespace-wrapper">\CI_Loader::_ci_library_paths</span></a></dd>
+                                            <dd><a href="../classes/CI_Loader.html#property__ci_model_paths"><span class="namespace-wrapper">\CI_Loader::_ci_model_paths</span></a></dd>
+                                            <dd><a href="../classes/CI_Loader.html#property__ci_helper_paths"><span class="namespace-wrapper">\CI_Loader::_ci_helper_paths</span></a></dd>
+                                            <dd><a href="../classes/CI_Config.html#property__config_paths"><span class="namespace-wrapper">\CI_Config::_config_paths</span></a></dd>
+                                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_get_package_paths" name="method_get_package_paths" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">get_package_paths()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">get_package_paths(boolean  <span class="argument">$include_base = FALSE</span>) : array</pre>
+                <p><em>Get Package Paths</em></p>
+                <p>Return a list of all package paths.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>boolean</td>
+                                <td>$include_base </td>
+                                <td><p>Whether to include BASEPATH (default: FALSE)</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method_remove_package_path" name="method_remove_package_path" class="anchor"></a>
+            <article class="method">
+                <h3 class="public ">remove_package_path()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">remove_package_path(string  <span class="argument">$path = &#039;&#039;</span>) : object</pre>
+                <p><em>Remove Package Path</em></p>
+                <p>Remove a path from the library, model, helper and/or config
+path arrays if it exists. If no path is provided, the most recently
+added path will be removed removed.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$path </td>
+                                <td><p>Path to remove</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    object
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method__ci_load" name="method__ci_load" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">_ci_load()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">_ci_load(array  <span class="argument">$_ci_data</span>) : object</pre>
+                <p><em>Internal CI Data Loader</em></p>
+                <p>Used to load views and files.</p>
+<p>Variables are prefixed with <em>ci</em> to avoid symbol collision with
+variables made available to view files.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>array</td>
+                                <td>$_ci_data </td>
+                                <td><p>Data to load</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    object
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            used-by
+                        </th>
+                        <td>
+                                                                                            <p>CI_Loader::view()</p>
+                                                                                            <p>CI_Loader::file()</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method__ci_load_library" name="method__ci_load_library" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">_ci_load_library()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">_ci_load_library(string  <span class="argument">$class</span>, mixed  <span class="argument">$params = NULL</span>, string  <span class="argument">$object_name = NULL</span>) : void</pre>
+                <p><em>Internal CI Library Loader</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$class </td>
+                                <td><p>Class name to load</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$params </td>
+                                <td><p>Optional parameters to pass to the class constructor</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$object_name </td>
+                                <td><p>Optional object name to assign to</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                                            <dt>Uses</dt>
+                                                                <dd>CI_Loader::_ci_init_library()</dd>
+                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            used-by
+                        </th>
+                        <td>
+                                                                                            <p>CI_Loader::library()</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method__ci_load_stock_library" name="method__ci_load_stock_library" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">_ci_load_stock_library()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">_ci_load_stock_library(string  <span class="argument">$library_name</span>, string  <span class="argument">$file_path</span>, mixed  <span class="argument">$params</span>, string  <span class="argument">$object_name</span>) : void</pre>
+                <p><em>Internal CI Stock Library Loader</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$library_name </td>
+                                <td><p>Library name to load</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$file_path </td>
+                                <td><p>Path to the library filename, relative to libraries/</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$params </td>
+                                <td><p>Optional parameters to pass to the class constructor</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$object_name </td>
+                                <td><p>Optional object name to assign to</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                                                            <dt>Uses</dt>
+                                                                <dd>CI_Loader::_ci_init_library()</dd>
+                                                </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            used-by
+                        </th>
+                        <td>
+                                                                                            <p>CI_Loader::_ci_load_library()</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method__ci_init_library" name="method__ci_init_library" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">_ci_init_library()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">_ci_init_library(string  <span class="argument">$class</span>, string  <span class="argument">$prefix</span>, array|null|boolean  <span class="argument">$config = FALSE</span>, string  <span class="argument">$object_name = NULL</span>) : void</pre>
+                <p><em>Internal CI Library Instantiator</em></p>
+                
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$class </td>
+                                <td><p>Class name</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$prefix </td>
+                                <td><p>Class name prefix</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>array|null|boolean</td>
+                                <td>$config </td>
+                                <td><p>Optional configuration to pass to the class constructor:
+FALSE to skip;
+NULL to search in config paths;
+array containing configuration data</p></td>
+                            </tr>
+                                                    <tr>
+                                <td>string</td>
+                                <td>$object_name </td>
+                                <td><p>Optional object name to assign to</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            used-by
+                        </th>
+                        <td>
+                                                                                            <p>CI_Loader::_ci_load_stock_library()</p>
+                                                                                            <p>CI_Loader::_ci_load_library()</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method__ci_autoloader" name="method__ci_autoloader" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">_ci_autoloader()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">_ci_autoloader() : void</pre>
+                <p><em>CI Autoloader</em></p>
+                <p>Loads component listed in the config/autoload.php file.</p>
+
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr>
+                        <th>
+                            used-by
+                        </th>
+                        <td>
+                                                                                            <p>CI_Loader::initialize()</p>
+                                                    </td>
+                    </tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method__ci_prepare_view_vars" name="method__ci_prepare_view_vars" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">_ci_prepare_view_vars()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">_ci_prepare_view_vars(mixed  <span class="argument">$vars</span>) : array</pre>
+                <p><em>Prepare variables for _ci_vars, to be later extract()-ed inside views</em></p>
+                <p>Converts objects to associative arrays and filters-out internal
+variable names (i.e. keys prefixed with '<em>ci</em>').</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>mixed</td>
+                                <td>$vars </td>
+                                <td></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    array
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                    <div class="row-fluid">
+        <div class="span8 content class">
+            <a id="method__ci_get_component" name="method__ci_get_component" class="anchor"></a>
+            <article class="method">
+                <h3 class="protected ">_ci_get_component()</h3>
+                <a href="#source-view" role="button" class="pull-right btn" data-toggle="modal" style="font-size: 1.1em; padding: 9px 14px"><i class="icon-code"></i></a>
+                <pre class="signature" style="margin-right: 54px;">_ci_get_component(string  <span class="argument">$component</span>) : boolean</pre>
+                <p><em>CI Component getter</em></p>
+                <p>Get a reference to a specific library or model.</p>
+
+                                    <h4>Parameters</h4>
+                    <table class="table table-condensed table-hover">
+                                                    <tr>
+                                <td>string</td>
+                                <td>$component </td>
+                                <td><p>Component name</p></td>
+                            </tr>
+                                            </table>
+                
+                
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+Warning: count(): Parameter must be an array or an object that implements Countable in phar://F:/xampp/htdocs/Proyectofinal_Antonio/phpDocumentor.phar/vendor/twig/twig/lib/Twig/Extension/Core.php on line 1293
+
+                                    <h4>Returns</h4>
+                    boolean
+                                    				
+                            </article>
+        </div>
+        <aside class="span4 detailsbar">
+            <h1><i class="icon-arrow-down"></i></h1>
+                                                            <dl>
+                                                                            </dl>
+            <h2>Tags</h2>
+            <table class="table table-condensed">
+                                    <tr><td colspan="2"><em>None found</em></td></tr>
+                            </table>
+        </aside>
+    </div>
+
+                                                    </div>
+    </section>
+
+    <div id="source-view" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="source-view-label" aria-hidden="true">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            <h3 id="source-view-label">Loader.php</h3>
+        </div>
+        <div class="modal-body">
+            <pre data-src="../files/system\core\Loader.php.txt" class="language-php line-numbers"></pre>
+        </div>
+    </div>
+
+    <footer class="row-fluid">
+        <section class="span10 offset2">
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <section class="row-fluid footer-sections">
+                        <section class="span4">
+                                                        <h1><i class="icon-code"></i></h1>
+                            <div>
+                                <ul>
+                                                                    </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-bar-chart"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../graphs/class.html">Class Hierarchy Diagram</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                        <section class="span4">
+                                                        <h1><i class="icon-pushpin"></i></h1>
+                            <div>
+                                <ul>
+                                    <li><a href="../reports/errors.html">Errors</a></li>
+                                    <li><a href="../reports/markers.html">Markers</a></li>
+                                </ul>
+                            </div>
+                        </section>
+                    </section>
+                </section>
+            </section>
+            <section class="row-fluid">
+                <section class="span10 offset1">
+                    <hr />
+                    Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and authored
+                    on May 18th, 2020 at 10:52.
+                </section>
+            </section>
+        </section>
+    </footer>
+</div>
+
+</body>
+</html>
