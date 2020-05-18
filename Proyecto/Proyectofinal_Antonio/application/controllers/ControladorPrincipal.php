@@ -364,6 +364,13 @@ class ControladorPrincipal extends CI_Controller
 		$this->session->sess_destroy();
 		return $this->index();
 	}
-
+	/**
+	 * Este metodo nos mostrara los datos de la incidencia y podremos añadir comentarios en ella .
+	 *
+	 * Este metodo sera el encargado de mostrarnos los datos de la incidencia como el titulo y descripcion  y poder añadir comentarios en ella.
+	 *
+	 */
+	//con esta clase podremos ver los datos y añadir comentarios
+	
 
 }
