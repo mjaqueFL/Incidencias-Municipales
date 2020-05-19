@@ -74,13 +74,13 @@ echo '
 <input type="submit" value="añadir  comentario">
 </form>';
 
-print_r($this->miscomentarios);
-//if ($this->miscomentarios == NULL) {
-//	echo "<p>No hay incidencias disponibles para mostrar porfavor vuelva mas tarde</p>";
-//} else {
-//	foreach ($this->miscomentarios as $indice => $valor) {
-//
-//		echo "<div >'Comentario:' $valor</div>";
-//	}
-//}
+//print_r($this->miscomentarios);
+if ($this->miscomentarios == NULL) {
+	echo "<p>No hay incidencias disponibles para mostrar porfavor vuelva mas tarde</p>";
+} else {
+	foreach ($this->miscomentarios as $indice => $valor) {
+
+		echo "<div >Comentario: $valor</div>";
+	}
+}
 ?>

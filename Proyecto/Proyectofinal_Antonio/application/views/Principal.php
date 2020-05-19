@@ -54,7 +54,7 @@ if ($this->todasinci == NULL) {
 } else {
 	foreach ($this->todasinci as $indice => $valor) {
 
-		echo "<div ><a href=" . base_url() . "verincidencia/" . $i++ . "> $valor</a></div>";
+		echo "<div ><a href=" . base_url() . "verincidencia/" .  $indice . "> $valor</a></div>";
 	}
 }
 echo '
