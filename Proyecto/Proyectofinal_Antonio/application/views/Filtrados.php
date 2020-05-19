@@ -4,6 +4,7 @@
 //Escuela: Escuela Virgen de Guadalupe
 //Proyecto fin de ciclo: Proyecto de Web de Gestión de Incidencias Municipales
 //Año:2020
+$i=0;
 echo '
 		<!doctype html>
 		<html lang="en">
@@ -34,22 +35,15 @@ if ($this->filtradas == NULL) {
 	echo "<p>No hay incidencias disponibles con ese tipo para mostrar porfavor vuelva mas tarde</p>";
 } else {
 	foreach ($this->filtradas as $indice ) {
-		echo "<div>$indice</div>";
+		print_r($this->filtradas);
+		echo "<div><a href=" . base_url() . "verincidencia/" . $i++ . "> $indice</a></div>";
 	}
 }
 echo'
         </div>';
-
-
-
 echo '
-				</div>
-			
-			
-			
-			
+				</div>		
 			';
-
 include('barrafooter.php');
 echo '
 			</div>

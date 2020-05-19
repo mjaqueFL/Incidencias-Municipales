@@ -10,6 +10,7 @@ $tipos = array(
 	'type' => 'select'
 
 );
+$i=0;
 
 echo '
 		<!doctype html>
@@ -52,7 +53,8 @@ if ($this->todasinci == NULL) {
 	echo "<p>No hay incidencias disponibles para mostrar porfavor vuelva mas tarde</p>";
 } else {
 	foreach ($this->todasinci as $indice => $valor) {
-		echo "<div >$valor</div>";
+
+		echo "<div ><a href=" . base_url() . "verincidencia/" . $i++ . "> $valor</a></div>";
 	}
 }
 echo '

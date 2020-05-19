@@ -6,10 +6,10 @@
 // Año:2020
 echo '<div class="row" id="footer">
 					<div class=" col-lg-4 col-sm-12">
-						   <li><a href="PoliticaPrivacidad.html">POLITICA DE PRIVACIDAD</a> </li>
+						   <li><a href="PoliticaPrivacidad.html">POLÍTICA DE PRIVACIDAD</a> </li>
 					</div>
 					 <div class="col-lg-4 col-sm-12">
-					 <li><a href="Cookies.html">POLITICA DE COOKIES</a> </li>
+					 <li><a href="Cookies.html">POLÍTICA DE COOKIES</a> </li>
 					 </div>
 					 <div class="col-lg-4 col-sm-12">
 					   <li><a href="avisolegal.html"> AVISO LEGAL</a></li>

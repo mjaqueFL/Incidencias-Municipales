@@ -208,6 +208,8 @@ class ControladorPrincipal extends CI_Controller
 	 *
 	 * Este metodo sera el encargado de mostrarnos la pagina donde podremos modificar una incidencia.
 	 *
+	 *  string $idincidencia esto cogera el id de la incidencia que vamos a trabajar
+	 *
 	 */
 
 	//Para acceder al formulario que nos permitira añadir una incidencia
@@ -352,25 +354,71 @@ class ControladorPrincipal extends CI_Controller
 		$this->load->view('Filtrados');
 	}
 
+
+	/**
+	 * Este metodo nos mostrara los datos de la incidencia y podremos añadir comentarios en ella .
+	 *
+	 * Este metodo sera el encargado de mostrarnos los datos de la incidencia como el titulo y descripcion  y poder añadir comentarios en ella.
+	 *
+	 * string $idincidencia esto cogera el id de la incidencia que vamos a trabajar
+	 */
+
+	//con esta clase podremos ver los datos y añadir comentarios
+	public function clickarincidencia($idincidencia)
+	{
+		$this->load->helper('url');
+		$this->load->helper('form');
+
+		if ($this->form_validation->run() == FALSE)
+		{
+			$tipos = $this->ModeloPrincipal->cogertipos();
+			$this->mistipos = array();
+			foreach ($tipos as $tipo)
+				$this->mistipos[$tipo['id_tipo']] = $tipo['nombre_tipo'];
+
+			//cogemos todos los comentarios
+			$comentarios=$this->ModeloPrincipal->vercomentarios($idincidencia);
+			$this->miscomentarios = array();
+			foreach ($comentarios as $cme)
+				$this->miscomentarios[$cme['id_comentario']] = $cme['texto_comentario'];
+
+			/*Aqui cogemos los datos de la incidencia*/
+			$incidencia = $this->ModeloPrincipal->cogerdatosincidencia($idincidencia);
+			$this->incidenciasss = $incidencia[$idincidencia];
+
+
+
+			$this->load->view('visualizarincidencia');
+		}
+	}
+	/**
+	 * Este metodo nos permitira añadir un comentario a esa incidencia .
+	 *
+	 * Este metodo sera el encargado de  añadir un comentario a esa incidencia.
+	 *
+	 */
+	public function altacomentario()
+	{
+		$this->load->helper('url');
+		$this->load->helper('form');
+
+		$datos = array();
+		$datos["texto_comentario"] = $this->input->post("comentario");
+		$datos["id_incidencia"] = $this->input->post("idincidencia");
+		$this->ModeloPrincipal->altacomentarios($datos);
+		return $this->index();
+	}
+
 	/**
 	 * Este metodo nos cerrara la sesion .
 	 *
 	 * Este metodo sera el encargado de cerrar sesion que tenemos abierta.
 	 *
 	 */
-//con esta clase realizaremos el cerrar sesion
+	//con esta clase realizaremos el cerrar sesion
 	public function cerrarsesion()
 	{
 		$this->session->sess_destroy();
 		return $this->index();
 	}
-	/**
-	 * Este metodo nos mostrara los datos de la incidencia y podremos añadir comentarios en ella .
-	 *
-	 * Este metodo sera el encargado de mostrarnos los datos de la incidencia como el titulo y descripcion  y poder añadir comentarios en ella.
-	 *
-	 */
-	//con esta clase podremos ver los datos y añadir comentarios
-	
-
 }

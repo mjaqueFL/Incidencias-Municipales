@@ -146,7 +146,7 @@ class ModeloPrincipal extends CI_Model
 	 *Este metodo se usa para ver todas las incidencias	.
 	 *
 	 */
-	public function cogertodo()
+	public function cogertodo($datos)
 	{
 
 		return $this->bd->get('incidencia')->result();
@@ -182,6 +182,34 @@ class ModeloPrincipal extends CI_Model
 		$this->bd->select('*');
 		$this->bd->from('incidencia');
 		$this->bd->where('tipo_incidencia', $tipo);
+		$query = $this->bd->get();
+		$rows = $query->result_array();
+		$query->free_result();
+		return $rows;
+	}
+	/**
+	 * Este metodo sera el encargado de añadir comentarios .
+	 *
+	 * Este metodo sera el encargado de añadir comentarios a esa incidencia	.
+	 *
+	 *
+	 */
+	public function altacomentarios($datos)
+	{
+		$this->bd->insert('comentario', $datos);
+	}
+	/**
+	 * Este metodo sera el encargado de ver  los comentarios .
+	 *
+	 * Este metodo sera el encargado de encargado de ver  los comentarios de esa inciencia	.
+	 *
+	 *
+	 */
+	public function vercomentarios($idincidencia)
+	{
+		$this->bd->select('*');
+		$this->bd->from('comentario');
+		$this->bd->where('id_incidencia', $idincidencia);
 		$query = $this->bd->get();
 		$rows = $query->result_array();
 		$query->free_result();

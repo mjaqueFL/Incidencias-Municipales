@@ -9,7 +9,7 @@ USE `proyectoincidencias`;
 
 
 CREATE TABLE `incidencia` (
-  `id_incidencia` smallint(5) UNSIGNED NOT NULL,
+  `id_incidencia` smallint(5) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `titulo` varchar(30) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   `descripcion` text COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   `fecha` DATE DEFAULT NULL,
@@ -20,13 +20,13 @@ CREATE TABLE `incidencia` (
 
 
 CREATE TABLE `tipo_incidencia` (
-  `id_tipo` tinyint(3) UNSIGNED NOT NULL,
+  `id_tipo` tinyint(3) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `nombre_tipo` varchar(30) COLLATE utf8mb4_spanish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 
 CREATE TABLE `usuario` (
-  `id_usuario` smallint(5) UNSIGNED NOT NULL,
+  `id_usuario` smallint(5) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
   `correo` varchar(80) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   `tipo` enum('a','u') COLLATE utf8mb4_spanish_ci DEFAULT NULL
@@ -39,27 +39,6 @@ CREATE TABLE `comentario` (
 `id_incidencia` smallint(5) UNSIGNED NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
-ALTER TABLE `incidencia`
-  ADD PRIMARY KEY (`id_incidencia`),
-  ADD KEY `fk_IncidenciaTipo` (`tipo_incidencia`);
-
-ALTER TABLE `tipo_incidencia`
-  ADD PRIMARY KEY (`id_tipo`);
-
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`id_usuario`),
-  ADD UNIQUE KEY `correo` (`correo`);
-
-
-ALTER TABLE `incidencia`
-  MODIFY `id_incidencia` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT;
-
-ALTER TABLE `tipo_incidencia`
-  MODIFY `id_tipo` tinyint(3) UNSIGNED NOT NULL AUTO_INCREMENT;
-
-
-ALTER TABLE `usuario`
-  MODIFY `id_usuario` smallint(5) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 
 ALTER TABLE `incidencia`
@@ -72,34 +51,34 @@ ALTER TABLE `comentario`
   ADD CONSTRAINT `fk_comentarioincidencia` FOREIGN KEY (`id_incidencia`) REFERENCES `incidencia` (`id_incidencia`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 
-  INSERT INTO `usuario` (`id_usuario`, `correo`, `password`, `tipo`) VALUES
-(1, 'correo1@gmail.com', '123', 'u'),
-(2, 'correo2@gmail.com', '123', 'u'),
-(3, 'correo3@gmail.com', '1234', 'u');
+  INSERT INTO `usuario` (`correo`, `password`, `tipo`) VALUES
+('correo1@gmail.com', '123', 'u'),
+('correo2@gmail.com', '1234', 'u'),
+('correo3@gmail.com', '12345', 'u');
 
 INSERT INTO `tipo_incidencia` (`nombre_tipo`) VALUES
 ('vial'),
 ('ciudadana'),
 ('transito');
 
-INSERT INTO `incidencia` (`id_incidencia`,`titulo`,`descripcion`,`fecha`,`ubicacion`,`tipo_incidencia`,`id_usuario`) VALUES
-(1,'habia','una vez','2020-12-03','montijo',1,1),
-(2,'erase','una vez','2020-11-03','montijo',2,2),
-(3,'pepe','un cafe','2020-08-03','montijo',3,3),
-(4,'matilda','se tiro','2020-04-13','montijo',1,2),
-(5,'habia','un perezoso llamado juanjo','2020-12-15','montijo',3,1),
-(6,'kervo','una vez se durmio','2020-12-30','montijo',1,1);
+INSERT INTO `incidencia` (`titulo`,`descripcion`,`fecha`,`ubicacion`,`tipo_incidencia`,`id_usuario`) VALUES
+('había','una vez','2020-12-03','montijo',1,1),
+('erase','una vez','2020-11-03','montijo',1,2),
+('pepe','un cafe','2020-08-03','montijo',2,1),
+('matilda','se tiro','2020-04-13','montijo',2,1),
+('había','un perezoso llamado juanjo','2020-12-15','montijo',1,1),
+('kervo','una vez se durmio','2020-12-30','montijo',1,2);
 
-INSERT INTO `comentario`(`id_comentario`, `texto_comentario`, `id_incidencia`) VALUES 
-(1,'ESTA PAGINA ES GENIAL ',1),
-(2,'debe mejorar ',2),
-(3,'juanjo estuvo aqui ',3),
-(4,'sabes que eso es mentira? ',4),
-(5,'esto lo vi el otro dia ',5),
-(6,'pepepepepepepepepepe ',6),
-(7,'anpan anpan anpan anpan ',3),
-(8,'toulouse el chueco ',2),
-(9,'kervo el dormilon ',4);
+INSERT INTO `comentario`(`texto_comentario`, `id_incidencia`) VALUES 
+('ESTA PAGINA ES GENIAL ',1),
+('debe mejorar ',2),
+('juanjo estuvo aqui ',3),
+('sabes que eso es mentira? ',4),
+('esto lo vi el otro dia ',5),
+('pepepepepepepepepepe ',6),
+('anpan anpan anpan anpan ',3),
+('toulouse el chueco ',2),
+('kervo el dormilon ',4);
 
 
   
