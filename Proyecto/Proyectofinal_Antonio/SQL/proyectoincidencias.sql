@@ -36,19 +36,19 @@ CREATE TABLE `comentario` (
 
 `id_comentario` smallint(5) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
 `texto_comentario` text default null,
-`id_incidencia` smallint(5) UNSIGNED NOT NULL
+`id_incidenciacomn` smallint(5) UNSIGNED NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 
 
 ALTER TABLE `incidencia`
-  ADD CONSTRAINT `fk_IncidenciaTipo` FOREIGN KEY (`tipo_incidencia`) REFERENCES `tipo_incidencia` (`id_tipo`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_IncidenciaTipo` FOREIGN KEY (`tipo_incidencia`) REFERENCES `tipo_incidencia` (`id_tipo`) ON DELETE CASCADE ON UPDATE  CASCADE;
   
 ALTER TABLE `incidencia`
-  ADD CONSTRAINT `fk_Incidenciausuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Incidenciausuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
   
 ALTER TABLE `comentario`
-  ADD CONSTRAINT `fk_comentarioincidencia` FOREIGN KEY (`id_incidencia`) REFERENCES `incidencia` (`id_incidencia`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_comentarioincidencia` FOREIGN KEY (`id_incidenciacomn`) REFERENCES `incidencia` (`id_incidencia`) ON DELETE  CASCADE ON UPDATE  CASCADE;
 
 
   INSERT INTO `usuario` (`correo`, `password`, `tipo`) VALUES
@@ -69,7 +69,7 @@ INSERT INTO `incidencia` (`titulo`,`descripcion`,`fecha`,`ubicacion`,`tipo_incid
 ('había','un perezoso llamado juanjo','2020-12-15','montijo',1,1),
 ('kervo','una vez se durmio','2020-12-30','montijo',1,2);
 
-INSERT INTO `comentario`(`texto_comentario`, `id_incidencia`) VALUES 
+INSERT INTO `comentario`(`texto_comentario`, `id_incidenciacomn`) VALUES 
 ('ESTA PAGINA ES GENIAL ',1),
 ('debe mejorar ',2),
 ('juanjo estuvo aqui ',3),

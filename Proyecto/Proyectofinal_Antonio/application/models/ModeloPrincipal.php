@@ -99,7 +99,7 @@ class ModeloPrincipal extends CI_Model
 	 */
 
 	//Con esta funcion modificaremos una incidencia
-	public function modificacionincidencia($datos)
+	public function modificacionincidencia($datos,$idincidencia)
 	{
 		$this->bd->replace('incidencia', $datos);
 
@@ -131,9 +131,10 @@ class ModeloPrincipal extends CI_Model
 	//para coger los datos
 	public function cogerdatosincidencia($idincidencia)
 	{
-		$this->bd->select('id_incidencia,titulo,descripcion,fecha,ubicacion,tipo_incidencia');
+		$this->bd->select('id_incidencia,titulo,descripcion,fecha,ubicacion,tipo_incidencia,id_usuario');
 		$query = $this->bd->get('incidencia');
 		$this->bd->where('id_incidencia', $idincidencia);
+		$this->bd->where('id_usuario',$this->session->userdata('codigousuario'));
 		$rows = $query->result_array();
 		$query->free_result();
 		return $rows;
@@ -209,7 +210,18 @@ class ModeloPrincipal extends CI_Model
 	{
 		$this->bd->select('*');
 		$this->bd->from('comentario');
-		$this->bd->where('id_incidencia', $idincidencia);
+		$this->bd->where('id_incidenciacomn', $idincidencia);
+		$query = $this->bd->get();
+		$rows = $query->result_array();
+		$query->free_result();
+		return $rows;
+	}
+
+	public function testeo($idincidenciass)
+	{
+		$this->bd->select('id_incidencia,titulo,descripcion,fecha,ubicacion,tipo_incidencia,id_usuario');
+		$this->bd->from('incidencia');
+		$this->bd->where('id_incidencia', $idincidenciass);
 		$query = $this->bd->get();
 		$rows = $query->result_array();
 		$query->free_result();

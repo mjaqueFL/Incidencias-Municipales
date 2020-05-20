@@ -37,7 +37,7 @@ if ($this->misincidencias == NULL) {
 	echo "<p>No hay incidencias</p>";
 } else {
 	foreach ($this->misincidencias as $indice => $valor) {
-		echo "<a href=" . base_url() . "Modificarincidencia/" . $i++ . "><div class='mx-1 p-1'>$valor</div></a>";
+		echo "<a href=" . base_url() . "Modificarincidencia/" . $indice-- . "><div class='mx-1 p-1'>$valor</div></a>";
 	}
 }
 

@@ -233,9 +233,10 @@ class ControladorPrincipal extends CI_Controller
 						foreach ($tipos as $tipo)
 							$this->mistipos[$tipo['id_tipo']] = $tipo['nombre_tipo'];
 
-						/*Aqui cogemos los datos de la clase*/
+					//Cogemos los datos de la incidencia pulsada
 						$claseaux = $this->ModeloPrincipal->cogerdatosincidencia($idincidencia);
-						$this->clase = $claseaux[$idincidencia];
+						$this->clase = $claseaux[$idincidencia-1];
+
 
 
 						$this->load->view('Modificarincidencia');
@@ -264,15 +265,16 @@ class ControladorPrincipal extends CI_Controller
 		$this->load->helper('url');
 		$this->load->helper('form');
 
+		$idincidencia=$this->input->post("idincidencia");
 		$datos = array();
-		$datos["id_incidencia"] = $this->input->post("idincidencia");
+		$datos["id_incidencia"] = $idincidencia;
 		$datos["titulo"] = $this->input->post("tituloincidencia");
 		$datos["descripcion"] = $this->input->post("descripcioninciencia");
 		$datos["fecha"] = $this->input->post("fechaincidencia");
 		$datos["ubicacion"] = $this->input->post("ubicacionincidencia");
 		$datos["tipo_incidencia"] = $this->input->post("tipoincidencia");
 		$datos["id_usuario"] = $this->session->userdata('codigousuario');
-		$this->ModeloPrincipal->modificacionincidencia($datos);
+		$this->ModeloPrincipal->modificacionincidencia($datos,$idincidencia);
 		return $this->index();
 	}
 
@@ -368,23 +370,32 @@ class ControladorPrincipal extends CI_Controller
 	{
 		$this->load->helper('url');
 		$this->load->helper('form');
+		print_r($idincidencia);
+
 
 		if ($this->form_validation->run() == FALSE)
 		{
+
 			$tipos = $this->ModeloPrincipal->cogertipos();
 			$this->mistipos = array();
 			foreach ($tipos as $tipo)
+			{
 				$this->mistipos[$tipo['id_tipo']] = $tipo['nombre_tipo'];
+			}
+
 
 			//cogemos todos los comentarios
 			$comentarios=$this->ModeloPrincipal->vercomentarios($idincidencia);
 			$this->miscomentarios = array();
 			foreach ($comentarios as $cme)
+			{
 				$this->miscomentarios[$cme['id_comentario']] = $cme['texto_comentario'];
+
+			}
 
 			/*Aqui cogemos los datos de la incidencia*/
 			$incidencia = $this->ModeloPrincipal->cogerdatosincidencia($idincidencia);
-			$this->incidenciasss = $incidencia[$idincidencia];
+			$this->visualizadon = $incidencia[$idincidencia-1];
 
 
 
@@ -402,11 +413,22 @@ class ControladorPrincipal extends CI_Controller
 		$this->load->helper('url');
 		$this->load->helper('form');
 
-		$datos = array();
-		$datos["texto_comentario"] = $this->input->post("comentario");
-		$datos["id_incidencia"] = $this->input->post("idincidencia");
-		$this->ModeloPrincipal->altacomentarios($datos);
-		return $this->index();
+		$textocomentario=$this->input->post("comentario");
+		if(empty($textocomentario))
+		{
+			return $this->index();
+		}
+		else
+		{
+			$datos = array();
+
+			$datos["texto_comentario"] = $textocomentario;
+			$datos["id_incidencia"] = $this->input->post("idincidencia");
+			$this->ModeloPrincipal->altacomentarios($datos);
+			return $this->index();
+		}
+
+
 	}
 
 	/**

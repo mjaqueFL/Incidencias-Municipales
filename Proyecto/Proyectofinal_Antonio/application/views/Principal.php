@@ -10,7 +10,7 @@ $tipos = array(
 	'type' => 'select'
 
 );
-$i=0;
+
 
 echo '
 		<!doctype html>
@@ -54,7 +54,7 @@ if ($this->todasinci == NULL) {
 } else {
 	foreach ($this->todasinci as $indice => $valor) {
 
-		echo "<div ><a href=" . base_url() . "verincidencia/" .  $indice . "> $valor</a></div>";
+		echo "<div ><a href=" . base_url() . "verincidencia/" .  $indice . ">$indice. $valor</a></div>";
 	}
 }
 echo '

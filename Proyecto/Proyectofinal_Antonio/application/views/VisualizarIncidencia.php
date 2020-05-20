@@ -10,45 +10,46 @@ $inp_tituloincidencia=array(
 	'id'=>'nombreclase',
 	'size'=>'38',
 	'readonly' => 'readonly',
-	'value'=>$this->incidenciasss['titulo'],
+	'value'=>$this->visualizadon['titulo'],
 );
 
 $inp_idincidencia=array(
 	'name'=>'idincidencia',
 	'id'=>'ins_idclase',
 	'readonly' => 'readonly',
-	'value'=>$this->incidenciasss['id_incidencia'],
-	'type'=>'hidden',
+	'value'=>$this->visualizadon['id_incidencia'],
+	''
 );
 $inp_descripcion=array(
 	'name'=>'descripcioninciencia',
 	'id'=>'ins_idclase',
 	'readonly' => 'readonly',
-	'value'=>$this->incidenciasss['descripcion'],
+	'value'=>$this->visualizadon['descripcion'],
 );
 $inp_idfecha=array(
 	'name'=>'fechaincidencia',
 	'id'=>'ins_idclase',
 	'size'=>'38',
 	'readonly' => 'readonly',
-	'value'=>$this->incidenciasss['fecha'],
+	'value'=>$this->visualizadon['fecha'],
 );
 $inp_idubicacion=array(
 	'name'=>'ubicacionincidencia',
 	'id'=>'ins_idclase',
 	'size'=>'38',
 	'readonly' => 'readonly',
-	'value'=>$this->incidenciasss['ubicacion'],
+	'value'=>$this->visualizadon['ubicacion'],
 );
 
 $slc_tipoincidencia=array(
 	'name'=>'tipoincidencia',
 	'options'=> $this->mistipos,
 	'readonly' => 'readonly',
-	'selected' => $this->incidenciasss["tipo_incidencia"],
+	'selected' => $this->visualizadon["tipo_incidencia"],
 	'type' => 'select'
 
 );
+print_r($this->visualizadon);
 echo '<form action="'.base_url().'altacomentario" method="post">';
 echo form_label('titulo incidencia: ');
 echo '<br>';
