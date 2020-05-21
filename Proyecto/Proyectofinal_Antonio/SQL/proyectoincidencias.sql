@@ -66,7 +66,7 @@ INSERT INTO `incidencia` (`titulo`,`descripcion`,`fecha`,`ubicacion`,`tipo_incid
 ('erase','una vez','2020-11-03','montijo',1,2),
 ('pepe','un cafe','2020-08-03','montijo',2,1),
 ('matilda','se tiro','2020-04-13','montijo',2,1),
-('había','un perezoso llamado juanjo','2020-12-15','montijo',1,1),
+('toulouse','un perezoso llamado juanjo','2020-12-15','montijo',1,1),
 ('kervo','una vez se durmio','2020-12-30','montijo',1,2);
 
 INSERT INTO `comentario`(`texto_comentario`, `id_incidenciacomn`) VALUES 

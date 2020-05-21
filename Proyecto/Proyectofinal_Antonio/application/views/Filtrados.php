@@ -34,9 +34,9 @@ echo '<div class=" col-lg-12 col-md-6 col-xs-12 p-3" id="incidenciaslista">
 if ($this->filtradas == NULL) {
 	echo "<p>No hay incidencias disponibles con ese tipo para mostrar porfavor vuelva mas tarde</p>";
 } else {
-	foreach ($this->filtradas as $indice ) {
-		print_r($this->filtradas);
-		echo "<div><a href=" . base_url() . "verincidencia/" . $i++ . "> $indice</a></div>";
+	foreach ($this->filtradas as $indice=>$valor ) {
+
+		echo "<div><a href=" . base_url() . "verincidencia/" . $indice . "> $valor</a></div>";
 	}
 }
 echo'

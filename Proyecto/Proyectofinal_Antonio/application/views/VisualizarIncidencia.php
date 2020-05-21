@@ -4,7 +4,13 @@
 //Escuela: Escuela Virgen de Guadalupe
 //Proyecto fin de ciclo: Proyecto de Web de Gestión de Incidencias Municipales
 //Año:2020
-$i = 0;
+$inp_idincidencia=array(
+	'name'=>'idincidencia',
+	'id'=>'ins_idclase',
+	'readonly' => 'readonly',
+	'value'=>$this->visualizadon['id_incidencia'],
+	'type' =>'hidden',
+);
 $inp_tituloincidencia=array(
 	'name'=>'tituloincidencia',
 	'id'=>'nombreclase',
@@ -13,13 +19,7 @@ $inp_tituloincidencia=array(
 	'value'=>$this->visualizadon['titulo'],
 );
 
-$inp_idincidencia=array(
-	'name'=>'idincidencia',
-	'id'=>'ins_idclase',
-	'readonly' => 'readonly',
-	'value'=>$this->visualizadon['id_incidencia'],
-	''
-);
+
 $inp_descripcion=array(
 	'name'=>'descripcioninciencia',
 	'id'=>'ins_idclase',
@@ -49,7 +49,7 @@ $slc_tipoincidencia=array(
 	'type' => 'select'
 
 );
-print_r($this->visualizadon);
+
 echo '<form action="'.base_url().'altacomentario" method="post">';
 echo form_label('titulo incidencia: ');
 echo '<br>';
@@ -75,7 +75,7 @@ echo '
 <input type="submit" value="añadir  comentario">
 </form>';
 
-//print_r($this->miscomentarios);
+
 if ($this->miscomentarios == NULL) {
 	echo "<p>No hay incidencias disponibles para mostrar porfavor vuelva mas tarde</p>";
 } else {

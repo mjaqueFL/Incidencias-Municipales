@@ -132,9 +132,9 @@ class ModeloPrincipal extends CI_Model
 	public function cogerdatosincidencia($idincidencia)
 	{
 		$this->bd->select('id_incidencia,titulo,descripcion,fecha,ubicacion,tipo_incidencia,id_usuario');
-		$query = $this->bd->get('incidencia');
-		$this->bd->where('id_incidencia', $idincidencia);
-		$this->bd->where('id_usuario',$this->session->userdata('codigousuario'));
+		$this->bd->from('incidencia');
+		$this->bd->where('id_incidencia='. $idincidencia.' and id_usuario='.$this->session->userdata('codigousuario'));
+		$query = $this->bd->get();
 		$rows = $query->result_array();
 		$query->free_result();
 		return $rows;
@@ -217,16 +217,18 @@ class ModeloPrincipal extends CI_Model
 		return $rows;
 	}
 
-	public function testeo($idincidenciass)
+	public function testeo($idincidencia)
 	{
+
 		$this->bd->select('id_incidencia,titulo,descripcion,fecha,ubicacion,tipo_incidencia,id_usuario');
-		$this->bd->from('incidencia');
-		$this->bd->where('id_incidencia', $idincidenciass);
+		 $this->bd->from('incidencia');
+		$this->bd->where('id_incidencia', $idincidencia);
 		$query = $this->bd->get();
 		$rows = $query->result_array();
 		$query->free_result();
 		return $rows;
 	}
+
 }
 
 ?>

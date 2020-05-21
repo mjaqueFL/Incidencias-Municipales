@@ -53,8 +53,8 @@ if ($this->todasinci == NULL) {
 	echo "<p>No hay incidencias disponibles para mostrar porfavor vuelva mas tarde</p>";
 } else {
 	foreach ($this->todasinci as $indice => $valor) {
-
-		echo "<div ><a href=" . base_url() . "verincidencia/" .  $indice . ">$indice. $valor</a></div>";
+//		print_r($this->todasinci);
+		echo "<div ><a href=" . base_url() . "verincidencia/" .  $indice . "> $valor</a></div>";
 	}
 }
 echo '
