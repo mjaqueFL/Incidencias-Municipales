@@ -417,19 +417,38 @@ class ControladorPrincipal extends CI_Controller
 
 		$textocomentario=$this->input->post("comentario");
 
-		if(empty($textocomentario))
+		if(!isset($this->session))
 		{
 			return $this->index();
 		}
 		else
 		{
-			$datos = array();
+			if(isset($_SESSION['logeado']))
+			{
+				if($_SESSION['logeado']==1)
+				{
+					if(empty($textocomentario))
+					{
+						return $this->index();
+					}
+					else
+					{
+						$datos = array();
 
-			$datos["texto_comentario"] = $textocomentario;
-			$datos["id_incidenciacomn"] = $this->input->post("idincidencia");
-			$this->ModeloPrincipal->altacomentarios($datos);
-			return $this->index();
+						$datos["texto_comentario"] = $textocomentario;
+						$datos["id_incidenciacomn"] = $this->input->post("idincidencia");
+						$this->ModeloPrincipal->altacomentarios($datos);
+						return $this->index();
+					}
+				}
+			}
+			else
+			{
+				return $this->index();
+			}
 		}
+
+
 
 
 	}
