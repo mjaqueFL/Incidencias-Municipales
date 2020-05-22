@@ -32,6 +32,7 @@ $inp_idfecha=array(
 	'size'=>'38',
 	'readonly' => 'readonly',
 	'value'=>$this->visualizadon['fecha'],
+	'type' =>'hidden',
 );
 $inp_idubicacion=array(
 	'name'=>'ubicacionincidencia',
@@ -39,6 +40,7 @@ $inp_idubicacion=array(
 	'size'=>'38',
 	'readonly' => 'readonly',
 	'value'=>$this->visualizadon['ubicacion'],
+	'type' =>'hidden',
 );
 
 $slc_tipoincidencia=array(
@@ -46,7 +48,8 @@ $slc_tipoincidencia=array(
 	'options'=> $this->mistipos,
 	'readonly' => 'readonly',
 	'selected' => $this->visualizadon["tipo_incidencia"],
-	'type' => 'select'
+	'type' => 'select',
+	'type' =>'hidden',
 
 );
 
@@ -59,29 +62,44 @@ echo form_label('Descripcion incidencia: ');
 echo '<br>';
 echo form_textarea($inp_descripcion);
 echo '<br>';
-echo form_label('Fecha incidencia: ');
 echo '<br>';
 echo form_input($inp_idincidencia);
 echo form_input($inp_idfecha);
-echo '<br>';
-echo form_label('Ubicación incidencia: ');
-echo '<br>';
+
+
 echo form_input($inp_idubicacion);
-echo '<br>';
-echo '<br>';echo '<br>';
+
+
 echo '
 <textarea rows=4 cols="40" placeholder="Agrega tu comentario aqui" name="comentario"></textarea>
 <br>
 <input type="submit" value="añadir  comentario">
 </form>';
 
+if($this->session->userdata('tipousuario')=='a')
+{
+	if ($this->miscomentarios == NULL) {
+		echo "<p>No hay incidencias disponibles para mostrar porfavor vuelva mas tarde</p>";
+	} else {
+		foreach ($this->miscomentarios as $indice => $valor) {
 
-if ($this->miscomentarios == NULL) {
-	echo "<p>No hay incidencias disponibles para mostrar porfavor vuelva mas tarde</p>";
-} else {
-	foreach ($this->miscomentarios as $indice => $valor) {
-
-		echo "<div >Comentario: $valor</div>";
+			echo "<div >Comentario: $valor 
+				<button data-id='$indice' class='borrarcomentario'>Borrar</button> 
+			</div>";
+		}
 	}
 }
+else
+{
+	if ($this->miscomentarios == NULL) {
+		echo "<p>No hay incidencias disponibles para mostrar porfavor vuelva mas tarde</p>";
+	} else {
+		foreach ($this->miscomentarios as $indice => $valor) {
+
+			echo "<div >Comentario: $valor </div>";
+		}
+	}
+}
+
+echo '<script src="'.base_url().'js/ajax/ajax.js"></script>';
 ?>

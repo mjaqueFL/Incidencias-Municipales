@@ -26,7 +26,7 @@ class ModeloPrincipal extends CI_Model
 	public function autenticar($usuario, $password)
 	{
 
-		$this->bd->select('id_usuario,correo,password');
+		$this->bd->select('id_usuario,correo,password,tipo');
 		$this->bd->from('usuario');
 		$this->bd->where("correo", $usuario);
 		$this->bd->where("password", $password);
@@ -229,6 +229,11 @@ class ModeloPrincipal extends CI_Model
 		return $rows;
 	}
 
+	public function borrarcomentarios($idcoment)
+	{
+		$this->bd->where('id_comentario', $idcoment);
+		$this->bd->delete('comentario');
+	}
 }
 
 ?>

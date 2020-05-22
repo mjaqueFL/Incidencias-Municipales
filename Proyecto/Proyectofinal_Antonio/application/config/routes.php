@@ -77,4 +77,4 @@ $route['incidencias']='ControladorPrincipal/menuincidencias';
 $route['Modificarincidencia/(:num)']='ControladorPrincipal/formulariomodificar/$1';
 $route['verincidencia/(:num)']='ControladorPrincipal/clickarincidencia/$1';
 $route['altacomentario']='ControladorPrincipal/altacomentario';
-
+$route['prueba']='ControladorPrincipal/prueba';

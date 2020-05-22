@@ -94,6 +94,7 @@ class ControladorPrincipal extends CI_Controller
 			//Con esto creamos la variable de sesion
 			$sesion = array(
 				'codigousuario' => $res->id_usuario,
+				'tipousuario'=>$res->tipo,
 				'logeado' => TRUE
 			);
 //			//Aqui le decimos que asi se llamara
@@ -219,8 +220,7 @@ class ControladorPrincipal extends CI_Controller
 		$this->load->helper('url');
 		$this->load->helper('form');
 		$this->load->library('form_validation');
-
-
+		echo $this->input->post('idincidencia');
 		if (!isset($this->session)) {
 			return $this->index();
 		} else {
@@ -237,8 +237,6 @@ class ControladorPrincipal extends CI_Controller
 					//Cogemos los datos de la incidencia pulsada
 						$claseaux = $this->ModeloPrincipal->cogerdatosincidencia($idincidencia);
 						$this->clase = $claseaux[0];
-
-
 
 						$this->load->view('Modificarincidencia');
 					}
@@ -451,6 +449,19 @@ class ControladorPrincipal extends CI_Controller
 
 
 
+	}
+	/**
+	 * Este metodo nos borrara el comentario .
+	 *
+	 * Este metodo sera el encargado de  nos borrara el comentario que pulsemos.
+	 *
+	 */
+	public function borracomentario()
+	{
+
+		$idcoment=$this->input->post('id_comentario');
+		$this->ModeloPrincipal->borrarcomentarios($idcoment);
+		echo 'okay';
 	}
 
 	/**
