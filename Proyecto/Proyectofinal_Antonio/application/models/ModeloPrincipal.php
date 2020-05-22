@@ -234,6 +234,18 @@ class ModeloPrincipal extends CI_Model
 		$this->bd->where('id_comentario', $idcoment);
 		$this->bd->delete('comentario');
 	}
+
+	public function cantidadtipos()
+	{
+		$this->bd->select('COUNT(*) as cantidad ,nombre_tipo');
+		$this->bd->from('incidencia');
+		$this->bd->join('tipo_incidencia','tipo_incidencia=id_tipo');
+		$this->bd->group_by('tipo_incidencia');
+		$query = $this->bd->get();
+		$rows = $query->result_array();
+		$query->free_result();
+		return $rows;
+	}
 }
 
 ?>

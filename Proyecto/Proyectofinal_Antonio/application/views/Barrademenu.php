@@ -10,11 +10,11 @@ if(isset($_SESSION['logeado']))
 	echo '
 		<div class="col-12" id="menu">
 			<a class="nav" href="' .base_url(). 'home">Inicio</a>						
-			<a class="nav" href="Estadisticas.html">Estadísticas</a>
+			<a class="nav" href="' .base_url(). 'estadisticas">Estadisticas</a>
 			<a class="nav" href="' .base_url(). 'incidencias">Incidencias</a>
 			<a class="nav" href="Historiadelapagina.html">Historia de la página</a>
 			<a class="nav" href="haztemiembro.html">Hazte miembro</a>
-			<a class="nav" href="' .base_url(). 'cerrarsesion" onclick="recargar()">Cerrar sesión</a>
+			<a class="nav" href="' .base_url(). 'cerrarsesion" onclick="recargar(\''.base_url().'home\')">Cerrar sesión</a>
 		</div>';
 }
 else
@@ -22,7 +22,7 @@ else
 	echo '
 		<div class="col-12" id="menu">
 			<a class="nav" href="' .base_url(). 'home">Inicio</a>						
-			<a class="nav" href="Estadisticas.html">Estadísticas</a>
+			<a class="nav" href="' .base_url(). 'estadisticas">Estadisticas</a>
 			<a class="nav" href="' .base_url(). 'incidencias">Incidencias</a>
 			<a class="nav" href="Historiadelapagina.html">Historia de la página</a>
 			<a class="nav" href="haztemiembro.html">Hazte miembro</a>

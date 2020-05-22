@@ -78,3 +78,4 @@ $route['Modificarincidencia/(:num)']='ControladorPrincipal/formulariomodificar/$
 $route['verincidencia/(:num)']='ControladorPrincipal/clickarincidencia/$1';
 $route['altacomentario']='ControladorPrincipal/altacomentario';
 $route['prueba']='ControladorPrincipal/prueba';
+$route['estadisticas']='ControladorPrincipal/estadisticas';

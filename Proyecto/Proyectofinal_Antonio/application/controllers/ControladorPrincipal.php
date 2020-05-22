@@ -463,7 +463,32 @@ class ControladorPrincipal extends CI_Controller
 		$this->ModeloPrincipal->borrarcomentarios($idcoment);
 		echo 'okay';
 	}
+	/**
+	 * Este método nos mostrará las estadisticas .
+	 *
+	 * Este método será el encargado de coger todos los tipos y mostrárnoslo en una gráfica.
+	 *
+	 */
 
+
+	public function estadisticas()
+	{
+		$tipos = $this->ModeloPrincipal->cogertipos();
+		$this->mistipos = array();
+		foreach ($tipos as $tipo)
+		{
+			$this->mistipos[$tipo['id_tipo']] = $tipo['nombre_tipo'];
+		};
+
+		$this->count=array();
+		$cantidad=$this->ModeloPrincipal->cantidadtipos();
+		foreach ($cantidad as $valor)
+		{
+			$this->count[$valor['nombre_tipo']] = $valor['cantidad'];
+		};
+
+		$this->load->view('estadisticas');
+	}
 	/**
 	 * Este metodo nos cerrara la sesion .
 	 *
@@ -474,6 +499,6 @@ class ControladorPrincipal extends CI_Controller
 	public function cerrarsesion()
 	{
 		$this->session->sess_destroy();
-		return $this->index();
+		header("Location:".base_url().'home');
 	}
 }
