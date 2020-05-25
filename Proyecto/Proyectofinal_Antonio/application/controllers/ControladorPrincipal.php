@@ -87,14 +87,14 @@ class ControladorPrincipal extends CI_Controller
 
 		//comprobamos que es correcto
 
-		$res = $this->ModeloPrincipal->autenticar($usuario, $password);
+		$res = $this->ModeloPrincipal->autenticar($usuario, sha1($password));
 		if (!$res) {
 			$this->load->view('errror');
 		} else {
 			//Con esto creamos la variable de sesion
 			$sesion = array(
 				'codigousuario' => $res->id_usuario,
-				'tipousuario'=>$res->tipo,
+				'tipousuario' => $res->tipo,
 				'logeado' => TRUE
 			);
 //			//Aqui le decimos que asi se llamara
@@ -178,28 +178,26 @@ class ControladorPrincipal extends CI_Controller
 		$this->load->helper('form');
 
 
-			$titulo=$this->input->post("tituloincidencia");
-			$descripcion= $this->input->post("descripcioninciencia");;
-			$fecha=date("Y-m-d h:i:sa");;
-			$ubicacion=$this->input->post("ubicacionincidencia");;
-			$tipoinci=$this->input->post("tipo");
-			$idusu= $this->session->userdata('codigousuario');
+		$titulo = $this->input->post("tituloincidencia");
+		$descripcion = $this->input->post("descripcioninciencia");;
+		$fecha = date("Y-m-d h:i:sa");;
+		$ubicacion = $this->input->post("ubicacionincidencia");;
+		$tipoinci = $this->input->post("tipo");
+		$idusu = $this->session->userdata('codigousuario');
 
 
 		if ($this->form_validation->run() == FALSE) {
 			$datos = array();
 			$datos["titulo"] = $titulo;
 			$datos["descripcion"] = $descripcion;
-			$datos["fecha"] =$fecha;
-			$datos["ubicacion"] =$ubicacion;
+			$datos["fecha"] = $fecha;
+			$datos["ubicacion"] = $ubicacion;
 			$datos["tipo_incidencia"] = $tipoinci;
-			$datos["id_usuario"] =$idusu;
+			$datos["id_usuario"] = $idusu;
 //			print_r($datos);
 			$this->ModeloPrincipal->altaincidencia($datos);
 			header("Location:" . base_url() . "incidencias");
-		}
-		else
-		{
+		} else {
 			echo 'Debe rellenar todos los datos';
 		}
 	}
@@ -234,7 +232,7 @@ class ControladorPrincipal extends CI_Controller
 						foreach ($tipos as $tipo)
 							$this->mistipos[$tipo['id_tipo']] = $tipo['nombre_tipo'];
 
-					//Cogemos los datos de la incidencia pulsada
+						//Cogemos los datos de la incidencia pulsada
 						$claseaux = $this->ModeloPrincipal->cogerdatosincidencia($idincidencia);
 						$this->clase = $claseaux[0];
 
@@ -264,7 +262,7 @@ class ControladorPrincipal extends CI_Controller
 		$this->load->helper('url');
 		$this->load->helper('form');
 
-		$idincidencia=$this->input->post("idincidencia");
+		$idincidencia = $this->input->post("idincidencia");
 		$datos = array();
 		$datos["id_incidencia"] = $idincidencia;
 		$datos["titulo"] = $this->input->post("tituloincidencia");
@@ -273,7 +271,7 @@ class ControladorPrincipal extends CI_Controller
 		$datos["ubicacion"] = $this->input->post("ubicacionincidencia");
 		$datos["tipo_incidencia"] = $this->input->post("tipoincidencia");
 		$datos["id_usuario"] = $this->session->userdata('codigousuario');
-		$this->ModeloPrincipal->modificacionincidencia($datos,$idincidencia);
+		$this->ModeloPrincipal->modificacionincidencia($datos, $idincidencia);
 		return $this->index();
 	}
 
@@ -289,16 +287,11 @@ class ControladorPrincipal extends CI_Controller
 	{
 		$this->load->helper('url');
 		$this->load->helper('form');
-		if(!isset($this->session))
-		{
+		if (!isset($this->session)) {
 			return $this->index();
-		}
-		else
-		{
-			if(isset($_SESSION['logeado']))
-			{
-				if($_SESSION['logeado']==1)
-				{
+		} else {
+			if (isset($_SESSION['logeado'])) {
+				if ($_SESSION['logeado'] == 1) {
 					$incidencias = $this->ModeloPrincipal->verincidencias();
 
 					$this->misincidencias = array();
@@ -306,9 +299,7 @@ class ControladorPrincipal extends CI_Controller
 						$this->misincidencias[$inc['id_incidencia']] = $inc["titulo"];
 					$this->load->view('borrarincidencias');
 				}
-			}
-			else
-			{
+			} else {
 				return $this->index();
 			}
 		}
@@ -370,38 +361,33 @@ class ControladorPrincipal extends CI_Controller
 		$this->load->helper('url');
 		$this->load->helper('form');
 
-		if ($this->form_validation->run() == FALSE)
-		{
+		if ($this->form_validation->run() == FALSE) {
 
 			$tipos = $this->ModeloPrincipal->cogertipos();
 			$this->mistipos = array();
-			foreach ($tipos as $tipo)
-			{
+			foreach ($tipos as $tipo) {
 				$this->mistipos[$tipo['id_tipo']] = $tipo['nombre_tipo'];
 			};
 
 
 			//cogemos todos los comentarios
-			$comentarios=$this->ModeloPrincipal->vercomentarios($idincidencia);
+			$comentarios = $this->ModeloPrincipal->vercomentarios($idincidencia);
 			$this->miscomentarios = array();
 
-			foreach ($comentarios as $cme)
-			{
+			foreach ($comentarios as $cme) {
 
 				$this->miscomentarios[$cme['id_comentario']] = $cme['texto_comentario'];
 			};
 
 			/*Aqui cogemos los datos de la incidencia*/
-			$incidencia=$this->ModeloPrincipal->testeo($idincidencia);
+			$incidencia = $this->ModeloPrincipal->testeo($idincidencia);
 			$this->visualizadon = $incidencia[0];
-
-		
-
 
 
 			$this->load->view('visualizarincidencia');
 		}
 	}
+
 	/**
 	 * Este metodo nos permitira añadir un comentario a esa incidencia .
 	 *
@@ -413,24 +399,16 @@ class ControladorPrincipal extends CI_Controller
 		$this->load->helper('url');
 		$this->load->helper('form');
 
-		$textocomentario=$this->input->post("comentario");
+		$textocomentario = $this->input->post("comentario");
 
-		if(!isset($this->session))
-		{
+		if (!isset($this->session)) {
 			return $this->index();
-		}
-		else
-		{
-			if(isset($_SESSION['logeado']))
-			{
-				if($_SESSION['logeado']==1)
-				{
-					if(empty($textocomentario))
-					{
+		} else {
+			if (isset($_SESSION['logeado'])) {
+				if ($_SESSION['logeado'] == 1) {
+					if (empty($textocomentario)) {
 						return $this->index();
-					}
-					else
-					{
+					} else {
 						$datos = array();
 
 						$datos["texto_comentario"] = $textocomentario;
@@ -439,17 +417,12 @@ class ControladorPrincipal extends CI_Controller
 						return $this->index();
 					}
 				}
-			}
-			else
-			{
+			} else {
 				return $this->index();
 			}
 		}
-
-
-
-
 	}
+
 	/**
 	 * Este metodo nos borrara el comentario .
 	 *
@@ -459,10 +432,11 @@ class ControladorPrincipal extends CI_Controller
 	public function borracomentario()
 	{
 
-		$idcoment=$this->input->post('id_comentario');
+		$idcoment = $this->input->post('id_comentario');
 		$this->ModeloPrincipal->borrarcomentarios($idcoment);
 		echo 'okay';
 	}
+
 	/**
 	 * Este método nos mostrará las estadisticas .
 	 *
@@ -475,19 +449,74 @@ class ControladorPrincipal extends CI_Controller
 	{
 		$tipos = $this->ModeloPrincipal->cogertipos();
 		$this->mistipos = array();
-		foreach ($tipos as $tipo)
-		{
+		foreach ($tipos as $tipo) {
 			$this->mistipos[$tipo['id_tipo']] = $tipo['nombre_tipo'];
 		};
 
-		$this->count=array();
-		$cantidad=$this->ModeloPrincipal->cantidadtipos();
-		foreach ($cantidad as $valor)
-		{
+		$this->count = array();
+		$cantidad = $this->ModeloPrincipal->cantidadtipos();
+		foreach ($cantidad as $valor) {
 			$this->count[$valor['nombre_tipo']] = $valor['cantidad'];
 		};
 
 		$this->load->view('estadisticas');
+	}
+
+	/**
+	 * Este metodo nos realizara el alta de usuario .
+	 *
+	 * Este metodo sera el encargado de añadir al usuario a la base de datos.
+	 *
+	 */
+	public function altausuario()
+	{
+		$this->load->helper('url');
+		$this->load->helper('form');
+		$correo = $this->input->post('correo');
+		$contrasenia1 = $this->input->post('contrasenia1');
+
+//		$usua=$this->ModeloPrincipal->verusuarios();
+//		$this->usu= $usua[0];
+//		 foreach ($this->usu as $indice=>$valor)
+//	{
+//		echo $indice. $valor;
+//	}
+
+
+
+
+		$datos = array();
+		$datos['correo'] = $correo;
+		$datos['password'] = sha1($contrasenia1);
+		$datos['tipo'] = 'u';
+
+
+
+		$this->ModeloPrincipal->registrousuario($datos);
+
+//			$this->load->view('falloregistro');
+
+			header("Location:" . base_url() . 'home');
+		}
+
+	}
+
+	/**
+	 * Este metodo nos llevara la pagina del registro .
+	 *
+	 * Este metodo sera el encargado de mostrarnos la pagina para poder hacer un alta de usuario.
+	 *
+	 */
+	public function paginadelregistro()
+	{
+		$this->load->helper('url');
+		$this->load->helper('form');
+		$this->load->view('registro');
+	}
+	public function historia()
+	{
+		$this->load->helper('url');
+		$this->load->view('historia');
 	}
 	/**
 	 * Este metodo nos cerrara la sesion .
@@ -499,6 +528,6 @@ class ControladorPrincipal extends CI_Controller
 	public function cerrarsesion()
 	{
 		$this->session->sess_destroy();
-		header("Location:".base_url().'home');
+		header("Location:" . base_url() . 'home');
 	}
 }

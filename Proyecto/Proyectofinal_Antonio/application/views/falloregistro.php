@@ -1,10 +1,9 @@
 <?php
 //Nombre de autor:Antonio Barril Hernandez
-// Curso:2 DAW
-// Escuela: Escuela Virgen de Guadalupe
-// Proyecto fin de ciclo: Proyecto de Web de Gestión de Incidencias Municipales
-// Año:2020
-
+//Curso:2 DAW
+//Escuela: Escuela Virgen de Guadalupe
+//Proyecto fin de ciclo: Proyecto de Web de Gestión de Incidencias Municipales
+//Año:2020
 echo '
 		<!doctype html>
 		<html lang="en">
@@ -13,7 +12,7 @@ echo '
 			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 			<link href="' . base_url() . 'CSS/style.css" rel="stylesheet" type="text/css">
 			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-			<title>Inicio</title>
+			<title>Incidencias</title>
 		  </head>
 		  <body>
 			<div class="container-fluid" >
@@ -28,31 +27,10 @@ include('barrademenu.php');
 echo '
 				</div>
 				<div class="row" id="contenedor">
-					<div id="formulario">
-					
-						<form  action="' . base_url() . 'autenticacion" method="post" id="estilodellogin" class="p-4">
-						<div class="col-12 p-2" id="imagensenales">
-											<img src="' . base_url() . 'Imagenes/senales.png" class="img-fluid" alt="Es una imagen del inicio" longdesc="Se trata de una imagen " >
-					</div>
-						  <div class="form-group row" >
-							<label for="staticEmail" class="col-sm-2 col-form-label">Correo</label>
-							<div class="col-sm-10">
-							  <input type="text"  class="form-control"  id="staticEmail"  name="correo" placeholder="Correo electronico">
-							</div>
-						  </div>
-						  <div class="form-group row">
-							<label for="inputPassword" class="col-sm-2 col-form-label">Contraseña</label>
-							<div class="col-sm-10">		
-							  <input type="password" class="form-control" name="contrasenia" placeholder="Contraseña" required >
-							</div>
-						  </div>
-						  <div class="form-group row">
-							 <div class="col-sm-12" id="botondellogin">
-								<input type="submit" value="iniciar sesión"> 
-							</div>
-						  </div>
-						</form>
-					</div>
+					<div class="col-12" id="errorlogin">
+               			<p>Correo duplicado Porfavor especifique otro correo</p>
+               			<a class="nav" href="' .base_url(). 'registro"><button>registro</button></a>
+           			</div>
 				</div>
 			';
 

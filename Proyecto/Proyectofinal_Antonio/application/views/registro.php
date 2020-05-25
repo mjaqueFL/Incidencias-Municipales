@@ -1,9 +1,9 @@
 <?php
 //Nombre de autor:Antonio Barril Hernandez
-// Curso:2 DAW
-// Escuela: Escuela Virgen de Guadalupe
-// Proyecto fin de ciclo: Proyecto de Web de Gestión de Incidencias Municipales
-// Año:2020
+//Curso:2 DAW
+//Escuela: Escuela Virgen de Guadalupe
+//Proyecto fin de ciclo: Proyecto de Web de Gestión de Incidencias Municipales
+//Año:2020
 
 echo '
 		<!doctype html>
@@ -19,7 +19,7 @@ echo '
 			<div class="container-fluid" >
 				<div class="row">
 					<div class="col-12" id="header">
-						<img src="' . base_url() . 'Imagenes/prueba1.jpg" class="img-fluid" alt="Es una imagen del inicio" longdesc="Se trata de una imagen ">
+						<img src="' . base_url() . 'Imagenes/prueba1.jpg"  class="img-fluid" alt="Es una imagen del inicio" longdesc="Se trata de una imagen ">
 					</div>
 				</div>
 				<div class="row">
@@ -27,42 +27,47 @@ echo '
 include('barrademenu.php');
 echo '
 				</div>
-				<div class="row" id="contenedor">
-					<div id="formulario">
+				<div class="row " id="contenedor">
+				<div id="formulario">
 					
-						<form  action="' . base_url() . 'autenticacion" method="post" id="estilodellogin" class="p-4">
-						<div class="col-12 p-2" id="imagensenales">
-											<img src="' . base_url() . 'Imagenes/senales.png" class="img-fluid" alt="Es una imagen del inicio" longdesc="Se trata de una imagen " >
-					</div>
+						<form  action="'.base_url().'altausuario" method="post" id="estilodellogin" class="p-4">
 						  <div class="form-group row" >
-							<label for="staticEmail" class="col-sm-2 col-form-label">Correo</label>
+							<label for="Correo" class="col-sm-2 col-form-label">Correo electronico:</label>
 							<div class="col-sm-10">
-							  <input type="text"  class="form-control"  id="staticEmail"  name="correo" placeholder="Correo electronico">
+								<input type="text"  class="form-control" placeholder="correoflaso@gmail.com" required name="correo"  onblur="validarcorreo()" id="correo">								</div>
+							</div>
+						  <div class="form-group row">
+							<label for="Contraseña" class="col-sm-2 col-form-label">Contraseña</label>
+							<div class="col-sm-10">
+								<input type="password"  class="form-control"  placeholder="*********" required name="contrasenia1" id="contrasenia1">							
 							</div>
 						  </div>
 						  <div class="form-group row">
-							<label for="inputPassword" class="col-sm-2 col-form-label">Contraseña</label>
-							<div class="col-sm-10">		
-							  <input type="password" class="form-control" name="contrasenia" placeholder="Contraseña" required >
+							<label for="Verificar Contraseña" class="col-sm-2 col-form-label">Verificar Contraseña</label>
+							<div class="col-sm-10">
+							  <input type="password"   class="form-control" placeholder="*********" required name="contrasenia2" id="contrasenia2" onblur="validarcontrasenia()">
 							</div>
 						  </div>
 						  <div class="form-group row">
 							 <div class="col-sm-12" id="botondellogin">
-								<input type="submit" value="iniciar sesión"> 
+								<input type="submit" value="Registro" id="boton" disabled> 
 							</div>
 						  </div>
 						</form>
 					</div>
-				</div>
-			';
-
+				';
+echo '</div>';
 include('barrafooter.php');
 echo '
 			</div>
 			<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 			<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 			<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+			<script src="'.base_url().'js/funciones.js"></script>
 		  </body>
 		</html>
 	';
+
+
+
 ?>

@@ -79,3 +79,7 @@ $route['verincidencia/(:num)']='ControladorPrincipal/clickarincidencia/$1';
 $route['altacomentario']='ControladorPrincipal/altacomentario';
 $route['prueba']='ControladorPrincipal/prueba';
 $route['estadisticas']='ControladorPrincipal/estadisticas';
+$route['registro']='ControladorPrincipal/paginadelregistro';
+$route['altausuario']='ControladorPrincipal/altausuario';
+$route['historia']='ControladorPrincipal/historia';
+

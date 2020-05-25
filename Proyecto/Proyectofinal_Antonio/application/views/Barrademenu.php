@@ -12,8 +12,8 @@ if(isset($_SESSION['logeado']))
 			<a class="nav" href="' .base_url(). 'home">Inicio</a>						
 			<a class="nav" href="' .base_url(). 'estadisticas">Estadisticas</a>
 			<a class="nav" href="' .base_url(). 'incidencias">Incidencias</a>
-			<a class="nav" href="Historiadelapagina.html">Historia de la página</a>
-			<a class="nav" href="haztemiembro.html">Hazte miembro</a>
+			<a class="nav" href="'.base_url().'historia">Historia de la página</a>
+			<a class="nav" href="'.base_url().'registro">Hazte miembro</a>
 			<a class="nav" href="' .base_url(). 'cerrarsesion" onclick="recargar(\''.base_url().'home\')">Cerrar sesión</a>
 		</div>';
 }
@@ -24,8 +24,8 @@ else
 			<a class="nav" href="' .base_url(). 'home">Inicio</a>						
 			<a class="nav" href="' .base_url(). 'estadisticas">Estadisticas</a>
 			<a class="nav" href="' .base_url(). 'incidencias">Incidencias</a>
-			<a class="nav" href="Historiadelapagina.html">Historia de la página</a>
-			<a class="nav" href="haztemiembro.html">Hazte miembro</a>
+			<a class="nav" href="'.base_url().'historia">Historia de la página</a>
+			<a class="nav" href="'.base_url().'registro">Hazte miembro</a>
 			<a class="nav" href="' .base_url(). 'logearse">Login</a>
 		</div>
 	';
