@@ -4,7 +4,7 @@
 // Escuela: Escuela Virgen de Guadalupe
 // Proyecto fin de ciclo: Proyecto de Web de Gestión de Incidencias Municipales
 // Año:2020
-$i = 0;
+
 
 echo '
 		<!doctype html>
@@ -36,8 +36,9 @@ echo '
 if ($this->misincidencias == NULL) {
 	echo "<p>No hay incidencias</p>";
 } else {
+
 	foreach ($this->misincidencias as $indice => $valor) {
-		echo "<a href=" . base_url() . "Modificarincidencia/" . $i++ . "><div class='mx-1 p-1'>$valor</div></a>";
+		echo "<a href=" . base_url() . "Modificarincidencia/" . $indice . "><div class='mx-1 p-1'>$valor</div></a>";
 	}
 }
 
