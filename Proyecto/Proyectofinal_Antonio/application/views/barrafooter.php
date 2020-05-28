@@ -6,13 +6,13 @@
 // Año:2020
 echo '<div class="row" id="footer">
 					<div class=" col-lg-4 col-sm-12">
-						   <li><a href="PoliticaPrivacidad.html">POLÍTICA DE PRIVACIDAD</a> </li>
+						   <li><a href="' .base_url(). 'politica">POLÍTICA DE PRIVACIDAD</a> </li>
 					</div>
 					 <div class="col-lg-4 col-sm-12">
-					 <li><a href="Cookies.html">POLÍTICA DE COOKIES</a> </li>
+					 <li><a href="' .base_url(). 'cookies">POLÍTICA DE COOKIES</a> </li>
 					 </div>
 					 <div class="col-lg-4 col-sm-12">
-					   <li><a href="avisolegal.html"> AVISO LEGAL</a></li>
+					   <li><a href="' .base_url(). 'avisolegal"> AVISO LEGAL</a></li>
 					 </div>
 				</div>
 	';

@@ -13,7 +13,7 @@ echo '
 			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 			<link href="' . base_url() . 'CSS/style.css" rel="stylesheet" type="text/css">
 			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-			<title>Inicio</title>
+			<title>Historia</title>
 		  </head>
 		  <body>
 			<div class="container-fluid" >
@@ -29,8 +29,19 @@ echo '
 				</div>
 				<div class="row " id="contenedor">
 				
-				<div></div>
-				<div></div>
+				<div>
+					<p>
+						 Esta pagina nacio de las necesidades que vi a la hora de sacarme el carnet de conducir debido a los tremendos socabones que existen alrededor de todo el pueblo, algunas señales pintadas,
+						 otras caidas y muchas de ellas que harian faltas no la tienen, dicho esto se me ocurrio hacer mi proyecto de grado superior para intentar de una forma mas simple las necesidades
+						 de estas.Si todo va bien a la hora de presentar el proyecto podria fomentarse la forma de expandirlo
+					 </p>
+				 </div>
+				<div>
+					<p>
+						El desarollador de esta aplicacion se llama: Antonio Barril Hernandez programador y estudiante de 2DAW en la escuela virgen de guadalupe un alumno que desea aprender
+						y investigar tecnologias, aplicado y trabajador, gracias a su esfuerzo llego al final cuando el no pensaba que llegaria. 
+					</p>		
+				</div>
 				<div></div>
 				
 				

@@ -27,7 +27,7 @@ CREATE TABLE `tipo_incidencia` (
 
 CREATE TABLE `usuario` (
   `id_usuario` smallint(5) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  `correo` varchar(80) COLLATE utf8mb4_spanish_ci DEFAULT NULL unique,
+  `correo` varchar(80) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   `password` varchar(255) COLLATE utf8mb4_spanish_ci DEFAULT NULL,
   `tipo` enum('a','u') COLLATE utf8mb4_spanish_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;

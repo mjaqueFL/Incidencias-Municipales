@@ -1760,6 +1760,352 @@
       ],
       "value": ""
     }]
+  }, {
+    "id": "957b932c-5131-4f80-b73e-90a1eebacc75",
+    "name": "6.-Estadisticas",
+    "commands": [{
+      "id": "c8af6fb3-2b9d-44a9-997e-c04da2153eb1",
+      "comment": "",
+      "command": "open",
+      "target": "/Proyectofinal_Antonio/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ab88ef25-d214-4d97-acf0-2001960cef16",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9b3a10ad-b9b3-4b90-9359-26b288e8948f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "90ccd2d3-f708-4234-b6db-567cd4926665",
+      "comment": "",
+      "command": "assertConfirmation",
+      "target": "¿Quieres aceptar el uso de cookies?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e24ee219-3684-4689-9cac-57001ba757a4",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bc11fa9f-0cd8-4843-9640-488340554f02",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Estadisticas",
+      "targets": [
+        ["linkText=Estadisticas", "linkText"],
+        ["css=.nav:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Estadisticas')]", "xpath:link"],
+        ["xpath=//div[@id='menu']/a[2]", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost/Proyectofinal_Antonio/estadisticas']", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Estadisticas')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c38a1667-7086-41c5-87b7-16093f311a42",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "linkText=Estadisticas",
+      "targets": [
+        ["linkText=Estadisticas", "linkText"],
+        ["css=.nav:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Estadisticas')]", "xpath:link"],
+        ["xpath=//div[@id='menu']/a[2]", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost/Proyectofinal_Antonio/estadisticas']", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Estadisticas')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "23721588-a56d-4a39-a432-2ce2260fab06",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Login",
+      "targets": [
+        ["linkText=Login", "linkText"],
+        ["css=.nav:nth-child(6)", "css:finder"],
+        ["xpath=//a[contains(text(),'Login')]", "xpath:link"],
+        ["xpath=//div[@id='menu']/a[6]", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost/Proyectofinal_Antonio/logearse']", "xpath:href"],
+        ["xpath=//a[6]", "xpath:position"],
+        ["xpath=//a[contains(.,'Login')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9d8f5eeb-8e50-49b1-94fc-552f61441659",
+      "comment": "",
+      "command": "click",
+      "target": "id=staticEmail",
+      "targets": [
+        ["id=staticEmail", "id"],
+        ["name=correo", "name"],
+        ["css=#staticEmail", "css:finder"],
+        ["xpath=//input[@id='staticEmail']", "xpath:attributes"],
+        ["xpath=//form[@id='estilodellogin']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bd96e77f-17a3-404d-bb66-dd6f74e4b929",
+      "comment": "",
+      "command": "type",
+      "target": "id=staticEmail",
+      "targets": [
+        ["id=staticEmail", "id"],
+        ["name=correo", "name"],
+        ["css=#staticEmail", "css:finder"],
+        ["xpath=//input[@id='staticEmail']", "xpath:attributes"],
+        ["xpath=//form[@id='estilodellogin']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "correo2@gmail.com"
+    }, {
+      "id": "3462f722-193a-4a4a-98a7-b034d8655cf6",
+      "comment": "",
+      "command": "click",
+      "target": "name=contrasenia",
+      "targets": [
+        ["name=contrasenia", "name"],
+        ["css=.form-group:nth-child(3) .form-control", "css:finder"],
+        ["xpath=//input[@name='contrasenia']", "xpath:attributes"],
+        ["xpath=//form[@id='estilodellogin']/div[3]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "80b45a7a-46ac-4a78-8a41-c6c6a938a479",
+      "comment": "",
+      "command": "type",
+      "target": "name=contrasenia",
+      "targets": [
+        ["name=contrasenia", "name"],
+        ["css=.form-group:nth-child(3) .form-control", "css:finder"],
+        ["xpath=//input[@name='contrasenia']", "xpath:attributes"],
+        ["xpath=//form[@id='estilodellogin']/div[3]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": "1234"
+    }, {
+      "id": "a875b764-b74a-4ec5-8a65-e77223a50d37",
+      "comment": "",
+      "command": "click",
+      "target": "css=#botondellogin > input",
+      "targets": [
+        ["css=#botondellogin > input", "css:finder"],
+        ["xpath=//input[@value='iniciar sesión']", "xpath:attributes"],
+        ["xpath=//div[@id='botondellogin']/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4b8ea7ca-8010-409b-8373-375b0018476e",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Incidencias",
+      "targets": [
+        ["linkText=Incidencias", "linkText"],
+        ["css=.nav:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Incidencias')]", "xpath:link"],
+        ["xpath=//div[@id='menu']/a[3]", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost/Proyectofinal_Antonio/incidencias']", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Incidencias')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0db839db-c49e-41a8-96df-5349d39f46d1",
+      "comment": "",
+      "command": "click",
+      "target": "css=#menuincidencias > a:nth-child(5) > div",
+      "targets": [
+        ["css=#menuincidencias > a:nth-child(5) > div", "css:finder"],
+        ["xpath=//div[@id='menuincidencias']/a[2]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/a[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5197b6ee-857f-4fcc-92b4-815716f0c422",
+      "comment": "",
+      "command": "click",
+      "target": "css=.col-lg-3:nth-child(6) > input",
+      "targets": [
+        ["css=.col-lg-3:nth-child(6) > input", "css:finder"],
+        ["xpath=(//input[@name='id_incidencia[]'])[6]", "xpath:attributes"],
+        ["xpath=//div[@id='contenedorborrar']/div[6]/input", "xpath:idRelative"],
+        ["xpath=//div[6]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8b5e47ba-dc05-4321-b142-14efd2792846",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(4)",
+      "targets": [
+        ["css=input:nth-child(4)", "css:finder"],
+        ["xpath=//input[@value='borrar']", "xpath:attributes"],
+        ["xpath=//form[@id='formularioborrar']/input", "xpath:idRelative"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "98094482-047c-4f21-8ce0-0959637c6599",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Estadisticas",
+      "targets": [
+        ["linkText=Estadisticas", "linkText"],
+        ["css=.nav:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Estadisticas')]", "xpath:link"],
+        ["xpath=//div[@id='menu']/a[2]", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost/Proyectofinal_Antonio/estadisticas']", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Estadisticas')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "2473eca5-1159-4a94-8985-b5c789875d91",
+    "name": "7.-Alta de usuario",
+    "commands": [{
+      "id": "d11a3dff-d10a-4826-aacb-141d52e2b5cc",
+      "comment": "",
+      "command": "open",
+      "target": "/Proyectofinal_Antonio/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "813d43b4-195b-4853-a254-47ecfe456a67",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1936x1056",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c1aa3dd8-c1da-4062-bb39-230211abd900",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Cerrar sesión",
+      "targets": [
+        ["linkText=Cerrar sesión", "linkText"],
+        ["css=.nav:nth-child(5)", "css:finder"],
+        ["xpath=//a[contains(text(),'Cerrar sesión')]", "xpath:link"],
+        ["xpath=//a[@onclick=\"recargar('http://localhost/Proyectofinal_Antonio/home')\"]", "xpath:attributes"],
+        ["xpath=//div[@id='menu']/a[5]", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost/Proyectofinal_Antonio/cerrarsesion']", "xpath:href"],
+        ["xpath=//a[5]", "xpath:position"],
+        ["xpath=//a[contains(.,'Cerrar sesión')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "32b30f05-5550-4ead-a559-0f64ba47a64b",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Hazte miembro",
+      "targets": [
+        ["linkText=Hazte miembro", "linkText"],
+        ["css=.nav:nth-child(5)", "css:finder"],
+        ["xpath=//a[contains(text(),'Hazte miembro')]", "xpath:link"],
+        ["xpath=//div[@id='menu']/a[5]", "xpath:idRelative"],
+        ["xpath=//a[@href='http://localhost/Proyectofinal_Antonio/registro']", "xpath:href"],
+        ["xpath=//a[5]", "xpath:position"],
+        ["xpath=//a[contains(.,'Hazte miembro')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2948c9e9-73b0-47b8-9f87-47131f8c015b",
+      "comment": "",
+      "command": "click",
+      "target": "id=correo",
+      "targets": [
+        ["id=correo", "id"],
+        ["name=correo", "name"],
+        ["css=#correo", "css:finder"],
+        ["xpath=//input[@id='correo']", "xpath:attributes"],
+        ["xpath=//form[@id='estilodellogin']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ce1c628e-34d6-4417-b1f1-57b3381f118b",
+      "comment": "",
+      "command": "type",
+      "target": "id=correo",
+      "targets": [
+        ["id=correo", "id"],
+        ["name=correo", "name"],
+        ["css=#correo", "css:finder"],
+        ["xpath=//input[@id='correo']", "xpath:attributes"],
+        ["xpath=//form[@id='estilodellogin']/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "correo123@gmail.com"
+    }, {
+      "id": "4c18be8a-ce0c-497c-b5ad-a8571b4843f2",
+      "comment": "",
+      "command": "type",
+      "target": "id=contrasenia1",
+      "targets": [
+        ["id=contrasenia1", "id"],
+        ["name=contrasenia1", "name"],
+        ["css=#contrasenia1", "css:finder"],
+        ["xpath=//input[@id='contrasenia1']", "xpath:attributes"],
+        ["xpath=//form[@id='estilodellogin']/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "123"
+    }, {
+      "id": "fd4c7db7-5f3d-46af-919e-4fba5b5e1c01",
+      "comment": "",
+      "command": "type",
+      "target": "id=contrasenia2",
+      "targets": [
+        ["id=contrasenia2", "id"],
+        ["name=contrasenia2", "name"],
+        ["css=#contrasenia2", "css:finder"],
+        ["xpath=//input[@id='contrasenia2']", "xpath:attributes"],
+        ["xpath=//form[@id='estilodellogin']/div[3]/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": "123"
+    }, {
+      "id": "39c5a628-384b-459e-9bcc-dca20cb1632b",
+      "comment": "",
+      "command": "click",
+      "target": "id=estilodellogin",
+      "targets": [
+        ["id=estilodellogin", "id"],
+        ["css=#estilodellogin", "css:finder"],
+        ["xpath=//form[@id='estilodellogin']", "xpath:attributes"],
+        ["xpath=//div[@id='formulario']/form", "xpath:idRelative"],
+        ["xpath=//form", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "066a8899-8928-4b7a-bf69-cab4eee78173",
+      "comment": "",
+      "command": "click",
+      "target": "id=boton",
+      "targets": [
+        ["id=boton", "id"],
+        ["css=#boton", "css:finder"],
+        ["xpath=//input[@id='boton']", "xpath:attributes"],
+        ["xpath=//div[@id='botondellogin']/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }]
   }],
   "suites": [{
     "id": "42e828c6-190c-4635-a0b4-9287f44db1d4",

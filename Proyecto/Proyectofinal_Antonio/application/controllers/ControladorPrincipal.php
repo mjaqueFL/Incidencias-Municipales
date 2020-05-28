@@ -87,7 +87,8 @@ class ControladorPrincipal extends CI_Controller
 
 		//comprobamos que es correcto
 
-		$res = $this->ModeloPrincipal->autenticar($usuario, sha1($password));
+		$res = $this->ModeloPrincipal->autenticar($usuario, $password);
+
 		if (!$res) {
 			$this->load->view('errror');
 		} else {
@@ -474,7 +475,7 @@ class ControladorPrincipal extends CI_Controller
 		$this->load->helper('form');
 		$correo = $this->input->post('correo');
 		$contrasenia1 = $this->input->post('contrasenia1');
-
+		$passwordhash=password_hash($contrasenia1,PASSWORD_BCRYPT);
 //		$usua=$this->ModeloPrincipal->verusuarios();
 //		$this->usu= $usua[0];
 //		 foreach ($this->usu as $indice=>$valor)
@@ -487,17 +488,15 @@ class ControladorPrincipal extends CI_Controller
 
 		$datos = array();
 		$datos['correo'] = $correo;
-		$datos['password'] = sha1($contrasenia1);
+		$datos['password'] = $passwordhash;
 		$datos['tipo'] = 'u';
-
-
-
 		$this->ModeloPrincipal->registrousuario($datos);
+		return $this->index();
 
 //			$this->load->view('falloregistro');
 
-			header("Location:" . base_url() . 'home');
-		}
+//			header("Location:" . base_url() . 'home');
+
 
 	}
 
@@ -513,10 +512,31 @@ class ControladorPrincipal extends CI_Controller
 		$this->load->helper('form');
 		$this->load->view('registro');
 	}
+	/**
+	 * Este metodo nos llevara la pagina de la historia .
+	 *
+	 * Este metodo sera el encargado de mostrarnos la pagina de historia de la pagina.
+	 *
+	 */
 	public function historia()
 	{
 		$this->load->helper('url');
 		$this->load->view('historia');
+	}
+	public function avisolegal()
+	{
+		$this->load->helper('url');
+		$this->load->view('avisolegal');
+	}
+	public function politica()
+	{
+		$this->load->helper('url');
+		$this->load->view('politica');
+	}
+	public function cookies()
+	{
+		$this->load->helper('url');
+		$this->load->view('cookie');
 	}
 	/**
 	 * Este metodo nos cerrara la sesion .

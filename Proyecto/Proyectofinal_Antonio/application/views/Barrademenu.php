@@ -13,7 +13,6 @@ if(isset($_SESSION['logeado']))
 			<a class="nav" href="' .base_url(). 'estadisticas">Estadisticas</a>
 			<a class="nav" href="' .base_url(). 'incidencias">Incidencias</a>
 			<a class="nav" href="'.base_url().'historia">Historia de la página</a>
-			<a class="nav" href="'.base_url().'registro">Hazte miembro</a>
 			<a class="nav" href="' .base_url(). 'cerrarsesion" onclick="recargar(\''.base_url().'home\')">Cerrar sesión</a>
 		</div>';
 }

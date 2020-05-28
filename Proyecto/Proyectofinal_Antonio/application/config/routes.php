@@ -82,4 +82,7 @@ $route['estadisticas']='ControladorPrincipal/estadisticas';
 $route['registro']='ControladorPrincipal/paginadelregistro';
 $route['altausuario']='ControladorPrincipal/altausuario';
 $route['historia']='ControladorPrincipal/historia';
+$route['avisolegal']='ControladorPrincipal/avisolegal';
+$route['politica']='ControladorPrincipal/politica';
+$route['cookies']='ControladorPrincipal/cookies';
 
