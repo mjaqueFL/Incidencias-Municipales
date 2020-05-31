@@ -475,27 +475,18 @@ class ControladorPrincipal extends CI_Controller
 		$this->load->helper('form');
 		$correo = $this->input->post('correo');
 		$contrasenia1 = $this->input->post('contrasenia1');
-		$passwordhash=password_hash($contrasenia1,PASSWORD_BCRYPT);
-//		$usua=$this->ModeloPrincipal->verusuarios();
-//		$this->usu= $usua[0];
-//		 foreach ($this->usu as $indice=>$valor)
-//	{
-//		echo $indice. $valor;
-//	}
-
-
-
+		$passwordhash = password_hash($contrasenia1, PASSWORD_BCRYPT);
 
 		$datos = array();
 		$datos['correo'] = $correo;
 		$datos['password'] = $passwordhash;
 		$datos['tipo'] = 'u';
-		$this->ModeloPrincipal->registrousuario($datos);
-		return $this->index();
-
-//			$this->load->view('falloregistro');
-
-//			header("Location:" . base_url() . 'home');
+		$error = $this->ModeloPrincipal->registrousuario($datos);
+		if (!empty($error)) {
+			$this->load->view('falloregistro');
+		} else {
+			return $this->index();
+		}
 
 
 	}
@@ -512,6 +503,7 @@ class ControladorPrincipal extends CI_Controller
 		$this->load->helper('form');
 		$this->load->view('registro');
 	}
+
 	/**
 	 * Este metodo nos llevara la pagina de la historia .
 	 *
@@ -523,21 +515,44 @@ class ControladorPrincipal extends CI_Controller
 		$this->load->helper('url');
 		$this->load->view('historia');
 	}
+
+	/**
+	 * Este metodo nos llevara la pagina de la aviso legal .
+	 *
+	 * Este metodo sera el encargado de mostrarnos la pagina de aviso legal de la pagina.
+	 *
+	 */
 	public function avisolegal()
 	{
 		$this->load->helper('url');
 		$this->load->view('avisolegal');
 	}
+
+	/**
+	 * Este metodo nos llevara la pagina de la politica .
+	 *
+	 * Este metodo sera el encargado de mostrarnos la pagina de politica de la pagina.
+	 *
+	 */
 	public function politica()
 	{
 		$this->load->helper('url');
 		$this->load->view('politica');
 	}
+
+	/**
+	 * Este metodo nos llevara la pagina de la cookies .
+	 *
+	 * Este metodo sera el encargado de mostrarnos la pagina de cookies de la pagina.
+	 *
+	 */
 	public function cookies()
 	{
 		$this->load->helper('url');
 		$this->load->view('cookie');
 	}
+
+
 	/**
 	 * Este metodo nos cerrara la sesion .
 	 *

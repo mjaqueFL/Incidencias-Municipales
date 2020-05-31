@@ -5,43 +5,57 @@
 /* Año:2020  */
 
 /*Importando las fuentes necesarias*/
-/*<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200&family=Manuale&family=Podkova&display=swap" rel="stylesheet">*/
 /*Colores*/
 /*Color azul muy oscuro: #222831*/
 /*Color azul marino:#30475e*/
 /*dorado:#f2a365*/
 /*Gris: #ececec*/
-
-
-/*html {*/
-/*	!*width: 1300px;*!*/
-/*	margin: 0 auto;*/
-/*}*/
+@font-face {
+	font-family: "Crimson";
+	src: url("../fuentes/Crimson_Pro/static/CrimsonPro-Regular.ttf");
+}
+@font-face {
+	font-family: "Podkova";
+	src: url("../fuentes/Podkova/static/Podkova-Regular.ttf");
+}
+@font-face {
+	font-family: "Manuale";
+	src: url("../fuentes/Manuale/static/Manuale-Regular.ttf");
+}
+html {
+	/*width: 1300px;*/
+	margin: 0 auto;
+}
+/*css para las imagenes*/
 
 img {
 	width: 100%;
 	height: auto;
 }
+/*css para los enlaces*/
 
 a {
 	text-decoration: none;
 }
+a:hover
+{
+	text-decoration: none;
+}
 
-
+/*css para la cabecera*/
 
 #header {
 	width: 100%;
 	padding: 0;
 	margin: 0 auto;
 }
-
+/*css para la imagen de la cabecera*/
 #header img {
-	width: 700px;
+	width:40%;
 	display: block;
 	margin: auto;
-	/*margin-left: 500px;*/
 }
-
+/*css para el menu*/
 #menu {
 	display: flex;
 	flex-direction:row;
@@ -50,15 +64,16 @@ a {
 	align-items: flex-start;
 	padding: 0;
 	overflow: hidden;
+	font-family: Podkova !important;
 
 
 }
-
+/*css para los el menu del nav*/
 #menu a:hover {
 	color: #ececec;
 	text-decoration: none;
 }
-
+/*css para el nav*/
 .nav {
 	flex-grow: 1;
 	background: #222831;
@@ -68,67 +83,84 @@ a {
 	font-size: 20px;
 	padding:10px 20px;
 	border: 2px solid #ececec;
+	font-family: Podkova !important;
 }
-
+/*css para los enlaces del footer*/
 footer {
 	text-align: left;
 
 	font-size: 13px;
 }
-
+/*css para el footer*/
 #footer {
 
 	background-color: #30475e;
 	text-align: center;
-
+	font-family: Podkova !important;
 	padding-top: 10px;
 }
-
+/*css para los li del footer*/
 #footer li {
 	display: inline-block;
 	text-align: center;
+	font-family: Podkova !important;
 }
+/*css para los enlaces del footer*/
 
 #footer a {
 	color: #f2a365;
+	font-family: Podkova !important;
 }
+/*css para los enlaces del footer*/
 
 #footer a:hover {
 	color: #ececec;
 	text-decoration: none;
-}
+	font-family: Podkova !important;
+	}
+/*css para el contenedor principal*/
 
 #contenedor {
 	background-color: #f1eade;
 	/*padding: 10px;*/
 	font-size: 15px;
 	min-height: 650px;
+	font-family: Manuale !important;
 }
+/*css para el h4*/
 
 #contenedor h4 {
 	text-align: center;
 	font-style: italic;
 	text-decoration: underline;
+	font-family: Podkova !important;
 }
+/*css para el boton*/
+
 #contenedor button
 {
 	width:100%;
 	background-color: #30475e;
 	color:#f2a365;
 }
+/*css para los titulos incidencias*/
 
 #titulodelasincidencias
 {
 	height: 50px;
 }
+/*css para los parrafos*/
+
 #misincidencias p
 {
 	font-weight: bold;
 	text-decoration: underline;
 	font-size: 18px;
 	text-align: center;
-
+	font-family: Manuale !important;
 }
+/*css para los divs*/
+
 #misincidencias div
 {
 	height: 40px;
@@ -137,11 +169,17 @@ footer {
 	color:#f2a365 ;
 	border:1px solid #ececec;
 	line-height: 35px;
+	font-family: Crimson !important;
 }
+/*css para los hover */
+
 #misincidencias a:hover {
 	color: #ececec !important;
 	text-decoration: none;
+	font-family: Podkova !important;
 }
+/*css para los divs*/
+
 #menuincidencias div
 {
 	height: 40px;
@@ -150,17 +188,23 @@ footer {
 	color:#30475e ;
 	border:1px solid #ececec;
 	line-height: 35px;
+	font-family: Manuale !important;
 }
+/*css para el hover del menu*/
 #menuincidencias a:hover {
 	color: #30475e;
 	text-decoration: none;
+	font-family: Podkova !important;
 }
 /*Login estilo*/
 #formulario {
 	text-align: center;
 	width: 100%;
 	margin: auto;
+	font-family: Manuale !important;
 }
+/*css para el login*/
+
 #estilodellogin
 {
 	width:61.53%;/*Pasamos de 800px entre 1300*/
@@ -169,22 +213,32 @@ footer {
 	background-color: #ececec;
 	padding: 10px;
 	margin: auto;
+	font-family: Manuale !important;
 
 }
+/*css para el formulario modificar*/
+
 #formulariomodifi
 {
 
 	text-align: center;
 	margin: auto;
 }
+/*css para que el boton del login*/
+
 #botondellogin
 {
 	text-align: center;
+	font-family: Podkova !important;
 }
+/*css para el boton*/
+
 #contenedor  button
 {
 	width: 40% !important;
 }
+/*css para la lista de incidencias*/
+
 #incidenciaslista div
 {
 
@@ -194,33 +248,40 @@ footer {
 	color:#f2a365 ;
 	border:1px solid #ececec;
 	line-height: 35px;
+	font-family: Manuale !important;
 
 }
+/*css para que esten centrados los tipos*/
 #filtros
 {
 
 	text-align: center;
 }
+/*css para a la hora de añadir tenga el mismo espacio*/
 .rellenartitulo
 {
 	width: 303px;
 }
+/*css para el formulario de borrar incidencia*/
 #formularioborrar
 {
 	width: 100%;
 	text-align: center;
-
+	font-family: Podkova !important;
 
 }
+/*imagen que tendra el login*/
 #imagensenales
 {
 	width: 40%;
 	margin: auto;
 }
+/*css para los filtros*/
 #filtrosss
 {
 	display: inline-block;
 }
+/*css para el borrado*/
 #contenedorborrar a
 {
 	padding:5px;
@@ -228,13 +289,67 @@ footer {
 	background-color: #30475e;
 	color:#f2a365 ;
 	border:1px solid #ececec;
+	font-family: Manuale !important;
 
 }
+#parrafo1historia
+{
+	text-align: justify;
+	font-style: italic;
 
+}
+#parrafo2{
+	text-align: justify;
+	font-style: italic;
+}
+/*estilo para la imagen de historia*/
+#fotoprota img
+{
+	width: 30% !important;
+	text-align: center !important;
+	margin: 0 auto !important;
+	padding-bottom: 5px !important;
+}
+/*Estilo que tendran todas las paginas legales*/
+.legales
+{
+	margin-left: 10px;
+	margin-right: 10px;
+}
+/*Estilo para elboton de alta de comentario*/
+#botonanadircomentario
+{
+ 	text-align: right;
+	padding-top: 10px;
+}
+
+/*div comentarios*/
+#estilocomentarios
+{
+
+	background-color: #30475e;
+	color:#f2a365 ;
+	width: 100% !important;
+}
+/*Como saldran los comentarios al admin*/
+#estilocomentariosadmin
+{
+	background-color:#f1eade ;
+	color: black;
+	border-radius: 1px ;
+	text-align: center;
+}
+#estilocomentariosadmin button
+{
+width: 100% !important;
+}
+/*para resaltar*/
+
+/*Esta media query se aplicara cuando se alcanze la forma de pantalla de movil*/
 @media (max-width: 40em) {
 	html
 	{
-		min-width: 474px;
+		min-width: 36.46153846153846% !important;/*474px de 1300px */
 	}
 	#menu {
 		width: 100%;
@@ -278,4 +393,5 @@ footer {
 	{
 		margin:auto;
 	}
+
 }

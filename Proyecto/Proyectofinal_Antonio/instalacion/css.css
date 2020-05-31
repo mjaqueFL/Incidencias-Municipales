@@ -1,0 +1,99 @@
+html
+{
+	/*width: 1300px;*/
+	margin: 0 auto;
+	background-color: #dbfff7;
+
+}
+
+body
+{
+	width: 100%;
+	text-align: center;
+	margin-top: 50px !important;
+
+}
+
+/*Estilo contenedor de los 2 PHP de Instalación*/
+#conteiner
+{
+	width: 100%;
+	overflow: hidden;
+	background-color: #dbfff7;
+	height: 400px;
+
+}
+/*Estilo index.php ->Instalacon*/
+
+/*Div siguiente*/
+#formulario{
+	/*width:800px;*/
+	width: 61.53846153846154% !important;
+	text-align: center;
+	margin: 0 auto !important;
+	float: left;
+
+}
+#boton
+{
+	text-align: center;
+}
+/*Div contiene img */
+#LOGO img
+{
+	width: 20%;
+	float: right;
+}
+/*Estilo Logo Montijo*/
+img
+ {
+	 width: 100%;
+	 height: auto;
+ }
+
+
+/*Estilo Instalacion2.php ->Instalación*/
+form{
+	display: inline-block;
+	text-align: end;
+}
+input[type=submit]
+{
+	text-align: center;
+}
+#alert{
+	font-size: 1em;
+	color: red;
+	text-align: center;
+	padding: 15px 0.7692307692307692%;/*10 px de 1300px*/
+	border:1px red solid ;/*10px de 1300px*/
+	background-color: white;
+	min-height: 50px;
+
+}
+#botonreset
+{
+	float: left;
+}
+#botonhnenviar
+{
+	float: right;
+}
+@media (max-width: 40em) {
+	#conteiner
+	{
+		text-align: center !important;
+	}
+	#formulario
+	{
+		width: 100% !important;
+	}
+	#LOGO img
+	{
+		width: 30%;
+		float: none;
+		margin-top: 20px;
+		text-align: center !important;
+	}
+
+}

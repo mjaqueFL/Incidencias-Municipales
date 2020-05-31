@@ -53,6 +53,7 @@ $attributes =array('class'=> 'ControladorPrincipal','id'=>'myform');
 			<meta charset="utf-8">
 			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 			<link href="'.base_url().'CSS/style.css" rel="stylesheet" type="text/css">
+			<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
 			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 			<title>Modificar Incidencia</title>
 		  </head>
@@ -60,7 +61,7 @@ $attributes =array('class'=> 'ControladorPrincipal','id'=>'myform');
 			<div class="container-fluid" >
 				<div class="row">
 					<div class="col-12" id="header">
-						<img src="'.base_url().'Imagenes/prueba1.jpg" class="img-fluid" alt="Es una imagen del inicio" longdesc="Se trata de una imagen ">
+						<img src="'.base_url().'imagenes/prueba1.jpg" class="img-fluid" alt="Es una imagen del inicio" longdesc="Se trata de una imagen ">
 					</div>
 				</div>
 				<div class="row">
