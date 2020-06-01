@@ -20,18 +20,21 @@ $inp_idclase=array(
 $inp_descripcion=array(
 	'name'=>'descripcioninciencia',
 	'id'=>'ins_idclase',
+	'style'=> 'text-align:justify',
 	'value'=>$this->clase['descripcion'],
 );
 $inp_idfecha=array(
 	'name'=>'fechaincidencia',
 	'id'=>'ins_idclase',
 	'size'=>'38',
+	'style'=> 'text-align:center',
 	'value'=>$this->clase['fecha'],
 );
 $inp_idubicacion=array(
 	'name'=>'ubicacionincidencia',
 	'id'=>'ins_idclase',
 	'size'=>'38',
+	'style'=> 'text-align:center',
 	'value'=>$this->clase['ubicacion'],
 );
 
@@ -53,6 +56,7 @@ $attributes =array('class'=> 'ControladorPrincipal','id'=>'myform');
 			<meta charset="utf-8">
 			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 			<link href="'.base_url().'CSS/style.css" rel="stylesheet" type="text/css">
+			<meta name="author" content="Antonio Barril Hernandez">
 			<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
 			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 			<title>Modificar Incidencia</title>
@@ -101,7 +105,6 @@ include('barrademenu.php');
 
 
 echo'
-<button id="Ajax">Boton</button>
 </div>
 </div>
 				</div>

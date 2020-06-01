@@ -36,6 +36,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+		<meta name="author" content="Antonio Barril Hernandez">
 		<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200&family=Manuale&family=Podkova&display=swap" rel="stylesheet">
 		<?php echo '<link href="' . base_url() . 'CSS/style.css" rel="stylesheet" type="text/css">'?>
 		<title>Estadisticas</title>

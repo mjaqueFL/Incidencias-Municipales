@@ -21,6 +21,7 @@ echo '
 			<link href="' . base_url() . 'CSS/style.css" rel="stylesheet" type="text/css">
 			<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200&family=Manuale&family=Podkova&display=swap" rel="stylesheet">
 			<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+			<meta name="author" content="Antonio Barril Hernandez">
 			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 			<title>Inicio</title>
 		  </head>

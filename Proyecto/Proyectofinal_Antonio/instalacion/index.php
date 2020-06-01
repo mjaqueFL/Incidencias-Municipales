@@ -72,27 +72,25 @@ INSERT INTO `tipo_incidencia` (`nombre_tipo`) VALUES
 ('transito');
 
 INSERT INTO `incidencia` (`titulo`,`descripcion`,`fecha`,`ubicacion`,`tipo_incidencia`,`id_usuario`) VALUES
-('había','una vez','2020-12-03','montijo',1,1),
-('erase','una vez','2020-11-03','montijo',1,2),
-('pepe','un cafe','2020-08-03','montijo',2,1),
-('matilda','se tiro','2020-04-13','montijo',2,1),
-('toulouse','un perezoso llamado juanjo','2020-12-15','montijo',1,1),
-('kervo','una vez se durmio','2020-12-30','montijo',1,2),
-('danubia','una vez se durmio','2020-12-30','montijo',3,2),
-('fenrir','una vez se durmio','2020-12-30','montijo',3,2),
-('cacatua','una vez se durmio','2020-12-30','montijo',3,2),
-('aaaaaa','una vez se durmio','2020-12-30','montijo',3,2);
+('Señal caida','Hay una señal caida cerca del ambulatorio desde hace 2 meses y parece que nadie la ve','2020-12-03','montijo',1,1),
+('Ceda el paso','Debería existir un ceda al paso en la calle que da acceso a la freiduría.','2020-11-03','montijo',1,2),
+('Gran agujero','Iba el otro dia para el mercadona con el coche y lo sufri en mi coche','2020-08-03','montijo',2,1),
+('Necesidad de un semaforo','En el cruce de la plaza que conecta con el restaurante deben ponerlo ya que van los coches como locos','2020-04-13','montijo',2,1),
+('Paso de peatones necesario','Se necesita un paso de peatones cerca del ambulatorio porfavor que las personas mayores tardan mas en cruzar','2020-12-15','montijo',1,1),
+('Señal pintada','Hay varias señales pintadas con spray negro por el pueblo que son un peligro para la gente','2020-12-30','montijo',1,2),
+('Paso de peatones sin pintura','Hay un paso de peatones cerca de la discoteca que apenas se ve y le vendria bien una capa de pintura','2020-12-30','montijo',3,3),
+('Semaforo con insectos','El semaforo a la salida de la piscina tiene un panal de avispas y no deja ver cuando esta en rojo','2020-12-30','montijo',3,3),
+('Cesped que obstaculiza','El cesped que ha crecido cerca de unos aparcamiento no permite que los coches circulen bien','2020-12-30','montijo',3,3);
+
 
 INSERT INTO `comentario`(`texto_comentario`, `id_incidenciacomn`) VALUES 
 ('ESTA PAGINA ES GENIAL ',1),
-('debe mejorar ',2),
-('juanjo estuvo aqui ',3),
-('sabes que eso es mentira? ',4),
-('esto lo vi el otro dia ',5),
-('pepepepepepepepepepe ',6),
-('anpan anpan anpan anpan ',3),
-('toulouse el chueco ',2),
-('kervo el dormilon ',4);
+('Debe mejorar ',2),
+('Juanjo y yo pasamos el otro dia por aqui',3),
+('Sabes que eso es mentira? ',4),
+('Esto lo vi el otro dia ',5),
+('Nunca antes lo habia notado gracias! ',6);
+
 
 
   

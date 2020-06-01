@@ -15,6 +15,7 @@ $inp_tituloincidencia=array(
 	'name'=>'tituloincidencia',
 	'id'=>'nombreclase',
 	'size'=>'232',
+	'style'=> 'width:100%',
 	'readonly' => 'readonly',
 	'value'=>$this->visualizadon['titulo'],
 );
@@ -26,6 +27,7 @@ $inp_descripcion=array(
 	'readonly' => 'readonly',
 	'rows' => 4,
 	'cols' => 232,
+	'style'=> 'width:100%',
 	'value'=>$this->visualizadon['descripcion'],
 );
 $inp_idfecha=array(
@@ -60,6 +62,7 @@ echo '
 		  <head>
 			<meta charset="utf-8">
 			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+			<meta name="author" content="Antonio Barril Hernandez">
 			<link href="' . base_url() . 'CSS/style.css" rel="stylesheet" type="text/css">
 			<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200&family=Manuale&family=Podkova&display=swap" rel="stylesheet">
 			<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
@@ -96,7 +99,7 @@ echo '
 					echo form_input($inp_idfecha);
 					echo form_input($inp_idubicacion);
 					echo '
-					<textarea rows=4 cols="232" placeholder="Agrega tu comentario aqui" name="comentario"></textarea>
+					<textarea rows=4 cols="232" placeholder="Agrega tu comentario aqui" name="comentario" style="width: 100%"></textarea>
 					<br>
 					<div id="botonanadircomentario">
 										<input type="submit" value="añadir  comentario">

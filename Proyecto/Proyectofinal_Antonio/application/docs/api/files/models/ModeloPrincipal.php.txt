@@ -84,7 +84,9 @@ class ModeloPrincipal extends CI_Model
 	//Con esta funcion crearemos una incidencia
 	public function altaincidencia($datos)
 	{
-		$this->bd->insert('incidencia', $datos);
+
+				$this->bd->insert('incidencia', $datos);
+
 
 	}
 
@@ -270,10 +272,10 @@ class ModeloPrincipal extends CI_Model
 	 */
 	public function registrousuario($datos)
 	{
-		$this->bd->insert('usuario', $datos);
-
+			$this->bd->insert('usuario', $datos);
+			$error=$this->bd->error();
+			return $error;
 	}
-
 
 	public function verusuarios()
 	{

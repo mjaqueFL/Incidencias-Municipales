@@ -12,6 +12,7 @@ echo '
 			<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 			<link href="' . base_url() . 'CSS/style.css" rel="stylesheet" type="text/css">
 			<link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+			<meta name="author" content="Antonio Barril Hernandez">
 			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 			<title>Politica de privacidad</title>
 		  </head>
@@ -134,7 +135,7 @@ Por último, te informamos que puedes dirigirte ante la Agencia Española de Pro
 La presente Política de Privacidad se encuentra actualizada a fecha 27/12/2018 ProyectosAntonio  (España). Reservados todos los derechos.
  <br><br>
 Si lo deseas también puedes consultar nuestra  <strong><a href="' .base_url(). 'cookies">Política de Cookies</a></strong>
-
+	<h3><a href="'.base_url().'documentos/rpgd.docx" download="Politica.docx">Descargar Politica</a></h3>
 </p>
 
 
