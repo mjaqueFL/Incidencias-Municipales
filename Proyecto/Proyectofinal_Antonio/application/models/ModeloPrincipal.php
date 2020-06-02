@@ -23,12 +23,13 @@ class ModeloPrincipal extends CI_Model
 	 *
 	 */
 	//Con esta funcion comprobaremos que existe el usuario o no
-	public function autenticar($usuario,$contrasenia)
+	public function autenticar($usuario)
 	{
 
 		$this->bd->select('id_usuario,correo,password,tipo');
 		$this->bd->from('usuario');
 		$this->bd->where("correo", $usuario);
+
 		$resultado = $this->bd->get();
 
 		if ($resultado->num_rows() > 0) {

@@ -39,7 +39,7 @@ echo '
 						  <div class="form-group row" >
 							<label for="staticEmail" class="col-sm-2 col-form-label">Correo</label>
 							<div class="col-sm-10">
-							  <input type="text"  class="form-control"  id="staticEmail"  name="correo" placeholder="Correo electronico">
+							  <input type="text"  class="form-control"  id="staticEmail"  name="correo" placeholder="Correo electronico" required>
 							</div>
 						  </div>
 						  <div class="form-group row">

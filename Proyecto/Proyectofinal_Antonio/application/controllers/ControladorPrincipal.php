@@ -87,22 +87,28 @@ class ControladorPrincipal extends CI_Controller
 
 		//comprobamos que es correcto
 
-		$res = $this->ModeloPrincipal->autenticar($usuario, $password);
+		$res = $this->ModeloPrincipal->autenticar($usuario);
 
-		if (!$res) {
-			$this->load->view('errror');
-		} else {
-			//Con esto creamos la variable de sesion
-			$sesion = array(
-				'codigousuario' => $res->id_usuario,
-				'tipousuario' => $res->tipo,
-				'logeado' => TRUE
-			);
+		$array = json_decode(json_encode($res), true);
+
+		if(password_verify($array['password'],$password))
+		{
+
+				$this->load->view('errror');
+			} else {
+				//Con esto creamos la variable de sesion
+				$sesion = array(
+					'codigousuario' => $res->id_usuario,
+					'tipousuario' => $res->tipo,
+					'logeado' => TRUE
+				);
 //			//Aqui le decimos que asi se llamara
 //
-			$this->session->set_userdata($sesion);
-			return $this->index();
+				$this->session->set_userdata($sesion);
+				return $this->index();
 		}
+
+
 	}
 
 
@@ -482,7 +488,8 @@ class ControladorPrincipal extends CI_Controller
 		$datos['password'] = $passwordhash;
 		$datos['tipo'] = 'u';
 		$error = $this->ModeloPrincipal->registrousuario($datos);
-		if (!empty($error)) {
+		print_r($error);
+		if ($error['code']!=0) {
 			$this->load->view('falloregistro');
 		} else {
 			return $this->index();
