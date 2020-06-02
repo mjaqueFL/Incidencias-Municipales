@@ -88,25 +88,28 @@ class ControladorPrincipal extends CI_Controller
 		//comprobamos que es correcto
 
 		$res = $this->ModeloPrincipal->autenticar($usuario);
-
+		print_r($res);
 		$array = json_decode(json_encode($res), true);
-
-		if(password_verify($array['password'],$password))
+		print_r($array);
+//		echo $array['password'];
+		if(password_verify($password,$array['password']))
 		{
-
-				$this->load->view('errror');
-			} else {
-				//Con esto creamos la variable de sesion
-				$sesion = array(
-					'codigousuario' => $res->id_usuario,
-					'tipousuario' => $res->tipo,
-					'logeado' => TRUE
-				);
+//Con esto creamos la variable de sesion
+			$sesion = array(
+				'codigousuario' => $array['id_usuario'],
+				'tipousuario' => $array['tipo'],
+				'logeado' => TRUE
+			);
 //			//Aqui le decimos que asi se llamara
 //
-				$this->session->set_userdata($sesion);
-				return $this->index();
+			$this->session->set_userdata($sesion);
+			return $this->index();
+
 		}
+		else
+			{
+				$this->load->view('errror');
+			}
 
 
 	}
