@@ -108,6 +108,7 @@ echo '
 echo '
 	</div>
 	<div class="col-lg-6 col-xs-12 ">
+		<h4>Comentarios</h4>;
 ';
 			if($this->session->userdata('tipousuario')=='a')
 			{
@@ -115,7 +116,7 @@ echo '
 					echo "<p>No hay incidencias disponibles para mostrar porfavor vuelva mas tarde</p>";
 				} else {
 					foreach ($this->miscomentarios as $indice => $valor) {
-						echo '<h4>Comentarios</h4>';
+
 						echo "<div id='estilocomentariosadmin'>Comentario: $valor 
 							
 								<button data-id='$indice' class='borrarcomentario'>Borrar</button> 

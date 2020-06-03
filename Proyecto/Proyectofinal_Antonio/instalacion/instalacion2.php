@@ -50,13 +50,13 @@ if (isset($_POST["enviar"]))
 			('Cesped que obstaculiza','El cesped que ha crecido cerca de unos aparcamiento no permite que los coches circulen bien','2020-12-30','montijo',3,3);
 			
 			
-			INSERT INTO `comentario`(`texto_comentario`, `id_incidenciacomn`) VALUES
-			('ESTA PAGINA ES GENIAL ',1),
-			('Debe mejorar ',2),
-			('Juanjo y yo pasamos el otro dia por aqui',3),
-			('Sabes que eso es mentira? ',4),
-			('Esto lo vi el otro dia ',5),
-			('Nunca antes lo habia notado gracias! ',6);
+			INSERT INTO `comentario`(`texto_comentario`, `id_incidenciacomn`,`id_usuario`) VALUES
+			('ESTA PAGINA ES GENIAL ',1,1),
+			('Debe mejorar ',2,2),
+			('Juanjo y yo pasamos el otro dia por aqui',3,3),
+			('Sabes que eso es mentira? ',4,3),
+			('Esto lo vi el otro dia ',5,1),
+			('Nunca antes lo habia notado gracias! ',6,2);
 			";
 
 

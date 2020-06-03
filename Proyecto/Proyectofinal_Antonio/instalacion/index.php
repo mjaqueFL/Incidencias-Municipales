@@ -46,7 +46,8 @@ CREATE TABLE `comentario` (
 
 `id_comentario` smallint(5) UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
 `texto_comentario` text default null,
-`id_incidenciacomn` smallint(5) UNSIGNED NOT NULL
+`id_incidenciacomn` smallint(5) UNSIGNED NOT NULL,
+`id_usuario`  smallint(5) UNSIGNED NOT NULL
 )ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 

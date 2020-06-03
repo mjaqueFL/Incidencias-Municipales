@@ -8,6 +8,7 @@ $inp_tituloincidencia=array(
 	'name'=>'tituloincidencia',
 	'id'=>'nombreclase',
 	'size'=>'38',
+	'style'=> 'required',
 	'value'=>$this->clase['titulo'],
 );
 

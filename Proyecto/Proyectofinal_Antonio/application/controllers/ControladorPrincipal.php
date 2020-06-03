@@ -88,10 +88,9 @@ class ControladorPrincipal extends CI_Controller
 		//comprobamos que es correcto
 
 		$res = $this->ModeloPrincipal->autenticar($usuario);
-		print_r($res);
-		$array = json_decode(json_encode($res), true);
-		print_r($array);
-//		echo $array['password'];
+
+		$array = json_decode(json_encode($res), true);//Pasamos a json debido a que nos devuelve una clase de objeto generico de php
+
 		if(password_verify($password,$array['password']))
 		{
 //Con esto creamos la variable de sesion
@@ -281,8 +280,40 @@ class ControladorPrincipal extends CI_Controller
 		$datos["ubicacion"] = $this->input->post("ubicacionincidencia");
 		$datos["tipo_incidencia"] = $this->input->post("tipoincidencia");
 		$datos["id_usuario"] = $this->session->userdata('codigousuario');
-		$this->ModeloPrincipal->modificacionincidencia($datos, $idincidencia);
-		return $this->index();
+		if($datos["titulo"]=="")
+		{
+			$this->load->view('errormodificar');
+
+		}
+		else
+		{
+			if($datos["descripcion"]=="")
+			{
+				$this->load->view('errormodificar');
+			}
+			else
+			{
+				if($datos["fecha"]=="")
+				{
+					$this->load->view('errormodificar');
+				}
+				else
+				{
+					if($datos["ubicacion"] =="")
+					{
+						$this->load->view('errormodificar');
+					}
+					else
+					{
+						$this->ModeloPrincipal->modificacionincidencia($datos, $idincidencia);
+						return $this->index();
+					}
+
+				}
+			}
+
+
+		}
 	}
 
 	/**
@@ -423,6 +454,7 @@ class ControladorPrincipal extends CI_Controller
 
 						$datos["texto_comentario"] = $textocomentario;
 						$datos["id_incidenciacomn"] = $this->input->post("idincidencia");
+						$datos["id_usuario"]=$this->session->userdata('codigousuario');
 						$this->ModeloPrincipal->altacomentarios($datos);
 						return $this->index();
 					}
