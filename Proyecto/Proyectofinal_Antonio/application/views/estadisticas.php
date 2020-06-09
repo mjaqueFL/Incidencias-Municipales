@@ -4,6 +4,7 @@
 //Escuela: Escuela Virgen de Guadalupe
 //Proyecto fin de ciclo: Proyecto de Web de Gestión de Incidencias Municipales
 //Año:2020
+
 ?>
 <html>
 	<head>
@@ -17,8 +18,8 @@
 				var data = google.visualization.arrayToDataTable([
 					['Task', 'Hours per Day']
 					<?php
-						foreach ($this->count as $indice => $valor)
-							echo ',["'.$indice.'", '.$valor.']'
+							foreach ($this->count as $indice => $valor)
+								echo ',["'.$indice.'", '.$valor.']';
 					?>
 				]);
 
@@ -28,8 +29,14 @@
 				};
 
 				var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+				<?php
+				if(!empty($this->count))
+				{
+					echo "chart.draw(data, options);";
+				}
+				?>
 
-				chart.draw(data, options);
+
 			}
 		</script>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -54,7 +61,13 @@
 
 			</div>
 			<div class="row " id="contenedor" >
-					<div id="piechart" class="col-md-4 offset-lg-4 col-xs-8 p-2" style=" height: 400px"></div>
+					<div id="piechart" class="col-md-4 offset-lg-4 col-xs-8 p-2" style=" height: 400px">
+						<?php if(empty($this->count))
+						{
+							echo '<p>no existen datos</p>';
+						}
+						?>
+					</div>
 			</div>
 			<?php include('barrafooter.php');?>
 		</div>

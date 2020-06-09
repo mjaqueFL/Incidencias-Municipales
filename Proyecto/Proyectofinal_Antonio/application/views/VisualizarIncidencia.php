@@ -108,7 +108,7 @@ echo '
 echo '
 	</div>
 	<div class="col-lg-6 col-xs-12 ">
-		<h4>Comentarios</h4>;
+		<h4>Comentarios</h4>
 ';
 			if($this->session->userdata('tipousuario')=='a')
 			{

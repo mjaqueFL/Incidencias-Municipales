@@ -448,7 +448,9 @@ class ControladorPrincipal extends CI_Controller
 			if (isset($_SESSION['logeado'])) {
 				if ($_SESSION['logeado'] == 1) {
 					if (empty($textocomentario)) {
-						return $this->index();
+
+
+						$this->load->view('erroraltacomentario');
 					} else {
 						$datos = array();
 
@@ -523,7 +525,7 @@ class ControladorPrincipal extends CI_Controller
 		$datos['password'] = $passwordhash;
 		$datos['tipo'] = 'u';
 		$error = $this->ModeloPrincipal->registrousuario($datos);
-		print_r($error);
+
 		if ($error['code']!=0) {
 			$this->load->view('falloregistro');
 		} else {
